@@ -5,8 +5,7 @@ export const HOTEL_LISTINGS = [
     location: "Beachfront District",
     city: "Miami",
     roomNumber: 50,
-    image:
-      "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=800&h=600&fit=crop",
+    image: "/src/images/hotels/arach-1.jpg",
     amenities: ["WiFi", "Pool", "Gym", "Restaurant", "Parking"],
     type: "Luxury Resort",
     status: ["For Sale"],
@@ -19,8 +18,7 @@ export const HOTEL_LISTINGS = [
     location: "Historic Center",
     city: "Charleston",
     roomNumber: 25,
-    image:
-      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop",
+    image: "/src/images/hotels/gulsultan-1.jpg",
     amenities: ["WiFi", "Restaurant", "Parking"],
     type: "Boutique Hotel",
     status: ["For Rent"],
@@ -33,8 +31,7 @@ export const HOTEL_LISTINGS = [
     location: "Financial District",
     city: "New York",
     roomNumber: 80,
-    image:
-      "https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800&h=600&fit=crop",
+    image: "/src/images/hotels/hermanos-1.jpg",
     amenities: ["WiFi", "Gym", "Restaurant", "Parking"],
     type: "Business Hotel",
     status: ["For Sale", "For Rent"],
@@ -47,8 +44,7 @@ export const HOTEL_LISTINGS = [
     location: "Seaside",
     city: "San Diego",
     roomNumber: 120,
-    image:
-      "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&h=600&fit=crop",
+    image: "/src/images/hotels/mardia-1.jpg",
     amenities: ["WiFi", "Pool", "Gym", "Restaurant", "Parking"],
     type: "Resort Hotel",
     status: ["For Sale"],
@@ -61,8 +57,7 @@ export const HOTEL_LISTINGS = [
     location: "Downtown",
     city: "Los Angeles",
     roomNumber: 65,
-    image:
-      "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&h=600&fit=crop",
+    image: "/src/images/hotels/newhotel-1.jpg",
     amenities: ["WiFi", "Gym", "Restaurant", "Parking"],
     type: "Urban Hotel",
     status: ["For Rent"],
@@ -75,8 +70,7 @@ export const HOTEL_LISTINGS = [
     location: "Old Town",
     city: "Boston",
     roomNumber: 95,
-    image:
-      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&h=600&fit=crop",
+    image: "/src/images/hotels/pelicanhouse-1.jpg",
     amenities: ["WiFi", "Pool", "Gym", "Restaurant", "Parking"],
     type: "Heritage Hotel",
     status: ["For Sale"],
@@ -89,8 +83,7 @@ export const HOTEL_LISTINGS = [
     location: "Marina District",
     city: "Seattle",
     roomNumber: 45,
-    image:
-      "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=800&h=600&fit=crop",
+    image: "/src/images/hotels/raimond-1.jpg",
     amenities: ["WiFi", "Pool", "Restaurant", "Parking"],
     type: "Boutique Hotel",
     status: ["For Sale", "For Rent"],
