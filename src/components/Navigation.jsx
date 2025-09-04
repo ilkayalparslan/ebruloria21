@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { FiSearch, FiMenu, FiX, FiChevronDown } from "react-icons/fi";
+import { Link, useLocation } from "react-router-dom";
 
 const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
   const [isSearchExpanded, setIsSearchExpanded] = useState(false);
+  const location = useLocation();
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -18,13 +20,29 @@ const Navigation = () => {
     setIsSearchExpanded(!isSearchExpanded);
   };
 
+  // Check if we're on the hotels page
+  const isHotelsPage = location.pathname === "/hotels";
+
   return (
     <nav className="bg-white shadow-sm border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 relative">
           {/* Left side - Logo */}
-          <div className={`flex items-center transition-all duration-300 ${isSearchExpanded ? 'md:translate-x-0 -translate-x-full opacity-0 md:opacity-100' : 'translate-x-0 opacity-100'}`}>
-            <h1 className="text-xl md:text-2xl font-bold text-accent bg-gradient-to-r from-accent to-accent-light bg-clip-text text-transparent whitespace-nowrap">EbruLoria</h1>
+          <div
+            className={`flex items-center transition-all duration-300 ${
+              isSearchExpanded
+                ? "md:translate-x-0 -translate-x-full opacity-0 md:opacity-100"
+                : "translate-x-0 opacity-100"
+            }`}
+          >
+            <Link
+              to="/"
+              className="hover:scale-105 transition-transform duration-300"
+            >
+              <h1 className="text-xl md:text-2xl font-bold text-accent bg-gradient-to-r from-accent to-accent-light bg-clip-text text-transparent whitespace-nowrap">
+                EbruLoria
+              </h1>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
@@ -36,20 +54,18 @@ const Navigation = () => {
                 type="text"
                 placeholder="Search..."
                 className={`transition-all duration-300 h-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent ${
-                  isSearchExpanded 
-                    ? 'w-64 pl-4 pr-12 opacity-100' 
-                    : 'w-10 pl-4 pr-10 opacity-60'
+                  isSearchExpanded
+                    ? "w-64 pl-4 pr-12 opacity-100"
+                    : "w-10 pl-4 pr-10 opacity-60"
                 }`}
                 onClick={!isSearchExpanded ? toggleSearch : undefined}
                 autoFocus={isSearchExpanded}
               />
               {/* Search Icon - positioned over the input */}
-              <button 
+              <button
                 onClick={toggleSearch}
                 className={`absolute top-1/2 transform -translate-y-1/2 p-1 text-gray-600 hover:text-primary z-10 ${
-                  isSearchExpanded 
-                    ? 'right-2' 
-                    : 'left-1/2 -translate-x-1/2'
+                  isSearchExpanded ? "right-2" : "left-1/2 -translate-x-1/2"
                 }`}
               >
                 <FiSearch size={18} />
@@ -78,18 +94,20 @@ const Navigation = () => {
             </div>
 
             {/* Navigation Links */}
-            <a
-              href="#"
+            <Link
+              to="/properties"
               className="text-gray-700 hover:text-primary font-medium"
             >
               Homes
-            </a>
-            <a
-              href="#"
-              className="text-gray-700 hover:text-primary font-medium"
-            >
-              Hotels
-            </a>
+            </Link>
+            {!isHotelsPage && (
+              <Link
+                to="/hotels"
+                className="text-gray-700 hover:text-primary font-medium"
+              >
+                Hotels
+              </Link>
+            )}
             <button className="text-white font-medium px-4 py-2 rounded-lg transition-all duration-200 bg-gradient-to-r from-primary to-accent hover:from-primary-dark hover:to-primary shadow-md">
               Sign In
             </button>
@@ -107,15 +125,15 @@ const Navigation = () => {
                 type="text"
                 placeholder="Search..."
                 className={`absolute right-0 top-0 transition-all duration-300 h-9 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent ${
-                  isSearchExpanded 
-                    ? 'w-48 pl-3 pr-10 opacity-100' 
-                    : 'w-9 pl-1 pr-8 opacity-60'
+                  isSearchExpanded
+                    ? "w-48 pl-3 pr-10 opacity-100"
+                    : "w-9 pl-1 pr-8 opacity-60"
                 }`}
                 onClick={!isSearchExpanded ? toggleSearch : undefined}
                 autoFocus={isSearchExpanded}
               />
               {/* Search Icon - positioned over the input */}
-              <button 
+              <button
                 onClick={toggleSearch}
                 className="relative w-9 h-9 flex items-center justify-center text-gray-600 hover:text-primary z-20"
               >
@@ -176,21 +194,25 @@ const Navigation = () => {
               <FiX size={24} />
             </button>
           </div>
-          
+
           {/* Menu content */}
           <div className="flex-1 px-6 py-6 space-y-6">
-            <a
-              href="#"
+            <Link
+              to="/properties"
               className="block text-lg font-medium text-gray-700 hover:text-primary"
+              onClick={toggleMobileMenu}
             >
               Homes
-            </a>
-            <a
-              href="#"
-              className="block text-lg font-medium text-gray-700 hover:text-primary"
-            >
-              Hotels
-            </a>
+            </Link>
+            {!isHotelsPage && (
+              <Link
+                to="/hotels"
+                className="block text-lg font-medium text-gray-700 hover:text-primary"
+                onClick={toggleMobileMenu}
+              >
+                Hotels
+              </Link>
+            )}
             <button className="block w-full text-left bg-gradient-to-r from-primary to-primary-light text-white px-4 py-3 rounded-lg hover:from-primary-dark hover:to-primary font-medium shadow-md transition-all duration-200">
               Sell on Ebruloria
             </button>

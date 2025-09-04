@@ -17,7 +17,7 @@ const FloatingButtons = () => {
       </div>
 
       {/* WhatsApp Chat Button - Always visible */}
-      <div className="fixed bottom-20 right-5 z-50 cursor-pointer">
+      <div className="fixed bottom-32 md:bottom-20 right-5 z-50 cursor-pointer">
         <div className="relative w-16 h-16">
           {/* Ripple animation circles */}
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full border-2 border-green-400/70 animate-ping"></div>
@@ -30,15 +30,19 @@ const FloatingButtons = () => {
         </div>
       </div>
 
-      {/* Mobile Bottom Buttons - Mobile Only */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 flex">
-        <div className="w-1/2 flex items-center justify-between bg-black/90 text-white px-6 py-4 cursor-pointer text-sm font-medium transition-all duration-200 shadow-lg hover:bg-black">
-          <span>Request a Call</span>
-          <FaPhone className="text-lg" />
+      {/* Mobile Bottom Buttons - Mobile Only - Simple approach */}
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-30 flex h-16">
+        <div className="flex-1 flex items-center justify-center bg-black/90 text-white cursor-pointer text-sm font-medium transition-all duration-200 shadow-lg hover:bg-black border-r border-gray-700">
+          <div className="flex items-center gap-3">
+            <FaPhone className="text-lg" />
+            <span>Request a Call</span>
+          </div>
         </div>
-        <div className="w-1/2 flex items-center justify-between bg-black/50 text-white px-6 py-4 cursor-pointer text-sm font-medium transition-all duration-200 shadow-lg hover:bg-black/70">
-          <span>EbruLoria Online</span>
-          <FaMapMarkerAlt className="text-lg" />
+        <div className="flex-1 flex items-center justify-center bg-black/70 text-white cursor-pointer text-sm font-medium transition-all duration-200 shadow-lg hover:bg-black/90">
+          <div className="flex items-center gap-3">
+            <FaMapMarkerAlt className="text-lg" />
+            <span>EbruLoria Online</span>
+          </div>
         </div>
       </div>
     </>
