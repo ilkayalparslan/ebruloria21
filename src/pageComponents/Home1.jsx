@@ -244,7 +244,7 @@ function Home1() {
           </div>
 
           {/* Slide indicators */}
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+          <div className="absolute bottom-28 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
             {Array.from({ length: totalSlides }).map((_, index) => (
               <div
                 key={index}
