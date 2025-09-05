@@ -17,7 +17,7 @@ const FloatingButtons = () => {
       </div>
 
       {/* WhatsApp Chat Button - Always visible */}
-      <div className="fixed bottom-32 md:bottom-20 right-5 z-50 cursor-pointer">
+      <div className="fixed bottom-20 md:bottom-10 right-5 z-50 cursor-pointer">
         <div className="relative w-16 h-16">
           {/* Ripple animation circles */}
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full border-2 border-green-400/70 animate-ping"></div>
