@@ -1,5 +1,9 @@
 import React from "react";
 
+// Import home images
+import pic6 from "../assets/images/home/pic-6.jpg";
+import pic7 from "../assets/images/home/pic-7.jpg";
+
 function Home3() {
   return (
     <section className="w-full min-h-screen bg-gray-50 py-20 flex flex-col items-center justify-start relative">
@@ -39,7 +43,7 @@ function Home3() {
               className="h-[500px] rounded-3xl overflow-hidden relative shadow-xl transition-all duration-500 hover:shadow-2xl hover:scale-[1.02]"
               style={{
                 background: `linear-gradient(135deg, rgba(122, 147, 172, 0.9) 0%, rgba(97, 112, 115, 0.9) 100%), 
-                           url('src/images/home/pic-6.jpg') center/cover`,
+                           url('${pic6}') center/cover`,
               }}
             >
               {/* Content Overlay */}
@@ -96,7 +100,7 @@ function Home3() {
               className="h-[500px] rounded-3xl overflow-hidden relative shadow-xl transition-all duration-500 hover:shadow-2xl hover:scale-[1.02]"
               style={{
                 background: `linear-gradient(135deg, rgba(175, 179, 247, 0.9) 0%, rgba(182, 186, 248, 0.9) 100%), 
-                           url('src/images/home/pic-7.jpg') center/cover`,
+                           url('${pic7}') center/cover`,
               }}
             >
               {/* Content Overlay */}

@@ -1,34 +1,41 @@
 import React, { useState, useEffect } from "react";
 
+// Import home images
+import pic8 from "../assets/images/home/pic-8.jpg";
+import pic9 from "../assets/images/home/pic-9.jpg";
+import pic10 from "../assets/images/home/pic-10.jpg";
+import pic11 from "../assets/images/home/pic-11.jpg";
+import pic12 from "../assets/images/home/pic-12.jpg";
+
 const PORTFOLIO_ITEMS = [
   {
     id: 1,
     title: "Modern Living Spaces",
-    image: "src/images/home/pic-8.jpg",
+    image: pic8,
     description: "Contemporary design meets functionality",
   },
   {
     id: 2,
     title: "Luxury Interiors",
-    image: "src/images/home/pic-9.jpg",
+    image: pic9,
     description: "Sophisticated spaces for refined living",
   },
   {
     id: 3,
     title: "Urban Architecture",
-    image: "src/images/home/pic-10.jpg",
+    image: pic10,
     description: "Innovative solutions for city life",
   },
   {
     id: 4,
     title: "Scenic Properties",
-    image: "src/images/home/pic-11.jpg",
+    image: pic11,
     description: "Properties with breathtaking views",
   },
   {
     id: 5,
     title: "Smart Homes",
-    image: "src/images/home/pic-12.jpg",
+    image: pic12,
     description: "Technology integrated living",
   },
 ];

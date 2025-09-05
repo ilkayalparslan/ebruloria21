@@ -1,12 +1,21 @@
+// Import all images with correct filenames
+import hotel1 from "../assets/images/hotels/arach-1.jpg";
+import hotel2 from "../assets/images/hotels/gulsultan-1.jpg";
+import hotel3 from "../assets/images/hotels/hermanos-1.jpg";
+import hotel4 from "../assets/images/hotels/mardia-1.jpg";
+import hotel5 from "../assets/images/hotels/newhotel-1.jpg";
+import hotel6 from "../assets/images/hotels/pelicanhouse-1.jpg";
+import hotel7 from "../assets/images/hotels/raimond-1.jpg";
+
 export const HOTEL_LISTINGS = [
   {
     id: 1,
-    name: "Grand EbruLoria Resort", // Hidden from display
+    name: "Grand EbruLoria Resort",
     location: "Beachfront District",
     city: "Miami",
     country: "Turkey",
     roomNumber: 50,
-    image: "/src/images/hotels/arach-1.jpg",
+    image: hotel1,
     amenities: ["WiFi", "Pool", "Gym", "Restaurant", "Parking"],
     type: "Luxury Resort",
     status: ["For Sale"],
@@ -15,12 +24,12 @@ export const HOTEL_LISTINGS = [
   },
   {
     id: 2,
-    name: "EbruLoria Boutique Hotel", // Hidden from display
+    name: "EbruLoria Boutique Hotel",
     location: "Historic Center",
     city: "Charleston",
     country: "Turkey",
     roomNumber: 25,
-    image: "/src/images/hotels/gulsultan-1.jpg",
+    image: hotel2,
     amenities: ["WiFi", "Restaurant", "Parking"],
     type: "Boutique Hotel",
     status: ["For Rent"],
@@ -29,12 +38,12 @@ export const HOTEL_LISTINGS = [
   },
   {
     id: 3,
-    name: "Metropolitan Business Hotel", // Hidden from display
+    name: "Metropolitan Business Hotel",
     location: "Financial District",
     city: "New York",
     country: "Turkey",
     roomNumber: 80,
-    image: "/src/images/hotels/hermanos-1.jpg",
+    image: hotel3,
     amenities: ["WiFi", "Gym", "Restaurant", "Parking"],
     type: "Business Hotel",
     status: ["For Sale", "For Rent"],
@@ -43,12 +52,12 @@ export const HOTEL_LISTINGS = [
   },
   {
     id: 4,
-    name: "Coastal Retreat Hotel", // Hidden from display
+    name: "Coastal Retreat Hotel",
     location: "Seaside",
     city: "San Diego",
     country: "Turkey",
     roomNumber: 120,
-    image: "/src/images/hotels/mardia-1.jpg",
+    image: hotel4,
     amenities: ["WiFi", "Pool", "Gym", "Restaurant", "Parking"],
     type: "Resort Hotel",
     status: ["For Sale"],
@@ -57,12 +66,12 @@ export const HOTEL_LISTINGS = [
   },
   {
     id: 5,
-    name: "Urban Lifestyle Hotel", // Hidden from display
+    name: "Urban Lifestyle Hotel",
     location: "Downtown",
     city: "Los Angeles",
     country: "Turkey",
     roomNumber: 65,
-    image: "/src/images/hotels/newhotel-1.jpg",
+    image: hotel5,
     amenities: ["WiFi", "Gym", "Restaurant", "Parking"],
     type: "Urban Hotel",
     status: ["For Rent"],
@@ -71,12 +80,12 @@ export const HOTEL_LISTINGS = [
   },
   {
     id: 6,
-    name: "Heritage Palace Hotel", // Hidden from display
+    name: "Heritage Palace Hotel",
     location: "Old Town",
     city: "Boston",
     country: "Turkey",
     roomNumber: 95,
-    image: "/src/images/hotels/pelicanhouse-1.jpg",
+    image: hotel6,
     amenities: ["WiFi", "Pool", "Gym", "Restaurant", "Parking"],
     type: "Heritage Hotel",
     status: ["For Sale"],
@@ -85,12 +94,12 @@ export const HOTEL_LISTINGS = [
   },
   {
     id: 7,
-    name: "Marina Bay Hotel", // Hidden from display
+    name: "Marina Bay Hotel",
     location: "Marina District",
     city: "Seattle",
     country: "Turkey",
     roomNumber: 45,
-    image: "/src/images/hotels/raimond-1.jpg",
+    image: hotel7,
     amenities: ["WiFi", "Pool", "Restaurant", "Parking"],
     type: "Boutique Hotel",
     status: ["For Sale", "For Rent"],

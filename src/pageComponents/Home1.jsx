@@ -1,5 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 
+// Import all home images
+import pic1 from "../assets/images/home/pic-1.jpg";
+import pic2 from "../assets/images/home/pic-2.jpg";
+import pic3 from "../assets/images/home/pic-3.jpg";
+import pic4 from "../assets/images/home/pic-4.jpg";
+import pic5 from "../assets/images/home/pic-5.jpg";
+
 function Home1() {
   const isMobile = window.innerWidth <= 768;
   const sliderRef = useRef(null);
@@ -139,7 +146,7 @@ function Home1() {
             <div
               className="w-screen h-full relative bg-cover bg-center flex-shrink-0"
               style={{
-                backgroundImage: "url('src/images/home/pic-1.jpg')",
+                backgroundImage: `url(${pic1})`,
               }}
             >
               <div className="absolute inset-0 bg-blue-500 bg-opacity-30 flex flex-col justify-center items-center px-8 py-20 text-center">
@@ -157,7 +164,7 @@ function Home1() {
             <div
               className="w-screen h-full relative bg-cover bg-center flex-shrink-0"
               style={{
-                backgroundImage: "url('src/images/home/pic-2.jpg')",
+                backgroundImage: `url(${pic2})`,
               }}
             >
               <div className="absolute inset-0 bg-red-500 bg-opacity-25 flex flex-col justify-center items-center px-8 py-20 text-center">
@@ -175,7 +182,7 @@ function Home1() {
             <div
               className="w-screen h-full relative bg-cover bg-center flex-shrink-0"
               style={{
-                backgroundImage: "url('src/images/home/pic-3.jpg')",
+                backgroundImage: `url(${pic3})`,
               }}
             >
               <div className="absolute inset-0 bg-green-500 bg-opacity-35 flex flex-col justify-center items-center px-8 py-20 text-center">
@@ -193,7 +200,7 @@ function Home1() {
             <div
               className="w-screen h-full relative bg-cover bg-center flex-shrink-0"
               style={{
-                backgroundImage: "url('src/images/home/pic-4.jpg')",
+                backgroundImage: `url(${pic4})`,
               }}
             >
               <div className="absolute inset-0 bg-yellow-400 bg-opacity-40 flex flex-col justify-center items-center px-8 py-20 text-center">
@@ -211,7 +218,7 @@ function Home1() {
             <div
               className="w-screen h-full relative bg-cover bg-center flex-shrink-0"
               style={{
-                backgroundImage: "url('src/images/home/pic-5.jpg')",
+                backgroundImage: `url(${pic5})`,
               }}
             >
               <div
@@ -321,7 +328,7 @@ function Home1() {
                   }}
                 >
                   <img
-                    src="src/images/home/pic-1.jpg"
+                    src={pic1}
                     alt="Team meeting"
                     style={{
                       width: "100%",
@@ -364,7 +371,7 @@ function Home1() {
                   }}
                 >
                   <img
-                    src="src/images/home/pic-2.jpg"
+                    src={pic2}
                     alt="Woman working"
                     style={{
                       width: "100%",
@@ -394,7 +401,7 @@ function Home1() {
                   }}
                 >
                   <img
-                    src="src/images/home/pic-3.jpg"
+                    src={pic3}
                     alt="Office space"
                     style={{
                       width: "100%",
@@ -437,7 +444,7 @@ function Home1() {
                   }}
                 >
                   <img
-                    src="src/images/home/pic-4.jpg"
+                    src={pic4}
                     alt="Person with phone"
                     style={{
                       width: "100%",
@@ -467,7 +474,7 @@ function Home1() {
                   }}
                 >
                   <img
-                    src="src/images/home/pic-5.jpg"
+                    src={pic5}
                     alt="Collaborative workspace"
                     style={{
                       width: "100%",

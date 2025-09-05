@@ -11,7 +11,7 @@ function Home2() {
         loop
         playsInline
       >
-        <source src="src/images/home/video-1.mp4" type="video/mp4" />
+        <source src="/videos/video-1.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
