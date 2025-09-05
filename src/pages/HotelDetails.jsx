@@ -246,7 +246,16 @@ const HotelDetails = () => {
           </div>
 
           {/* Image Counter */}
-          <div className="absolute bottom-4 right-4">
+          {/* Image Counter with View All button */}
+          <div className="absolute bottom-4 right-4 flex items-center gap-2">
+            <button
+              onClick={() => setShowAllImages(true)}
+              className="backdrop-blur-sm bg-white/50 rounded-full px-3 py-2 hover:bg-white/70 transition-colors"
+            >
+              <span className="text-sm font-medium text-gray-800">
+                View All
+              </span>
+            </button>
             <div className="backdrop-blur-sm bg-white/50 rounded-full px-3 py-2">
               <span className="text-sm font-medium text-gray-800">
                 {currentImageIndex + 1} of {images.length}
@@ -412,6 +421,33 @@ const HotelDetails = () => {
           </div>
         </div>
       </div>
+
+      {/* Full-screen Gallery Modal - Mobile Only */}
+      {showAllImages && (
+        <div className="fixed inset-0 bg-black z-50 md:hidden">
+          {/* Close button */}
+          <button
+            onClick={() => setShowAllImages(false)}
+            className="absolute top-4 left-4 z-10 backdrop-blur-sm bg-white/50 rounded-full p-3"
+          >
+            <MdArrowBack className="w-6 h-6 text-gray-800" />
+          </button>
+
+          {/* Vertical scrolling images */}
+          <div className="h-full overflow-y-auto pt-16 pb-4">
+            <div className="flex flex-col gap-4 px-4">
+              {images.map((image, index) => (
+                <img
+                  key={index}
+                  src={image}
+                  alt={`Property ${index + 1}`}
+                  className="w-full h-80 object-cover rounded-lg"
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Desktop Layout */}
       <div className="hidden md:block">
