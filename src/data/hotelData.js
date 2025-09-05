@@ -4,6 +4,7 @@ export const HOTEL_LISTINGS = [
     name: "Grand EbruLoria Resort", // Hidden from display
     location: "Beachfront District",
     city: "Miami",
+    country: "Turkey",
     roomNumber: 50,
     image: "/src/images/hotels/arach-1.jpg",
     amenities: ["WiFi", "Pool", "Gym", "Restaurant", "Parking"],
@@ -17,6 +18,7 @@ export const HOTEL_LISTINGS = [
     name: "EbruLoria Boutique Hotel", // Hidden from display
     location: "Historic Center",
     city: "Charleston",
+    country: "Turkey",
     roomNumber: 25,
     image: "/src/images/hotels/gulsultan-1.jpg",
     amenities: ["WiFi", "Restaurant", "Parking"],
@@ -30,6 +32,7 @@ export const HOTEL_LISTINGS = [
     name: "Metropolitan Business Hotel", // Hidden from display
     location: "Financial District",
     city: "New York",
+    country: "Turkey",
     roomNumber: 80,
     image: "/src/images/hotels/hermanos-1.jpg",
     amenities: ["WiFi", "Gym", "Restaurant", "Parking"],
@@ -43,6 +46,7 @@ export const HOTEL_LISTINGS = [
     name: "Coastal Retreat Hotel", // Hidden from display
     location: "Seaside",
     city: "San Diego",
+    country: "Turkey",
     roomNumber: 120,
     image: "/src/images/hotels/mardia-1.jpg",
     amenities: ["WiFi", "Pool", "Gym", "Restaurant", "Parking"],
@@ -56,6 +60,7 @@ export const HOTEL_LISTINGS = [
     name: "Urban Lifestyle Hotel", // Hidden from display
     location: "Downtown",
     city: "Los Angeles",
+    country: "Turkey",
     roomNumber: 65,
     image: "/src/images/hotels/newhotel-1.jpg",
     amenities: ["WiFi", "Gym", "Restaurant", "Parking"],
@@ -69,6 +74,7 @@ export const HOTEL_LISTINGS = [
     name: "Heritage Palace Hotel", // Hidden from display
     location: "Old Town",
     city: "Boston",
+    country: "Turkey",
     roomNumber: 95,
     image: "/src/images/hotels/pelicanhouse-1.jpg",
     amenities: ["WiFi", "Pool", "Gym", "Restaurant", "Parking"],
@@ -82,6 +88,7 @@ export const HOTEL_LISTINGS = [
     name: "Marina Bay Hotel", // Hidden from display
     location: "Marina District",
     city: "Seattle",
+    country: "Turkey",
     roomNumber: 45,
     image: "/src/images/hotels/raimond-1.jpg",
     amenities: ["WiFi", "Pool", "Restaurant", "Parking"],

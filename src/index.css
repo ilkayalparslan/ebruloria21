@@ -16,3 +16,49 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+/* Custom gradient backgrounds for consistency */
+.gradient-primary {
+  background: linear-gradient(
+    135deg,
+    var(--color-three) 0%,
+    var(--color-four) 100%
+  );
+}
+
+.gradient-primary-hover {
+  background: linear-gradient(
+    135deg,
+    var(--color-four) 0%,
+    var(--color-five) 100%
+  );
+}
+
+.btn-primary-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--color-three) 0%,
+    var(--color-four) 100%
+  );
+  transition: all 0.2s ease;
+}
+
+.btn-primary-gradient:hover {
+  background: linear-gradient(
+    135deg,
+    var(--color-four) 0%,
+    var(--color-five) 100%
+  );
+  transform: translateY(-1px);
+  box-shadow: 0 10px 25px rgba(122, 147, 172, 0.3);
+}
+
+/* Text color utilities for consistency */
+.text-primary-light {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Custom focus ring using color palette */
+.custom-focus:focus {
+  --tw-ring-color: var(--color-four);
+}
