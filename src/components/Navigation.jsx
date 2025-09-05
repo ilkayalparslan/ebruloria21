@@ -1,3 +1,11 @@
+// line 129 responsible for the search bar width on mobile
+// Navigation Component - Responsive header with search, language dropdown, and mobile menu
+// Desktop search expansion: lines 57-61 (w-10 collapsed, w-64 expanded)
+// Mobile search expansion: lines 119-123 (w-9 collapsed, w-28 expanded)
+// Logo animation on mobile search: lines 34-40
+// Desktop search icon positioning: lines 67-71
+// Mobile search icon positioning: lines 130-134
+
 import React, { useState } from "react";
 import { FiSearch, FiMenu, FiX, FiChevronDown } from "react-icons/fi";
 import { Link, useLocation } from "react-router-dom";
