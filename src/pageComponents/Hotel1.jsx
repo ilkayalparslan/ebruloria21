@@ -1,38 +1,15 @@
 import React, { useState, useMemo } from "react";
+import { useNavigate } from "react-router-dom";
 import { HOTEL_LISTINGS, getRoomDisplay } from "../data/hotelData";
 import { MdLocationOn, MdHome, MdStar, MdClose } from "react-icons/md";
 
-// HotelCard Component - Convert single image to 6-image carousel
-// Image carousel container: lines [95-110] (replace single img tag with carousel)
-// Navigation dots positioning: lines [111-125] (bottom center absolute positioning)
-// Navigation dots styling: lines [115-123] (Tailwind classes for dots appearance)
-// Desktop dot navigation: lines [74-82] (click handlers)
-// Mobile touch events: lines [84-106] (touchstart, touchmove, touchend)
-// Swipe detection: lines [97-105] (calculate swipe distance and direction)
-// Image transitions: lines [98-100] (transform translateX with smooth transitions)
-// State management: lines [18-19] (currentImageIndex useState)
-//
-// Carousel Dimensions:
-// - Container height: h-80 (320px) - maintains existing card image height
-// - Image width: w-full (100%) - each image takes full container width
-// - Carousel wrapper: overflow-hidden - hides adjacent images
-// - Navigation dots: 8px diameter (w-2 h-2), 4px spacing (gap-1)
-// - Dot container: bottom-3 positioning (12px from bottom)
-//
-// Touch Interaction:
-// - Minimum swipe distance: 50px
-// - Swipe threshold for navigation
-// - Touch coordinates stored in touchStart/touchEnd states
-
 const Hotel1 = () => {
+  const navigate = useNavigate();
   const [statusFilter, setStatusFilter] = useState("all");
   const [cityFilter, setCityFilter] = useState("all");
   const [expandedDescriptions, setExpandedDescriptions] = useState({});
   const [showContactModal, setShowContactModal] = useState(false);
   const [selectedHotel, setSelectedHotel] = useState(null);
-  const [currentImageIndex, setCurrentImageIndex] = useState({});
-  const [touchStart, setTouchStart] = useState(null);
-  const [touchEnd, setTouchEnd] = useState(null);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -40,6 +17,10 @@ const Hotel1 = () => {
     phone: "",
     message: "",
   });
+
+  const [currentImageIndex, setCurrentImageIndex] = useState({});
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
 
   // Get unique cities for filter dropdown
   const uniqueCities = useMemo(() => {
@@ -116,6 +97,10 @@ const Hotel1 = () => {
     console.log("Contact form submitted:", formData);
     alert("Thank you for your inquiry! We'll contact you soon.");
     closeContactModal();
+  };
+
+  const handleGetDetails = (hotel) => {
+    navigate(`/hotels/${hotel.adNumber}`);
   };
 
   // Handle dot click navigation
@@ -223,7 +208,7 @@ const Hotel1 = () => {
               key={index}
               className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
             >
-              {/* Hotel Image Carousel - Height: 320px (h-80) */}
+              {/* Hotel Image - Increased height */}
               <div className="relative h-80 overflow-hidden">
                 {/* Carousel Container - Transform based on currentImageIndex */}
                 <div
@@ -239,29 +224,18 @@ const Hotel1 = () => {
                     handleTouchEnd(index, hotel.images?.length || 1)
                   }
                 >
-                  {/* Generate 6 images or repeat single image */}
-                  {(
-                    hotel.images || [
-                      hotel.image,
-                      hotel.image,
-                      hotel.image,
-                      hotel.image,
-                      hotel.image,
-                      hotel.image,
-                    ]
-                  )
-                    .slice(0, 6)
-                    .map((image, imgIndex) => (
-                      <img
-                        key={imgIndex}
-                        src={image}
-                        alt={`Hotel ${imgIndex + 1}`}
-                        className="w-full h-full object-cover flex-shrink-0"
-                      />
-                    ))}
+                  {/* Generate 6 images */}
+                  {hotel.images.slice(0, 6).map((image, imgIndex) => (
+                    <img
+                      key={imgIndex}
+                      src={image}
+                      alt={`Hotel ${imgIndex + 1}`}
+                      className="w-full h-full object-cover flex-shrink-0"
+                    />
+                  ))}
                 </div>
 
-                {/* Navigation Dots - Positioned 12px from bottom, centered */}
+                {/* Navigation Dots */}
                 <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex gap-2">
                   {Array.from({
                     length: Math.min(hotel.images?.length || 1, 6),
@@ -302,7 +276,6 @@ const Hotel1 = () => {
                   </button>
                 </div>
               </div>
-
               {/* Hotel Details - Reduced padding and spacing */}
               <div className="p-4">
                 {/* Location */}
@@ -406,7 +379,10 @@ const Hotel1 = () => {
                 </div>
 
                 {/* Get Details Button */}
-                <button className="w-full btn-primary-gradient text-white py-2 px-4 rounded-lg font-medium text-sm">
+                <button
+                  onClick={() => handleGetDetails(hotel)}
+                  className="w-full btn-primary-gradient text-white py-2 px-4 rounded-lg font-medium text-sm"
+                >
                   Get Details
                 </button>
               </div>

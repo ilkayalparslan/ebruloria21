@@ -5,6 +5,39 @@ import arach3 from "../assets/images/hotels/arach/arach-3.jpg";
 import arach4 from "../assets/images/hotels/arach/arach-4.jpg";
 import arach5 from "../assets/images/hotels/arach/arach-5.jpg";
 import arach6 from "../assets/images/hotels/arach/arach-6.jpg";
+import arach7 from "../assets/images/hotels/arach/arach-7.jpg";
+import arach8 from "../assets/images/hotels/arach/arach-8.jpg";
+import arach9 from "../assets/images/hotels/arach/arach-9.jpg";
+import arach10 from "../assets/images/hotels/arach/arach-10.jpg";
+import arach11 from "../assets/images/hotels/arach/arach-11.jpg";
+import arach12 from "../assets/images/hotels/arach/arach-12.jpg";
+import arach13 from "../assets/images/hotels/arach/arach-13.jpg";
+import arach14 from "../assets/images/hotels/arach/arach-14.jpg";
+import arach15 from "../assets/images/hotels/arach/arach-15.jpg";
+import arach16 from "../assets/images/hotels/arach/arach-16.jpg";
+import arach17 from "../assets/images/hotels/arach/arach-17.jpg";
+import arach18 from "../assets/images/hotels/arach/arach-18.jpg";
+import arach19 from "../assets/images/hotels/arach/arach-19.jpg";
+import arach20 from "../assets/images/hotels/arach/arach-20.jpg";
+import arach21 from "../assets/images/hotels/arach/arach-21.jpg";
+import arach22 from "../assets/images/hotels/arach/arach-22.jpg";
+import arach23 from "../assets/images/hotels/arach/arach-23.jpg";
+import arach24 from "../assets/images/hotels/arach/arach-24.jpg";
+import arach25 from "../assets/images/hotels/arach/arach-25.jpg";
+import arach26 from "../assets/images/hotels/arach/arach-26.jpg";
+import arach27 from "../assets/images/hotels/arach/arach-27.jpg";
+import arach28 from "../assets/images/hotels/arach/arach-28.jpg";
+import arach29 from "../assets/images/hotels/arach/arach-29.jpg";
+import arach30 from "../assets/images/hotels/arach/arach-30.jpg";
+import arach31 from "../assets/images/hotels/arach/arach-31.jpg";
+import arach32 from "../assets/images/hotels/arach/arach-32.jpg";
+import arach33 from "../assets/images/hotels/arach/arach-33.jpg";
+import arach34 from "../assets/images/hotels/arach/arach-34.jpg";
+import arach35 from "../assets/images/hotels/arach/arach-35.jpg";
+import arach36 from "../assets/images/hotels/arach/arach-36.jpg";
+import arach37 from "../assets/images/hotels/arach/arach-37.jpg";
+import arach38 from "../assets/images/hotels/arach/arach-38.jpg";
+import arach39 from "../assets/images/hotels/arach/arach-39.jpg";
 import gulsultan1 from "../assets/images/hotels/gulsultan/gulsultan-1.jpg";
 import gulsultan2 from "../assets/images/hotels/gulsultan/gulsultan-2.jpg";
 import gulsultan3 from "../assets/images/hotels/gulsultan/gulsultan-3.jpg";
@@ -46,20 +79,64 @@ export const HOTEL_LISTINGS = [
   {
     id: 1,
     name: "Arach Hotel",
+    adNumber: "6295738461",
     location: "Beachfront District",
     city: "Istanbul",
     country: "Turkey",
     roomNumber: 50,
-    images: [arach1, arach2, arach3, arach4, arach5, arach6],
+    images: [
+      arach1,
+      arach2,
+      arach3,
+      arach4,
+      arach5,
+      arach6,
+      arach7,
+      arach8,
+      arach9,
+      arach10,
+      arach11,
+      arach12,
+      arach13,
+      arach14,
+      arach15,
+      arach16,
+      arach17,
+      arach18,
+      arach19,
+      arach20,
+      arach21,
+      arach22,
+      arach23,
+      arach24,
+      arach25,
+      arach26,
+      arach27,
+      arach28,
+      arach29,
+      arach30,
+      arach31,
+      arach32,
+      arach33,
+      arach34,
+      arach35,
+      arach36,
+      arach37,
+      arach38,
+      arach39,
+    ],
     amenities: ["WiFi", "Pool", "Gym", "Restaurant", "Parking"],
     type: "Luxury Resort",
     status: ["For Sale"],
+    floorCount: 5,
+    baseSquare: 65,
     description:
       "Luxury beachfront resort with world-class amenities and stunning ocean views. Premium investment opportunity in prime tourist destination.",
   },
   {
     id: 2,
     name: "EbruLoria Boutique Hotel",
+    adNumber: "6731905284",
     location: "Historic Center",
     city: "Istanbul",
     country: "Turkey",
@@ -75,12 +152,15 @@ export const HOTEL_LISTINGS = [
     amenities: ["WiFi", "Restaurant", "Parking"],
     type: "Boutique Hotel",
     status: ["For Rent"],
+    floorCount: 8,
+    baseSquare: 170,
     description:
       "Charming boutique hotel in the heart of historic district. Perfect for investors seeking steady rental income in cultural area.",
   },
   {
     id: 3,
     name: "Metropolitan Business Hotel",
+    adNumber: "6847293051",
     location: "Financial District",
     city: "Istanbul",
     country: "Turkey",
@@ -89,12 +169,15 @@ export const HOTEL_LISTINGS = [
     amenities: ["WiFi", "Gym", "Restaurant", "Parking"],
     type: "Business Hotel",
     status: ["For Sale", "For Rent"],
+    floorCount: 6,
+    baseSquare: 210,
     description:
       "Modern business hotel in prime financial location. Excellent for corporate clients with flexible purchase or rental options.",
   },
   {
     id: 4,
     name: "Coastal Retreat Hotel",
+    adNumber: "6582047163",
     location: "Seaside",
     city: "Istanbul",
     country: "Turkey",
@@ -103,12 +186,15 @@ export const HOTEL_LISTINGS = [
     amenities: ["WiFi", "Pool", "Gym", "Restaurant", "Parking"],
     type: "Resort Hotel",
     status: ["For Sale"],
+    floorCount: 4,
+    baseSquare: 130,
     description:
       "Expansive coastal resort with premium facilities. Exceptional investment opportunity with high ROI potential in scenic location.",
   },
   {
     id: 5,
     name: "Urban Lifestyle Hotel",
+    adNumber: "6149365827",
     location: "Istanbul",
     city: "Trabzon",
     country: "Turkey",
@@ -117,12 +203,16 @@ export const HOTEL_LISTINGS = [
     amenities: ["WiFi", "Gym", "Restaurant", "Parking"],
     type: "Urban Hotel",
     status: ["For Rent"],
+    floorCount: 5,
+    baseSquare: 110,
     description:
       "Contemporary urban hotel in vibrant downtown area. Ideal for rental investment with consistent occupancy rates.",
   },
   {
     id: 6,
     name: "Heritage Palace Hotel",
+    adNumber: "6408752196",
+    adNumber: "6936174528",
     location: "Old Town",
     city: "Ankara",
     country: "Turkey",
@@ -138,6 +228,8 @@ export const HOTEL_LISTINGS = [
     amenities: ["WiFi", "Pool", "Gym", "Restaurant", "Parking"],
     type: "Heritage Hotel",
     status: ["For Sale"],
+    floorCount: 7,
+    baseSquare: 125,
     description:
       "Historic palace converted to luxury hotel. Rare opportunity to own prestigious property with rich cultural heritage.",
   },
@@ -151,6 +243,8 @@ export const HOTEL_LISTINGS = [
     images: [raimond1, raimond2, raimond3, raimond4, raimond5, raimond6],
     type: "Boutique Hotel",
     status: ["For Sale", "For Rent"],
+    floorCount: 9,
+    baseSquare: 85,
     description:
       "Waterfront boutique hotel with marina views. Flexible investment options in growing maritime tourism sector.",
   },
