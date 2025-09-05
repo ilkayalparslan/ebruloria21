@@ -68,7 +68,7 @@ export const HOTEL_LISTINGS = [
     id: 5,
     name: "Urban Lifestyle Hotel",
     location: "Istanbul",
-    city: "Los Angeles",
+    city: "Trabzon",
     country: "Turkey",
     roomNumber: 65,
     image: hotel5,
