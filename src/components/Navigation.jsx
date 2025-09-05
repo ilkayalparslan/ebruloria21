@@ -103,7 +103,7 @@ const Navigation = () => {
 
             {/* Navigation Links */}
             <Link
-              to="/properties"
+              to="/homes"
               className="text-gray-700 hover:text-primary font-medium"
             >
               Homes
@@ -206,7 +206,7 @@ const Navigation = () => {
           {/* Menu content */}
           <div className="flex-1 px-6 py-6 space-y-6">
             <Link
-              to="/properties"
+              to="/homes"
               className="block text-lg font-medium text-gray-700 hover:text-primary"
               onClick={toggleMobileMenu}
             >
