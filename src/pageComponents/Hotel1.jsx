@@ -2,12 +2,37 @@ import React, { useState, useMemo } from "react";
 import { HOTEL_LISTINGS, getRoomDisplay } from "../data/hotelData";
 import { MdLocationOn, MdHome, MdStar, MdClose } from "react-icons/md";
 
+// HotelCard Component - Convert single image to 6-image carousel
+// Image carousel container: lines [95-110] (replace single img tag with carousel)
+// Navigation dots positioning: lines [111-125] (bottom center absolute positioning)
+// Navigation dots styling: lines [115-123] (Tailwind classes for dots appearance)
+// Desktop dot navigation: lines [74-82] (click handlers)
+// Mobile touch events: lines [84-106] (touchstart, touchmove, touchend)
+// Swipe detection: lines [97-105] (calculate swipe distance and direction)
+// Image transitions: lines [98-100] (transform translateX with smooth transitions)
+// State management: lines [18-19] (currentImageIndex useState)
+//
+// Carousel Dimensions:
+// - Container height: h-80 (320px) - maintains existing card image height
+// - Image width: w-full (100%) - each image takes full container width
+// - Carousel wrapper: overflow-hidden - hides adjacent images
+// - Navigation dots: 8px diameter (w-2 h-2), 4px spacing (gap-1)
+// - Dot container: bottom-3 positioning (12px from bottom)
+//
+// Touch Interaction:
+// - Minimum swipe distance: 50px
+// - Swipe threshold for navigation
+// - Touch coordinates stored in touchStart/touchEnd states
+
 const Hotel1 = () => {
   const [statusFilter, setStatusFilter] = useState("all");
   const [cityFilter, setCityFilter] = useState("all");
   const [expandedDescriptions, setExpandedDescriptions] = useState({});
   const [showContactModal, setShowContactModal] = useState(false);
   const [selectedHotel, setSelectedHotel] = useState(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState({});
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -93,6 +118,50 @@ const Hotel1 = () => {
     closeContactModal();
   };
 
+  // Handle dot click navigation
+  const handleDotClick = (hotelIndex, imageIndex) => {
+    setCurrentImageIndex((prev) => ({
+      ...prev,
+      [hotelIndex]: imageIndex,
+    }));
+  };
+
+  // Handle touch start for mobile swipe
+  const handleTouchStart = (e) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  // Handle touch move
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  // Handle touch end and swipe detection
+  const handleTouchEnd = (hotelIndex, totalImages) => {
+    if (!touchStart || !touchEnd) return;
+
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe || isRightSwipe) {
+      const currentIndex = currentImageIndex[hotelIndex] || 0;
+      let newIndex = currentIndex;
+
+      if (isLeftSwipe && currentIndex < totalImages - 1) {
+        newIndex = currentIndex + 1;
+      } else if (isRightSwipe && currentIndex > 0) {
+        newIndex = currentIndex - 1;
+      }
+
+      setCurrentImageIndex((prev) => ({
+        ...prev,
+        [hotelIndex]: newIndex,
+      }));
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gray-100 p-4">
       <div className="max-w-6xl mx-auto">
@@ -154,13 +223,61 @@ const Hotel1 = () => {
               key={index}
               className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
             >
-              {/* Hotel Image - Increased height */}
-              <div className="relative h-80">
-                <img
-                  src={hotel.image}
-                  alt="Hotel"
-                  className="w-full h-full object-cover"
-                />
+              {/* Hotel Image Carousel - Height: 320px (h-80) */}
+              <div className="relative h-80 overflow-hidden">
+                {/* Carousel Container - Transform based on currentImageIndex */}
+                <div
+                  className="flex h-full transition-transform duration-300 ease-in-out"
+                  style={{
+                    transform: `translateX(-${
+                      (currentImageIndex[index] || 0) * 100
+                    }%)`,
+                  }}
+                  onTouchStart={handleTouchStart}
+                  onTouchMove={handleTouchMove}
+                  onTouchEnd={() =>
+                    handleTouchEnd(index, hotel.images?.length || 1)
+                  }
+                >
+                  {/* Generate 6 images or repeat single image */}
+                  {(
+                    hotel.images || [
+                      hotel.image,
+                      hotel.image,
+                      hotel.image,
+                      hotel.image,
+                      hotel.image,
+                      hotel.image,
+                    ]
+                  )
+                    .slice(0, 6)
+                    .map((image, imgIndex) => (
+                      <img
+                        key={imgIndex}
+                        src={image}
+                        alt={`Hotel ${imgIndex + 1}`}
+                        className="w-full h-full object-cover flex-shrink-0"
+                      />
+                    ))}
+                </div>
+
+                {/* Navigation Dots - Positioned 12px from bottom, centered */}
+                <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex gap-2">
+                  {Array.from({
+                    length: Math.min(hotel.images?.length || 1, 6),
+                  }).map((_, imgIndex) => (
+                    <button
+                      key={imgIndex}
+                      onClick={() => handleDotClick(index, imgIndex)}
+                      className={`w-2 h-2 rounded-full transition-colors duration-200 ${
+                        (currentImageIndex[index] || 0) === imgIndex
+                          ? "bg-white"
+                          : "bg-white/50 hover:bg-white/75"
+                      }`}
+                    />
+                  ))}
+                </div>
+
                 {/* Status Badges */}
                 <div className="absolute top-3 left-3 flex gap-2">
                   {hotel.status.map((status, idx) => (

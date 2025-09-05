@@ -1,21 +1,56 @@
 // Import all images with correct filenames
-import hotel1 from "../assets/images/hotels/arach-1.jpg";
-import hotel2 from "../assets/images/hotels/gulsultan-1.jpg";
-import hotel3 from "../assets/images/hotels/hermanos-1.jpg";
-import hotel4 from "../assets/images/hotels/mardia-1.jpg";
-import hotel5 from "../assets/images/hotels/newhotel-1.jpg";
-import hotel6 from "../assets/images/hotels/pelicanhouse-1.jpg";
-import hotel7 from "../assets/images/hotels/raimond-1.jpg";
+import arach1 from "../assets/images/hotels/arach/arach-1.jpg";
+import arach2 from "../assets/images/hotels/arach/arach-2.jpg";
+import arach3 from "../assets/images/hotels/arach/arach-3.jpg";
+import arach4 from "../assets/images/hotels/arach/arach-4.jpg";
+import arach5 from "../assets/images/hotels/arach/arach-5.jpg";
+import arach6 from "../assets/images/hotels/arach/arach-6.jpg";
+import gulsultan1 from "../assets/images/hotels/gulsultan/gulsultan-1.jpg";
+import gulsultan2 from "../assets/images/hotels/gulsultan/gulsultan-2.jpg";
+import gulsultan3 from "../assets/images/hotels/gulsultan/gulsultan-3.jpg";
+import gulsultan4 from "../assets/images/hotels/gulsultan/gulsultan-4.jpg";
+import gulsultan5 from "../assets/images/hotels/gulsultan/gulsultan-5.jpg";
+import gulsultan6 from "../assets/images/hotels/gulsultan/gulsultan-6.jpg";
+import hermanos1 from "../assets/images/hotels/hermanos/hermanos-1.jpg";
+import hermanos2 from "../assets/images/hotels/hermanos/hermanos-2.jpg";
+import hermanos3 from "../assets/images/hotels/hermanos/hermanos-3.jpg";
+import hermanos4 from "../assets/images/hotels/hermanos/hermanos-4.jpg";
+import hermanos5 from "../assets/images/hotels/hermanos/hermanos-5.jpg";
+import hermanos6 from "../assets/images/hotels/hermanos/hermanos-6.jpg";
+import mardia1 from "../assets/images/hotels/mardia/mardia-1.jpg";
+import mardia2 from "../assets/images/hotels/mardia/mardia-2.jpg";
+import mardia3 from "../assets/images/hotels/mardia/mardia-3.jpg";
+import mardia4 from "../assets/images/hotels/mardia/mardia-4.jpg";
+import mardia5 from "../assets/images/hotels/mardia/mardia-5.jpg";
+import mardia6 from "../assets/images/hotels/mardia/mardia-6.jpg";
+import newhotel1 from "../assets/images/hotels/newhotel/newhotel-1.jpg";
+import newhotel2 from "../assets/images/hotels/newhotel/newhotel-2.jpg";
+import newhotel3 from "../assets/images/hotels/newhotel/newhotel-3.jpg";
+import newhotel4 from "../assets/images/hotels/newhotel/newhotel-4.jpg";
+import newhotel5 from "../assets/images/hotels/newhotel/newhotel-5.jpg";
+import newhotel6 from "../assets/images/hotels/newhotel/newhotel-6.jpg";
+import pelicanhouse1 from "../assets/images/hotels/pelicanhouse/pelicanhouse-1.jpg";
+import pelicanhouse2 from "../assets/images/hotels/pelicanhouse/pelicanhouse-2.jpg";
+import pelicanhouse3 from "../assets/images/hotels/pelicanhouse/pelicanhouse-3.jpg";
+import pelicanhouse4 from "../assets/images/hotels/pelicanhouse/pelicanhouse-4.jpg";
+import pelicanhouse5 from "../assets/images/hotels/pelicanhouse/pelicanhouse-5.jpg";
+import pelicanhouse6 from "../assets/images/hotels/pelicanhouse/pelicanhouse-6.jpg";
+import raimond1 from "../assets/images/hotels/raimond/raimond-1.jpg";
+import raimond2 from "../assets/images/hotels/raimond/raimond-2.jpg";
+import raimond3 from "../assets/images/hotels/raimond/raimond-3.jpg";
+import raimond4 from "../assets/images/hotels/raimond/raimond-4.jpg";
+import raimond5 from "../assets/images/hotels/raimond/raimond-5.jpg";
+import raimond6 from "../assets/images/hotels/raimond/raimond-6.jpg";
 
 export const HOTEL_LISTINGS = [
   {
     id: 1,
-    name: "Grand EbruLoria Resort",
+    name: "Arach Hotel",
     location: "Beachfront District",
     city: "Istanbul",
     country: "Turkey",
     roomNumber: 50,
-    image: hotel1,
+    images: [arach1, arach2, arach3, arach4, arach5, arach6],
     amenities: ["WiFi", "Pool", "Gym", "Restaurant", "Parking"],
     type: "Luxury Resort",
     status: ["For Sale"],
@@ -29,7 +64,14 @@ export const HOTEL_LISTINGS = [
     city: "Istanbul",
     country: "Turkey",
     roomNumber: 25,
-    image: hotel2,
+    images: [
+      gulsultan1,
+      gulsultan2,
+      gulsultan3,
+      gulsultan4,
+      gulsultan5,
+      gulsultan6,
+    ],
     amenities: ["WiFi", "Restaurant", "Parking"],
     type: "Boutique Hotel",
     status: ["For Rent"],
@@ -43,7 +85,7 @@ export const HOTEL_LISTINGS = [
     city: "Istanbul",
     country: "Turkey",
     roomNumber: 80,
-    image: hotel3,
+    images: [hermanos1, hermanos2, hermanos3, hermanos4, hermanos5, hermanos6],
     amenities: ["WiFi", "Gym", "Restaurant", "Parking"],
     type: "Business Hotel",
     status: ["For Sale", "For Rent"],
@@ -57,7 +99,7 @@ export const HOTEL_LISTINGS = [
     city: "Istanbul",
     country: "Turkey",
     roomNumber: 120,
-    image: hotel4,
+    images: [mardia1, mardia2, mardia3, mardia4, mardia5, mardia6],
     amenities: ["WiFi", "Pool", "Gym", "Restaurant", "Parking"],
     type: "Resort Hotel",
     status: ["For Sale"],
@@ -71,7 +113,7 @@ export const HOTEL_LISTINGS = [
     city: "Trabzon",
     country: "Turkey",
     roomNumber: 65,
-    image: hotel5,
+    images: [newhotel1, newhotel2, newhotel3, newhotel4, newhotel5, newhotel6],
     amenities: ["WiFi", "Gym", "Restaurant", "Parking"],
     type: "Urban Hotel",
     status: ["For Rent"],
@@ -85,7 +127,14 @@ export const HOTEL_LISTINGS = [
     city: "Ankara",
     country: "Turkey",
     roomNumber: 95,
-    image: hotel6,
+    images: [
+      pelicanhouse1,
+      pelicanhouse2,
+      pelicanhouse3,
+      pelicanhouse4,
+      pelicanhouse5,
+      pelicanhouse6,
+    ],
     amenities: ["WiFi", "Pool", "Gym", "Restaurant", "Parking"],
     type: "Heritage Hotel",
     status: ["For Sale"],
@@ -99,8 +148,7 @@ export const HOTEL_LISTINGS = [
     city: "Izmir",
     country: "Turkey",
     roomNumber: 45,
-    image: hotel7,
-    amenities: ["WiFi", "Pool", "Restaurant", "Parking"],
+    images: [raimond1, raimond2, raimond3, raimond4, raimond5, raimond6],
     type: "Boutique Hotel",
     status: ["For Sale", "For Rent"],
     description:
