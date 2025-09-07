@@ -181,7 +181,7 @@ export const HOTEL_LISTINGS = [
     floorCount: 5,
     baseSquare: 65,
     description:
-      "Luxury beachfront resort with world-class amenities and stunning ocean views. Premium investment opportunity in prime tourist destination.",
+      "**Prime Location in the Heart of Istanbul**\n\nSituated in the prestigious Harbiye district of Şişli, this boutique establishment occupies one of Istanbul's most sought-after locations. The property sits at the cultural and business crossroads of the city, offering guests unparalleled access to major attractions, shopping districts, and transportation hubs.\n\nThe hotel's strategic position places it within walking distance of iconic venues such as the Harbiye Congress Valley, Istanbul Congress Center, and the renowned Zorlu Center. Guests enjoy easy access to Taksim Square, one of Turkey's most famous landmarks, while the upscale Nişantaşı shopping district is just moments away.\n\n**Property Features:**\n- 50 well-appointed guest rooms\n- Complimentary breakfast service\n- Excellent ratings across all major booking platforms including Booking.com and Expedia\n- Currently operational with established revenue streams\n- Full financial documentation and sales reports available for qualified buyers\n\nThe location offers excellent connectivity via public transportation, with metro stations and bus routes providing seamless access to both the European and Asian sides of Istanbul. The property caters to both business and leisure travelers, benefiting from consistent demand due to its prime positioning in this vibrant metropolitan area.\n\nThis is a turnkey operation perfect for serious hospitality investors seeking an established presence in Istanbul's thriving tourism market.",
   },
   {
     id: 2,
@@ -233,7 +233,7 @@ export const HOTEL_LISTINGS = [
     floorCount: 8,
     baseSquare: 170,
     description:
-      "**Prime Location in the Heart of Istanbul**\n\nSituated in the prestigious Harbiye district of Şişli, this boutique establishment occupies one of Istanbul's most sought-after locations. The property sits at the cultural and business crossroads of the city, offering guests unparalleled access to major attractions, shopping districts, and transportation hubs.\n\nThe hotel's strategic position places it within walking distance of iconic venues such as the Harbiye Congress Valley, Istanbul Congress Center, and the renowned Zorlu Center. Guests enjoy easy access to Taksim Square, one of Turkey's most famous landmarks, while the upscale Nişantaşı shopping district is just moments away.\n\n**Property Features:**\n- 50 well-appointed guest rooms\n- Complimentary breakfast service\n- Excellent ratings across all major booking platforms including Booking.com and Expedia\n- Currently operational with established revenue streams\n- Full financial documentation and sales reports available for qualified buyers\n\nThe location offers excellent connectivity via public transportation, with metro stations and bus routes providing seamless access to both the European and Asian sides of Istanbul. The property caters to both business and leisure travelers, benefiting from consistent demand due to its prime positioning in this vibrant metropolitan area.\n\nThis is a turnkey operation perfect for serious hospitality investors seeking an established presence in Istanbul's thriving tourism market.",
+      "Charming boutique hotel in historic district. Unique investment with cultural appeal and strong rental potential.",
   },
   {
     id: 3,
