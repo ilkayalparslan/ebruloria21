@@ -38,12 +38,51 @@ import arach36 from "../assets/images/hotels/arach/arach-36.jpg";
 import arach37 from "../assets/images/hotels/arach/arach-37.jpg";
 import arach38 from "../assets/images/hotels/arach/arach-38.jpg";
 import arach39 from "../assets/images/hotels/arach/arach-39.jpg";
+import arach40 from "../assets/images/hotels/arach/arach-40.jpg";
+import arach41 from "../assets/images/hotels/arach/arach-41.jpg";
+import arach42 from "../assets/images/hotels/arach/arach-42.jpg";
+import arach43 from "../assets/images/hotels/arach/arach-43.jpg";
+import arach44 from "../assets/images/hotels/arach/arach-44.jpg";
+import arach45 from "../assets/images/hotels/arach/arach-45.jpg";
+import arach46 from "../assets/images/hotels/arach/arach-46.jpg";
+import arach47 from "../assets/images/hotels/arach/arach-47.jpg";
+import arach48 from "../assets/images/hotels/arach/arach-48.jpg";
+import arach49 from "../assets/images/hotels/arach/arach-49.jpg";
+import arach50 from "../assets/images/hotels/arach/arach-50.jpg";
 import gulsultan1 from "../assets/images/hotels/gulsultan/gulsultan-1.jpg";
 import gulsultan2 from "../assets/images/hotels/gulsultan/gulsultan-2.jpg";
 import gulsultan3 from "../assets/images/hotels/gulsultan/gulsultan-3.jpg";
 import gulsultan4 from "../assets/images/hotels/gulsultan/gulsultan-4.jpg";
 import gulsultan5 from "../assets/images/hotels/gulsultan/gulsultan-5.jpg";
 import gulsultan6 from "../assets/images/hotels/gulsultan/gulsultan-6.jpg";
+import gulsultan7 from "../assets/images/hotels/gulsultan/gulsultan-7.jpg";
+import gulsultan8 from "../assets/images/hotels/gulsultan/gulsultan-8.jpg";
+import gulsultan9 from "../assets/images/hotels/gulsultan/gulsultan-9.jpg";
+import gulsultan10 from "../assets/images/hotels/gulsultan/gulsultan-10.jpg";
+import gulsultan11 from "../assets/images/hotels/gulsultan/gulsultan11.jpg";
+import gulsultan12 from "../assets/images/hotels/gulsultan/gulsultan-12.jpg";
+import gulsultan13 from "../assets/images/hotels/gulsultan/gulsultan-13.jpg";
+import gulsultan14 from "../assets/images/hotels/gulsultan/gulsultan-14.jpg";
+import gulsultan15 from "../assets/images/hotels/gulsultan/gulsultan-15.jpg";
+import gulsultan16 from "../assets/images/hotels/gulsultan/gulsultan-16.jpg";
+import gulsultan17 from "../assets/images/hotels/gulsultan/gulsultan-17.jpg";
+import gulsultan18 from "../assets/images/hotels/gulsultan/gulsultan-18.jpg";
+import gulsultan19 from "../assets/images/hotels/gulsultan/gulsultan-19.jpg";
+import gulsultan20 from "../assets/images/hotels/gulsultan/gulsultan-20.jpg";
+import gulsultan21 from "../assets/images/hotels/gulsultan/gulsultan-21.jpg";
+import gulsultan22 from "../assets/images/hotels/gulsultan/gulsultan-22.jpg";
+import gulsultan23 from "../assets/images/hotels/gulsultan/gulsultan-23.jpg";
+import gulsultan24 from "../assets/images/hotels/gulsultan/gulsultan-24.jpg";
+import gulsultan25 from "../assets/images/hotels/gulsultan/gulsultan-25.jpg";
+import gulsultan26 from "../assets/images/hotels/gulsultan/gulsultan-26.jpg";
+import gulsultan27 from "../assets/images/hotels/gulsultan/gulsultan-27.jpg";
+import gulsultan28 from "../assets/images/hotels/gulsultan/gulsultan-28.jpg";
+import gulsultan29 from "../assets/images/hotels/gulsultan/gulsultan-29.jpg";
+import gulsultan30 from "../assets/images/hotels/gulsultan/gulsultan-30.jpg";
+import gulsultan31 from "../assets/images/hotels/gulsultan/gulsultan-31.jpg";
+import gulsultan32 from "../assets/images/hotels/gulsultan/gulsultan-32.jpg";
+import gulsultan33 from "../assets/images/hotels/gulsultan/gulsultan-33.jpg";
+import gulsultan34 from "../assets/images/hotels/gulsultan/gulsultan-34.jpg";
 import hermanos1 from "../assets/images/hotels/hermanos/hermanos-1.jpg";
 import hermanos2 from "../assets/images/hotels/hermanos/hermanos-2.jpg";
 import hermanos3 from "../assets/images/hotels/hermanos/hermanos-3.jpg";
@@ -124,6 +163,17 @@ export const HOTEL_LISTINGS = [
       arach37,
       arach38,
       arach39,
+      arach40,
+      arach41,
+      arach42,
+      arach43,
+      arach44,
+      arach45,
+      arach46,
+      arach47,
+      arach48,
+      arach49,
+      arach50,
     ],
     amenities: ["WiFi", "Pool", "Gym", "Restaurant", "Parking"],
     type: "Luxury Resort",
@@ -135,7 +185,7 @@ export const HOTEL_LISTINGS = [
   },
   {
     id: 2,
-    name: "EbruLoria Boutique Hotel",
+    name: "Gulsultan Boutique Hotel",
     adNumber: "6731905284",
     location: "Historic Center",
     city: "Istanbul",
@@ -148,6 +198,34 @@ export const HOTEL_LISTINGS = [
       gulsultan4,
       gulsultan5,
       gulsultan6,
+      gulsultan7,
+      gulsultan8,
+      gulsultan9,
+      gulsultan10,
+      gulsultan11,
+      gulsultan12,
+      gulsultan13,
+      gulsultan14,
+      gulsultan15,
+      gulsultan16,
+      gulsultan17,
+      gulsultan18,
+      gulsultan19,
+      gulsultan20,
+      gulsultan21,
+      gulsultan22,
+      gulsultan23,
+      gulsultan24,
+      gulsultan25,
+      gulsultan26,
+      gulsultan27,
+      gulsultan28,
+      gulsultan29,
+      gulsultan30,
+      gulsultan31,
+      gulsultan32,
+      gulsultan33,
+      gulsultan34,
     ],
     amenities: ["WiFi", "Restaurant", "Parking"],
     type: "Boutique Hotel",
