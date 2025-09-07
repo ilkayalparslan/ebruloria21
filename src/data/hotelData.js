@@ -59,7 +59,7 @@ import gulsultan7 from "../assets/images/hotels/gulsultan/gulsultan-7.jpg";
 import gulsultan8 from "../assets/images/hotels/gulsultan/gulsultan-8.jpg";
 import gulsultan9 from "../assets/images/hotels/gulsultan/gulsultan-9.jpg";
 import gulsultan10 from "../assets/images/hotels/gulsultan/gulsultan-10.jpg";
-import gulsultan11 from "../assets/images/hotels/gulsultan/gulsultan11.jpg";
+import gulsultan11 from "../assets/images/hotels/gulsultan/gulsultan-11.jpg";
 import gulsultan12 from "../assets/images/hotels/gulsultan/gulsultan-12.jpg";
 import gulsultan13 from "../assets/images/hotels/gulsultan/gulsultan-13.jpg";
 import gulsultan14 from "../assets/images/hotels/gulsultan/gulsultan-14.jpg";
