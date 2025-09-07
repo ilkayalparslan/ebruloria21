@@ -1,6 +1,10 @@
 import React, { useState, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
-import { HOTEL_LISTINGS, getRoomDisplay } from "../data/hotelData";
+import {
+  HOTEL_LISTINGS,
+  getRoomDisplay,
+  getHotelImages,
+} from "../data/hotelData";
 import { MdLocationOn, MdHome, MdStar, MdClose } from "react-icons/md";
 
 const Hotel1 = () => {
@@ -221,24 +225,26 @@ const Hotel1 = () => {
                   onTouchStart={handleTouchStart}
                   onTouchMove={handleTouchMove}
                   onTouchEnd={() =>
-                    handleTouchEnd(index, hotel.images?.length || 1)
+                    handleTouchEnd(index, hotel.imageCount || 1)
                   }
                 >
                   {/* Generate 6 images */}
-                  {hotel.images.slice(0, 6).map((image, imgIndex) => (
-                    <img
-                      key={imgIndex}
-                      src={image}
-                      alt={`Hotel ${imgIndex + 1}`}
-                      className="w-full h-full object-cover flex-shrink-0"
-                    />
-                  ))}
+                  {getHotelImages(hotel)
+                    .slice(0, 6)
+                    .map((image, imgIndex) => (
+                      <img
+                        key={imgIndex}
+                        src={image}
+                        alt={`Hotel ${imgIndex + 1}`}
+                        className="w-full h-full object-cover flex-shrink-0"
+                      />
+                    ))}
                 </div>
 
                 {/* Navigation Dots */}
                 <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex gap-2">
                   {Array.from({
-                    length: Math.min(hotel.images?.length || 1, 6),
+                    length: Math.min(hotel.imageCount || 1, 6),
                   }).map((_, imgIndex) => (
                     <button
                       key={imgIndex}
