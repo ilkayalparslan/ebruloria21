@@ -89,6 +89,50 @@ import hermanos3 from "../assets/images/hotels/hermanos/hermanos-3.jpg";
 import hermanos4 from "../assets/images/hotels/hermanos/hermanos-4.jpg";
 import hermanos5 from "../assets/images/hotels/hermanos/hermanos-5.jpg";
 import hermanos6 from "../assets/images/hotels/hermanos/hermanos-6.jpg";
+import hermanos7 from "../assets/images/hotels/hermanos/hermanos-7.jpg";
+import hermanos8 from "../assets/images/hotels/hermanos/hermanos-8.jpg";
+import hermanos9 from "../assets/images/hotels/hermanos/hermanos-9.jpg";
+import hermanos10 from "../assets/images/hotels/hermanos/hermanos-10.jpg";
+import hermanos11 from "../assets/images/hotels/hermanos/hermanos-11.jpg";
+import hermanos12 from "../assets/images/hotels/hermanos/hermanos-12.jpg";
+import hermanos13 from "../assets/images/hotels/hermanos/hermanos-13.jpg";
+import hermanos14 from "../assets/images/hotels/hermanos/hermanos-14.jpg";
+import hermanos15 from "../assets/images/hotels/hermanos/hermanos-15.jpg";
+import hermanos16 from "../assets/images/hotels/hermanos/hermanos-16.jpg";
+import hermanos17 from "../assets/images/hotels/hermanos/hermanos-17.jpg";
+import hermanos18 from "../assets/images/hotels/hermanos/hermanos-18.jpg";
+import hermanos19 from "../assets/images/hotels/hermanos/hermanos-19.jpg";
+import hermanos20 from "../assets/images/hotels/hermanos/hermanos-20.jpg";
+import hermanos21 from "../assets/images/hotels/hermanos/hermanos-21.jpg";
+import hermanos22 from "../assets/images/hotels/hermanos/hermanos-22.jpg";
+import hermanos23 from "../assets/images/hotels/hermanos/hermanos-23.jpg";
+import hermanos24 from "../assets/images/hotels/hermanos/hermanos-24.jpg";
+import hermanos25 from "../assets/images/hotels/hermanos/hermanos-25.jpg";
+import hermanos26 from "../assets/images/hotels/hermanos/hermanos-26.jpg";
+import hermanos27 from "../assets/images/hotels/hermanos/hermanos-27.jpg";
+import hermanos28 from "../assets/images/hotels/hermanos/hermanos-28.jpg";
+import hermanos29 from "../assets/images/hotels/hermanos/hermanos-29.jpg";
+import hermanos30 from "../assets/images/hotels/hermanos/hermanos-30.jpg";
+import hermanos31 from "../assets/images/hotels/hermanos/hermanos-31.jpg";
+import hermanos32 from "../assets/images/hotels/hermanos/hermanos-32.jpg";
+import hermanos33 from "../assets/images/hotels/hermanos/hermanos-33.jpg";
+import hermanos34 from "../assets/images/hotels/hermanos/hermanos-34.jpg";
+import hermanos35 from "../assets/images/hotels/hermanos/hermanos-35.jpg";
+import hermanos36 from "../assets/images/hotels/hermanos/hermanos-36.jpg";
+import hermanos37 from "../assets/images/hotels/hermanos/hermanos-37.jpg";
+import hermanos38 from "../assets/images/hotels/hermanos/hermanos-38.jpg";
+import hermanos39 from "../assets/images/hotels/hermanos/hermanos-39.jpg";
+import hermanos40 from "../assets/images/hotels/hermanos/hermanos-40.jpg";
+import hermanos41 from "../assets/images/hotels/hermanos/hermanos-41.jpg";
+import hermanos42 from "../assets/images/hotels/hermanos/hermanos-42.jpg";
+import hermanos43 from "../assets/images/hotels/hermanos/hermanos-43.jpg";
+import hermanos44 from "../assets/images/hotels/hermanos/hermanos-44.jpg";
+import hermanos45 from "../assets/images/hotels/hermanos/hermanos-45.jpg";
+import hermanos46 from "../assets/images/hotels/hermanos/hermanos-46.jpg";
+import hermanos47 from "../assets/images/hotels/hermanos/hermanos-47.jpg";
+import hermanos48 from "../assets/images/hotels/hermanos/hermanos-48.jpg";
+import hermanos49 from "../assets/images/hotels/hermanos/hermanos-49.jpg";
+import hermanos50 from "../assets/images/hotels/hermanos/hermanos-50.jpg";
 import mardia1 from "../assets/images/hotels/mardia/mardia-1.jpg";
 import mardia2 from "../assets/images/hotels/mardia/mardia-2.jpg";
 import mardia3 from "../assets/images/hotels/mardia/mardia-3.jpg";
@@ -233,24 +277,75 @@ export const HOTEL_LISTINGS = [
     floorCount: 8,
     baseSquare: 170,
     description:
-      "Charming boutique hotel in historic district. Unique investment with cultural appeal and strong rental potential.",
+      "**Historic Charm in the Heart of Sultanahmet**\n\nLocated in the prestigious Sultanahmet district on Istanbul's Historic Peninsula, this charming boutique hotel occupies a beautifully restored early 20th-century residence that has been welcoming guests since 2004. The property is situated less than a 5-minute walk from Topkapi Palace, the Hagia Sophia and Blue Mosque, placing guests at the very center of Istanbul's most iconic attractions.\n\n**Prime Location & Accessibility**\nThe hotel boasts an excellent location score of 9.9, with Blue Mosque just 1 km away and Ayasofya Hurrem Sultan Hamami merely a 6-minute walk. Guests can easily explore the Grand Bazaar, German Fountain, and Basilica Cistern, all within comfortable walking distance. The property provides convenient access to public transportation, with Sultanahmet tram station just 8 minutes away and Sirkeci train station a 10-minute walk.\n\n**Accommodation & Amenities**\nThe hotel features 13 elegantly appointed rooms, each equipped with modern amenities including air conditioning, free Wi-Fi, satellite TV, minibar, and private bathrooms with hair dryers. The hotel's summer terrace features views of the Sea of Marmara, offering guests a spectacular panoramic setting to relax and enjoy the historic cityscape.\n\n**Guest Experience**\nRated 9.3 by recent guests, the hotel is consistently praised for its exceptional cleanliness, comfortable accommodations, and outstanding hospitality. The multilingual staff provides 24-hour front desk service, tour assistance, and airport shuttle arrangements. Additional services include a gift shop, luggage storage, and concierge services to enhance the guest experience.\n\n**Strategic Investment Opportunity**\nThis established boutique property represents an exceptional investment opportunity in one of Istanbul's most sought-after tourism districts. With over 20 years of successful operation, the hotel benefits from consistent demand due to its unbeatable location and reputation for quality service, making it an ideal acquisition for serious hospitality investors.",
   },
   {
     id: 3,
-    name: "Metropolitan Business Hotel",
+    name: "Hermanos Business Hotel",
     adNumber: "6847293051",
     location: "Financial District",
     city: "Istanbul",
     country: "Turkey",
     roomNumber: 80,
-    images: [hermanos1, hermanos2, hermanos3, hermanos4, hermanos5, hermanos6],
+    images: [
+      hermanos1,
+      hermanos2,
+      hermanos3,
+      hermanos4,
+      hermanos5,
+      hermanos6,
+      hermanos7,
+      hermanos8,
+      hermanos9,
+      hermanos10,
+      hermanos11,
+      hermanos12,
+      hermanos13,
+      hermanos14,
+      hermanos15,
+      hermanos16,
+      hermanos17,
+      hermanos18,
+      hermanos19,
+      hermanos20,
+      hermanos21,
+      hermanos22,
+      hermanos23,
+      hermanos24,
+      hermanos25,
+      hermanos26,
+      hermanos27,
+      hermanos28,
+      hermanos29,
+      hermanos30,
+      hermanos31,
+      hermanos32,
+      hermanos33,
+      hermanos34,
+      hermanos35,
+      hermanos36,
+      hermanos37,
+      hermanos38,
+      hermanos39,
+      hermanos40,
+      hermanos41,
+      hermanos42,
+      hermanos43,
+      hermanos44,
+      hermanos45,
+      hermanos46,
+      hermanos47,
+      hermanos48,
+      hermanos49,
+      hermanos50,
+    ],
     amenities: ["WiFi", "Gym", "Restaurant", "Parking"],
     type: "Business Hotel",
     status: ["For Sale", "For Rent"],
     floorCount: 6,
     baseSquare: 210,
     description:
-      "Modern business hotel in prime financial location. Excellent for corporate clients with flexible purchase or rental options.",
+      "**Modern Business Hotel in Central Istanbul**\n\nStrategically positioned in the dynamic Aksaray district of Fatih, this contemporary 3-star business hotel offers an ideal base for both corporate and leisure travelers. Located within a 5-minute drive of Grand Bazaar and Süleymaniye Mosque, the hotel is 1.7 miles from Sultanahmet Square and 1.9 miles from Blue Mosque, providing excellent access to Istanbul's most significant historical and commercial areas.\n\n**Prime Business Location & Connectivity**\nLocated in Aksaray, one of the commercial centers of Istanbul, the hotel benefits from exceptional transportation links. Süleymaniye Camii is the closest landmark, while the property sits just 10 minutes' walk from the nearest underground station and close to major bus routes, ensuring seamless connectivity throughout the city.\n\n**Comprehensive Accommodation & Facilities**\nThe hotel features 70 well-appointed rooms equipped with modern business amenities including individually controlled air-conditioning, satellite television, minibar, free Wi-Fi, and business desks. All accommodations include safes, LCD televisions with satellite channels, and private bathrooms with deep soaking bathtubs.\n\n**Business & Leisure Amenities**\nThe hotel offers complimentary breakfast buffet, free Wi-Fi, free parking, 24-hour room service, and multilingual staff. Additional facilities include a sauna, on-site restaurant serving breakfast, lunch and dinner, bar/lounge, and tour assistance services. Services include laundry, ironing, dry cleaning, and currency exchange.\n\n**Guest Experience & Value**\nThe friendly, helpful, and multilingual staff provide excellent customer service, with particular praise for assistance in planning sightseeing trips. The hotel maintains high standards with daily housekeeping, contactless check-in/check-out, and enhanced cleaning protocols.\n\n**Investment Opportunity**\nThis established business hotel represents an excellent investment opportunity in one of Istanbul's key commercial districts. With its strategic location, comprehensive facilities, and strong operational foundation, the property offers significant potential for investors seeking a profitable hospitality asset in Turkey's economic capital.",
   },
   {
     id: 4,
