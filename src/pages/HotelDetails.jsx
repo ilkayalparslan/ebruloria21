@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { HOTEL_LISTINGS, getRoomDisplay } from "../data/hotelData";
+import {
+  HOTEL_LISTINGS,
+  getRoomDisplay,
+  getHotelImages,
+} from "../data/hotelData";
 import {
   MdArrowBack,
   MdFavorite,
@@ -124,7 +128,7 @@ const HotelDetails = () => {
     const isLeftSwipe = distance > 50;
     const isRightSwipe = distance < -50;
 
-    if (isLeftSwipe && currentImageIndex < (hotel.images?.length || 1) - 1) {
+    if (isLeftSwipe && currentImageIndex < (hotel.imageCount || 1) - 1) {
       setCurrentImageIndex((prev) => prev + 1);
     } else if (isRightSwipe && currentImageIndex > 0) {
       setCurrentImageIndex((prev) => prev - 1);
@@ -137,7 +141,7 @@ const HotelDetails = () => {
   };
 
   const nextImage = () => {
-    if (currentImageIndex < (hotel.images?.length || 1) - 1) {
+    if (currentImageIndex < (hotel.imageCount || 1) - 1) {
       setCurrentImageIndex((prev) => prev + 1);
     }
   };
@@ -183,14 +187,7 @@ const HotelDetails = () => {
     );
   }
 
-  const images = hotel.images || [
-    hotel.image,
-    hotel.image,
-    hotel.image,
-    hotel.image,
-    hotel.image,
-    hotel.image,
-  ];
+  const images = getHotelImages(hotel);
 
   return (
     <div className="min-h-screen bg-gray-100">
