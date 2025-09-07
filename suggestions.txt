@@ -1,0 +1,101 @@
+/*
+TIER-BASED RANDOM LOADING SYSTEM
+
+This system prioritizes hotels by tier while randomizing within each tier.
+Premium hotels always show first, but in random order each visit.
+
+JSON STRUCTURE - Add "tier" property to each hotel:
+{
+  "id": 1,
+  "name": "Arach Hotel",
+  "tier": "premium",  // Add this property
+  "adNumber": "6295738461",
+  // ... rest of hotel data
+}
+
+TIER LEVELS (in priority order):
+- "premium" (highest priority)
+- "gold" 
+- "silver"
+- "bronze"
+- "basic" (lowest priority)
+
+CODE IMPLEMENTATION:
+
+// In hotelData.js - Add this function
+export const getPrioritizedHotels = (hotels) => {
+  // Group hotels by tier
+  const tiers = {
+    premium: [],
+    gold: [],
+    silver: [],
+    bronze: [],
+    basic: []
+  };
+
+  // Sort hotels into their tiers
+  hotels.forEach(hotel => {
+    const tier = hotel.tier || 'basic'; // Default to basic if no tier
+    if (tiers[tier]) {
+      tiers[tier].push(hotel);
+    }
+  });
+
+  // Shuffle function - randomizes array order
+  const shuffleArray = (array) => {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  };
+
+  // Return hotels in priority order with random arrangement within each tier
+  return [
+    ...shuffleArray(tiers.premium),  // First 10 premium (random order)
+    ...shuffleArray(tiers.gold),     // Next 10 gold (random order)
+    ...shuffleArray(tiers.silver),   // Next 10 silver (random order)
+    ...shuffleArray(tiers.bronze),   // Next 10 bronze (random order)
+    ...shuffleArray(tiers.basic)     // Remaining basic (random order)
+  ];
+};
+
+// COMPONENT USAGE:
+
+// In your Hotels component
+import { getPrioritizedHotels } from '../data/hotelData';
+
+const Hotels = () => {
+  const [displayHotels, setDisplayHotels] = useState([]);
+
+  useEffect(() => {
+    // Get prioritized and shuffled hotels
+    const prioritized = getPrioritizedHotels(HOTEL_LISTINGS);
+    setDisplayHotels(prioritized);
+  }, []); // Shuffle once per session
+
+  // Alternative: Shuffle on every page load
+  useEffect(() => {
+    const prioritized = getPrioritizedHotels(HOTEL_LISTINGS);
+    setDisplayHotels(prioritized);
+  }, [someRefreshTrigger]);
+
+  return (
+    <div>
+      {displayHotels.map(hotel => (
+        <HotelCard key={hotel.id} hotel={hotel} />
+      ))}
+    </div>
+  );
+};
+
+EXAMPLE OUTPUT:
+Visit 1: Premium A, Premium C, Premium B, Gold X, Gold Z, Gold Y...
+Visit 2: Premium B, Premium A, Premium C, Gold Y, Gold X, Gold Z...
+Visit 3: Premium C, Premium B, Premium A, Gold Z, Gold Y, Gold X...
+
+Each visit shows different random order within each tier!
+*/
+
+-----------

@@ -1,0 +1,18 @@
+{
+  "id": 4,
+  "name": "Mardia Hotel",
+  "adNumber": "6582047163",
+  "location": "Aksaray",
+  "city": "Istanbul",
+  "country": "Turkey",
+  "roomNumber": 22,
+  "imageFolderName": "mardia",
+  "imageCount": 30,
+  "amenities": ["WiFi", "Restaurant", "Parking"],
+  "type": "Budget Hotel",
+  "status": ["For Sale"],
+  "floorCount": 4,
+  "baseSquare": 130,
+  "tier": "silver",
+  "description": "**Convenient City Hotel in Historic Aksaray District**\n\nStrategically located in the Aksaray district of Fatih, this 2-star budget hotel offers convenient access to Istanbul's historic attractions and transportation networks. The property is situated just 300 meters from Aksaray underground station and within walking distance of major cultural sites including the Blue Mosque, Hagia Sophia, and Topkapi Palace.\n\n**Prime Location & Accessibility**\nThe hotel is conveniently positioned 2 miles from the famous Spice Bazaar, 2.2 miles from Suleymaniye Mosque, and 2.5 miles from Galata Tower. The property is around 2.6 miles from Basilica Cistern, 2.7 miles from Column of Constantine and 2.8 miles from Blue Mosque. Guests benefit from excellent public transportation access with Aksaray metro station nearby and various bus routes within easy reach.\n\n**Accommodation & Facilities**\nThe accommodation comprises 22 rooms, some of them feature free wireless internet and a flat-screen TV with satellite channels, and comforts like individual climate control and ironing facilities. All rooms include modern amenities such as air conditioning, satellite TV, minibar, electric kettle, and private bathrooms with complimentary toiletries. Many rooms offer city views and some feature terraces.\n\n**Guest Services & Amenities**\nThe property provides a 24-hour front desk, airport transportation, a shared lounge and free WiFi throughout the property. The hotel serves a complimentary buffet breakfast each morning and features a restaurant on-site. Additional services include currency exchange, elevator access, and multilingual staff support.\n\n**Investment Opportunity**\nThis well-positioned budget hotel represents a solid investment opportunity in Istanbul's historic district. With its strategic location near major attractions and excellent transportation links, the property caters to budget-conscious travelers seeking convenient access to the city's cultural heritage sites and business districts."
+}
