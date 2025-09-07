@@ -177,54 +177,19 @@ export const getHotelImages = (hotel, count = null) => {
 
   return Array.from({ length: imageCount }, (_, i) => {
     const imageNumber = i + 1;
-    return `/assets/images/hotels/${folderName}/${folderName}-${imageNumber}.jpg`;
+    return `/images/hotels/${folderName}/${folderName}-${imageNumber}.jpg`; // CORRECT PATH
   });
 };
 
 // Get only the first image (hero image) for performance
 export const getHotelHeroImage = (hotel) => {
   const folderName = hotel.imageFolderName;
-  return `/assets/images/hotels/${folderName}/${folderName}-1.jpg`;
+  return `/images/hotels/${folderName}/${folderName}-1.jpg`; // CORRECT
 };
 
 // Get thumbnail images (first 5 for gallery previews)
 export const getHotelThumbnails = (hotel, count = 5) => {
   return getHotelImages(hotel, Math.min(count, hotel.imageCount));
-};
-
-// Lazy load actual image imports (for when you want webpack optimization)
-export const loadHotelImages = async (hotel, count = null) => {
-  const imageCount = count || hotel.imageCount;
-  const folderName = hotel.imageFolderName;
-
-  const imagePromises = Array.from({ length: imageCount }, (_, i) => {
-    const imageNumber = i + 1;
-    return import(
-      `../assets/images/hotels/${folderName}/${folderName}-${imageNumber}.jpg`
-    );
-  });
-
-  try {
-    const imageModules = await Promise.all(imagePromises);
-    return imageModules.map((module) => module.default);
-  } catch (error) {
-    console.error(`Failed to load images for ${hotel.name}:`, error);
-    return [];
-  }
-};
-
-// Load only hero image with import
-export const loadHotelHeroImage = async (hotel) => {
-  const folderName = hotel.imageFolderName;
-  try {
-    const imageModule = await import(
-      `../assets/images/hotels/${folderName}/${folderName}-1.jpg`
-    );
-    return imageModule.default;
-  } catch (error) {
-    console.error(`Failed to load hero image for ${hotel.name}:`, error);
-    return null;
-  }
 };
 
 // EXISTING HELPER FUNCTIONS
