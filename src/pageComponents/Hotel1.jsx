@@ -4,6 +4,7 @@ import {
   HOTEL_LISTINGS,
   getRoomDisplay,
   getHotelImages,
+  getPrioritizedHotels,
 } from "../data/hotelData";
 import { MdLocationOn, MdHome, MdStar, MdClose } from "react-icons/md";
 
@@ -37,8 +38,10 @@ const Hotel1 = () => {
   }, []);
 
   // Filter hotels based on status and city
+  // Filter and prioritize hotels
   const filteredHotels = useMemo(() => {
-    return HOTEL_LISTINGS.filter((hotel) => {
+    const prioritized = getPrioritizedHotels(HOTEL_LISTINGS);
+    return prioritized.filter((hotel) => {
       const statusMatch =
         statusFilter === "all" || hotel.status.includes(statusFilter);
       const cityMatch =
