@@ -8,7 +8,7 @@ import {
   getHotelImages,
   getPrioritizedHotels,
 } from "../data/hotelData";
-import { MdLocationOn, MdHome, MdStar, MdClose } from "react-icons/md";
+import { MdLocationOn, MdHotel, MdStar, MdClose } from "react-icons/md";
 
 const Hotel1 = () => {
   const navigate = useNavigate();
@@ -334,7 +334,7 @@ const Hotel1 = () => {
 
                 {/* Room Count */}
                 <div className="flex items-center text-gray-600 mb-3">
-                  <MdHome className="w-4 h-4 mr-2" />
+                  <MdHotel className="w-4 h-4 mr-2" />
                   <span className="font-medium text-sm">
                     {getRoomDisplay(hotel.roomNumber)} {t("rooms")}
                   </span>
