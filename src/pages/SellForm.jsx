@@ -90,7 +90,7 @@ const SellForm = () => {
     }));
   };
 
-  // Handle translation array changes (amenities)
+  // Handle translation array changes (amenities) - Updated for modern design
   const handleTranslationArrayChange = (language, field, value, checked) => {
     setFormData((prev) => ({
       ...prev,
@@ -108,7 +108,7 @@ const SellForm = () => {
     }));
   };
 
-  // Handle checkbox changes for arrays (status)
+  // Handle checkbox changes for arrays (status) - Updated for modern design
   const handleArrayChange = (name, value, checked) => {
     setFormData((prev) => ({
       ...prev,
@@ -169,6 +169,7 @@ const SellForm = () => {
       "ownerSurname",
       "email",
       "phone",
+      "sellerNeeds",
     ];
     const basicValid = basicRequired.every((field) => formData[field]);
     const statusValid = formData.status.length > 0;
@@ -306,7 +307,7 @@ const SellForm = () => {
     { value: "For Rent", label: t("forRent") || "For Rent" },
   ];
 
-  // Amenities matching your data structure
+  // Amenities matching your data structure - Updated for modern design
   const amenitiesOptions = {
     en: [
       "WiFi",
@@ -406,7 +407,7 @@ const SellForm = () => {
                 {t("propertyReviewMessage") ||
                   "Your property has been submitted for review. We'll contact you within 24 hours."}
               </p>
-              <div className="animate-pulse text-blue-600 font-medium">
+              <div className="animate-pulse text-primary font-medium">
                 {t("redirectingHome") || "Redirecting to homepage..."}
               </div>
             </>
@@ -422,7 +423,7 @@ const SellForm = () => {
               </p>
               <button
                 onClick={() => setSubmitStatus(null)}
-                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
+                className="bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-lg font-semibold transition-colors"
               >
                 {t("tryAgain") || "Try Again"}
               </button>
@@ -460,7 +461,7 @@ const SellForm = () => {
           {/* Basic Property Information */}
           <div className="space-y-6">
             <h2 className="text-xl font-semibold flex items-center border-b pb-2">
-              <MdHome className="w-6 h-6 mr-2 text-blue-600" />
+              <MdHome className="w-6 h-6 mr-2 text-primary" />
               {t("basicInformation") || "Basic Information"}
             </h2>
 
@@ -477,7 +478,7 @@ const SellForm = () => {
                   placeholder={
                     t("enterPropertyName") || "e.g., Luxury Beachfront Hotel"
                   }
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
                   required
                 />
               </div>
@@ -486,23 +487,26 @@ const SellForm = () => {
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   {t("status") || "Status"} *
                 </label>
-                <div className="flex gap-4 pt-2">
+                <div className="flex gap-3 pt-2">
                   {statusOptions.map((status) => (
-                    <label key={status.value} className="flex items-center">
-                      <input
-                        type="checkbox"
-                        checked={formData.status.includes(status.value)}
-                        onChange={(e) =>
-                          handleArrayChange(
-                            "status",
-                            status.value,
-                            e.target.checked
-                          )
-                        }
-                        className="mr-2 text-blue-600 focus:ring-blue-500 rounded"
-                      />
+                    <button
+                      key={status.value}
+                      type="button"
+                      onClick={() =>
+                        handleArrayChange(
+                          "status",
+                          status.value,
+                          !formData.status.includes(status.value)
+                        )
+                      }
+                      className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 border-2 ${
+                        formData.status.includes(status.value)
+                          ? "bg-primary text-white border-primary shadow-md"
+                          : "bg-primary/10 text-primary border-primary/20 hover:bg-primary/20"
+                      }`}
+                    >
                       {status.label}
-                    </label>
+                    </button>
                   ))}
                 </div>
               </div>
@@ -512,7 +516,7 @@ const SellForm = () => {
           {/* Location */}
           <div className="space-y-6">
             <h2 className="text-xl font-semibold flex items-center border-b pb-2">
-              <MdLocationOn className="w-6 h-6 mr-2 text-blue-600" />
+              <MdLocationOn className="w-6 h-6 mr-2 text-primary" />
               {t("location") || "Location"}
             </h2>
 
@@ -525,7 +529,7 @@ const SellForm = () => {
                   name="country"
                   value={formData.country}
                   onChange={handleInputChange}
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
                   required
                 >
                   <option value="">
@@ -547,7 +551,7 @@ const SellForm = () => {
                   name="city"
                   value={formData.city}
                   onChange={handleInputChange}
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
                   required
                 >
                   <option value="">{t("selectCity") || "Select City"}</option>
@@ -573,7 +577,7 @@ const SellForm = () => {
                 placeholder={
                   t("enterLocation") || "e.g., Beachfront District, City Center"
                 }
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
                 required
               />
             </div>
@@ -582,7 +586,7 @@ const SellForm = () => {
           {/* Property Details */}
           <div className="space-y-6">
             <h2 className="text-xl font-semibold flex items-center border-b pb-2">
-              <MdSquareFoot className="w-6 h-6 mr-2 text-blue-600" />
+              <MdSquareFoot className="w-6 h-6 mr-2 text-primary" />
               {t("propertyDetails") || "Property Details"}
             </h2>
 
@@ -597,7 +601,7 @@ const SellForm = () => {
                   value={formData.baseSquare}
                   onChange={handleInputChange}
                   placeholder="65"
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
                   required
                 />
               </div>
@@ -613,7 +617,7 @@ const SellForm = () => {
                   onChange={handleInputChange}
                   placeholder="50"
                   min="1"
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
                   required
                 />
               </div>
@@ -629,7 +633,7 @@ const SellForm = () => {
                   onChange={handleInputChange}
                   placeholder="5"
                   min="1"
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
                   required
                 />
               </div>
@@ -639,7 +643,7 @@ const SellForm = () => {
           {/* Multi-language Content */}
           <div className="space-y-6">
             <h2 className="text-xl font-semibold flex items-center border-b pb-2">
-              <MdDescription className="w-6 h-6 mr-2 text-blue-600" />
+              <MdDescription className="w-6 h-6 mr-2 text-primary" />
               {t("propertyContent") || "Property Content"} (
               {t("multiLanguage") || "Multi-Language"})
             </h2>
@@ -651,9 +655,9 @@ const SellForm = () => {
                   key={lang}
                   type="button"
                   onClick={() => setCurrentTab(lang)}
-                  className={`flex-1 py-2 px-4 text-sm font-medium rounded-md ${
+                  className={`flex-1 py-2 px-4 text-sm font-medium rounded-md transition-all duration-200 ${
                     currentTab === lang
-                      ? "bg-white text-blue-600 shadow-sm"
+                      ? "bg-white text-primary shadow-sm border-2 border-primary/20"
                       : "text-gray-500 hover:text-gray-700"
                   }`}
                 >
@@ -678,7 +682,7 @@ const SellForm = () => {
                     onChange={(e) =>
                       handleTranslationChange(lang, "type", e.target.value)
                     }
-                    className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
                     required
                   >
                     <option value="">{t("selectType") || "Select Type"}</option>
@@ -708,7 +712,7 @@ const SellForm = () => {
                       "Enter detailed property description, features, location benefits, etc."
                     }
                     rows={8}
-                    className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
                     required={lang === "en"} // At least English description required
                   />
                 </div>
@@ -717,26 +721,31 @@ const SellForm = () => {
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     {t("amenities") || "Amenities"} ({lang.toUpperCase()})
                   </label>
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-2 max-h-48 overflow-y-auto border border-gray-200 p-3 rounded-lg">
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                     {amenitiesOptions[lang]?.map((amenity) => (
-                      <label key={amenity} className="flex items-center">
-                        <input
-                          type="checkbox"
-                          checked={formData.translations[
-                            lang
-                          ].amenities.includes(amenity)}
-                          onChange={(e) =>
-                            handleTranslationArrayChange(
-                              lang,
-                              "amenities",
-                              amenity,
-                              e.target.checked
+                      <button
+                        key={amenity}
+                        type="button"
+                        onClick={() =>
+                          handleTranslationArrayChange(
+                            lang,
+                            "amenities",
+                            amenity,
+                            !formData.translations[lang].amenities.includes(
+                              amenity
                             )
-                          }
-                          className="mr-2 text-blue-600 focus:ring-blue-500 rounded"
-                        />
-                        <span className="text-sm">{amenity}</span>
-                      </label>
+                          )
+                        }
+                        className={`px-3 py-2 text-sm rounded-lg font-medium transition-all duration-200 border-2 ${
+                          formData.translations[lang].amenities.includes(
+                            amenity
+                          )
+                            ? "bg-primary text-white border-primary shadow-md scale-105"
+                            : "bg-primary/5 text-primary border-primary/15 hover:bg-primary/10 hover:border-primary/25"
+                        }`}
+                      >
+                        {amenity}
+                      </button>
                     ))}
                   </div>
                 </div>
@@ -747,7 +756,7 @@ const SellForm = () => {
           {/* Seller Needs/Expectations (instead of price) */}
           <div className="space-y-6">
             <h2 className="text-xl font-semibold flex items-center border-b pb-2">
-              <MdDescription className="w-6 h-6 mr-2 text-blue-600" />
+              <MdDescription className="w-6 h-6 mr-2 text-primary" />
               {t("sellerExpectations") || "Your Needs & Expectations"}
             </h2>
 
@@ -764,7 +773,7 @@ const SellForm = () => {
                   "Tell us about your expectations: price range, timeline, specific requirements, negotiation preferences, etc."
                 }
                 rows={4}
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
                 required
               />
             </div>
@@ -773,7 +782,7 @@ const SellForm = () => {
           {/* Contact Information */}
           <div className="space-y-6">
             <h2 className="text-xl font-semibold flex items-center border-b pb-2">
-              <MdPhone className="w-6 h-6 mr-2 text-blue-600" />
+              <MdPhone className="w-6 h-6 mr-2 text-primary" />
               {t("contactInformation") || "Contact Information"}
             </h2>
 
@@ -788,7 +797,7 @@ const SellForm = () => {
                   value={formData.ownerName}
                   onChange={handleInputChange}
                   placeholder={t("enterFirstName") || "Your first name"}
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
                   required
                 />
               </div>
@@ -803,7 +812,7 @@ const SellForm = () => {
                   value={formData.ownerSurname}
                   onChange={handleInputChange}
                   placeholder={t("enterLastName") || "Your last name"}
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
                   required
                 />
               </div>
@@ -820,7 +829,7 @@ const SellForm = () => {
                   value={formData.email}
                   onChange={handleInputChange}
                   placeholder={t("enterEmail") || "your.email@example.com"}
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
                   required
                 />
               </div>
@@ -835,7 +844,7 @@ const SellForm = () => {
                   value={formData.phone}
                   onChange={handleInputChange}
                   placeholder={t("enterPhone") || "+90 555 123 45 67"}
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
                   required
                 />
               </div>
@@ -845,7 +854,7 @@ const SellForm = () => {
           {/* Image Upload */}
           <div className="space-y-6">
             <h2 className="text-xl font-semibold flex items-center border-b pb-2">
-              <MdCloudUpload className="w-6 h-6 mr-2 text-blue-600" />
+              <MdCloudUpload className="w-6 h-6 mr-2 text-primary" />
               {t("uploadImages") || "Upload Images"} *
             </h2>
 
@@ -853,8 +862,8 @@ const SellForm = () => {
             <div
               className={`border-2 border-dashed rounded-lg p-8 text-center transition-colors ${
                 dragActive
-                  ? "border-blue-500 bg-blue-50"
-                  : "border-gray-300 hover:border-gray-400"
+                  ? "border-primary bg-primary/10"
+                  : "border-gray-300 hover:border-primary/50"
               }`}
               onDragEnter={handleDrag}
               onDragLeave={handleDrag}
@@ -878,7 +887,7 @@ const SellForm = () => {
               />
               <label
                 htmlFor="imageUpload"
-                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-semibold cursor-pointer transition-colors inline-block"
+                className="bg-primary hover:bg-primary-dark text-white px-6 py-2 rounded-lg font-semibold cursor-pointer transition-colors inline-block"
               >
                 {t("selectImages") || "Select Images"}
               </label>
@@ -921,10 +930,10 @@ const SellForm = () => {
             <button
               type="submit"
               disabled={isSubmitting || !validateForm()}
-              className={`px-8 py-3 rounded-lg font-semibold text-white transition-colors ${
+              className={`px-8 py-3 rounded-lg font-semibold text-white transition-all duration-200 ${
                 isSubmitting || !validateForm()
                   ? "bg-gray-400 cursor-not-allowed"
-                  : "bg-blue-600 hover:bg-blue-700"
+                  : "bg-gradient-to-r from-primary to-primary-light hover:from-primary-dark hover:to-primary shadow-lg hover:shadow-xl"
               }`}
             >
               {isSubmitting ? (
