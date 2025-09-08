@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "../data/translations";
 
 // Import all home images
 import pic1 from "../assets/images/home/pic-1.jpg";
@@ -16,6 +17,7 @@ function Home1() {
   const [currentTranslate, setCurrentTranslate] = useState(0);
   const [prevTranslate, setPrevTranslate] = useState(0);
   const totalSlides = 5;
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (!isMobile) return;
@@ -152,11 +154,10 @@ function Home1() {
             >
               <div className="absolute inset-0 bg-blue-500 bg-opacity-30 flex flex-col justify-center items-center px-8 py-20 text-center">
                 <h1 className="text-3xl font-bold leading-tight text-white mb-5 font-inter max-w-sm">
-                  We're changing the way people connect
+                  {t("home1Title")}
                 </h1>
                 <p className="text-base leading-relaxed text-white text-opacity-90 font-inter max-w-xs">
-                  Cupidatat minim id magna ipsum sint dolor qui. Sunt sit in
-                  quis cupidatat mollit aute velit.
+                  {t("home1Subtitle")}
                 </p>
               </div>
             </div>
@@ -170,11 +171,10 @@ function Home1() {
             >
               <div className="absolute inset-0 bg-red-500 bg-opacity-25 flex flex-col justify-center items-center px-8 py-20 text-center">
                 <h1 className="text-3xl font-bold leading-tight text-white mb-5 font-inter max-w-sm">
-                  We're changing the way people connect
+                  {t("home1Title")}
                 </h1>
                 <p className="text-base leading-relaxed text-white text-opacity-90 font-inter max-w-xs">
-                  Cupidatat minim id magna ipsum sint dolor qui. Sunt sit in
-                  quis cupidatat mollit aute velit.
+                  {t("home1Subtitle")}
                 </p>
               </div>
             </div>
@@ -188,11 +188,10 @@ function Home1() {
             >
               <div className="absolute inset-0 bg-green-500 bg-opacity-35 flex flex-col justify-center items-center px-8 py-20 text-center">
                 <h1 className="text-3xl font-bold leading-tight text-white mb-5 font-inter max-w-sm">
-                  We're changing the way people connect
+                  {t("home1Title")}
                 </h1>
                 <p className="text-base leading-relaxed text-white text-opacity-90 font-inter max-w-xs">
-                  Cupidatat minim id magna ipsum sint dolor qui. Sunt sit in
-                  quis cupidatat mollit aute velit.
+                  {t("home1Subtitle")}
                 </p>
               </div>
             </div>
@@ -206,11 +205,10 @@ function Home1() {
             >
               <div className="absolute inset-0 bg-yellow-400 bg-opacity-40 flex flex-col justify-center items-center px-8 py-20 text-center">
                 <h1 className="text-3xl font-bold leading-tight text-white mb-5 font-inter max-w-sm">
-                  We're changing the way people connect
+                  {t("home1Title")}
                 </h1>
                 <p className="text-base leading-relaxed text-white text-opacity-90 font-inter max-w-xs">
-                  Cupidatat minim id magna ipsum sint dolor qui. Sunt sit in
-                  quis cupidatat mollit aute velit.
+                  {t("home1Subtitle")}
                 </p>
               </div>
             </div>
@@ -241,11 +239,10 @@ function Home1() {
                 }}
               >
                 <h1 className="text-3xl font-bold leading-tight text-white mb-5 font-inter max-w-sm">
-                  We're changing the way people connect
+                  {t("home1Title")}
                 </h1>
                 <p className="text-base leading-relaxed text-white text-opacity-90 font-inter max-w-xs">
-                  Cupidatat minim id magna ipsum sint dolor qui. Sunt sit in
-                  quis cupidatat mollit aute velit.
+                  {t("home1Subtitle")}
                 </p>
               </div>
             </div>
@@ -274,21 +271,17 @@ function Home1() {
             }}
           >
             <h1 className="text-5xl font-bold leading-tight text-gray-800 mb-6 font-inter">
-              We're changing the way people connect
+              {t("home1Title")}
             </h1>
             <p className="text-base leading-relaxed text-gray-600 mb-8 font-inter">
-              Cupidatat minim id magna ipsum sint dolor qui. Sunt sit in quis
-              cupidatat mollit aute velit. Et labore commodo nulla aliqua
-              proident mollit ullamco exercitation tempor. Sint aliqua anim
-              nulla sunt mollit id pariatur in voluptate cillum. Eu voluptate
-              tempor esse minim amet fugiat veniam occaecat aliqua.
+              {t("home1Subtitle")}
             </p>
             <div className="flex gap-4">
               <button className="bg-blue-500 text-white border-none px-6 py-3 rounded-md text-base font-medium cursor-pointer font-inter hover:bg-blue-600 transition-colors">
-                Get Started
+                {t("getStarted")}
               </button>
               <button className="bg-transparent text-blue-500 border-2 border-blue-500 px-6 py-3 rounded-md text-base font-medium cursor-pointer font-inter hover:bg-blue-50 transition-colors">
-                Live Demo →
+                {t("liveDemo")}
               </button>
             </div>
           </div>
