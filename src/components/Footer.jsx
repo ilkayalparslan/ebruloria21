@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "../data/translations";
 import {
   FaInstagram,
   FaYoutube,
@@ -11,6 +12,8 @@ import {
 } from "react-icons/fa";
 
 const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <footer className="bg-dark text-white py-16">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
@@ -25,8 +28,7 @@ const Footer = () => {
                 </h3>
               </Link>
               <p className="text-gray-300 leading-relaxed font-inter">
-                Premium real estate solutions for modern living. From luxury
-                homes to commercial investments, we create spaces that inspire.
+                {t("footerBrandDesc")}
               </p>
             </div>
 
@@ -62,7 +64,7 @@ const Footer = () => {
           {/* Services */}
           <div>
             <h4 className="text-xl font-semibold font-inter mb-6 text-primary-light">
-              Our Services
+              {t("ourServices")}
             </h4>
             <ul className="space-y-3">
               <li>
@@ -70,7 +72,7 @@ const Footer = () => {
                   to="/properties"
                   className="text-gray-300 hover:text-primary-light transition-colors duration-300 font-inter"
                 >
-                  Residential Properties
+                  {t("residentialProperties")}
                 </Link>
               </li>
               <li>
@@ -78,7 +80,7 @@ const Footer = () => {
                   to="/commercial"
                   className="text-gray-300 hover:text-primary-light transition-colors duration-300 font-inter"
                 >
-                  Commercial Real Estate
+                  {t("commercialRealEstate")}
                 </Link>
               </li>
               <li>
@@ -86,7 +88,7 @@ const Footer = () => {
                   to="/hotels"
                   className="text-gray-300 hover:text-primary-light transition-colors duration-300 font-inter"
                 >
-                  Hotel Investments
+                  {t("hotelInvestments")}
                 </Link>
               </li>
               <li>
@@ -94,7 +96,7 @@ const Footer = () => {
                   to="/management"
                   className="text-gray-300 hover:text-primary-light transition-colors duration-300 font-inter"
                 >
-                  Property Management
+                  {t("propertyManagement")}
                 </Link>
               </li>
               <li>
@@ -102,7 +104,7 @@ const Footer = () => {
                   to="/consulting"
                   className="text-gray-300 hover:text-primary-light transition-colors duration-300 font-inter"
                 >
-                  Real Estate Consulting
+                  {t("realEstateConsulting")}
                 </Link>
               </li>
               <li>
@@ -110,7 +112,7 @@ const Footer = () => {
                   to="/advisory"
                   className="text-gray-300 hover:text-primary-light transition-colors duration-300 font-inter"
                 >
-                  Investment Advisory
+                  {t("investmentAdvisory")}
                 </Link>
               </li>
             </ul>
@@ -119,7 +121,7 @@ const Footer = () => {
           {/* Quick Links */}
           <div>
             <h4 className="text-xl font-semibold font-inter mb-6 text-primary-light">
-              Quick Links
+              {t("quickLinks")}
             </h4>
             <ul className="space-y-3">
               <li>
@@ -127,7 +129,7 @@ const Footer = () => {
                   to="/about"
                   className="text-gray-300 hover:text-primary-light transition-colors duration-300 font-inter"
                 >
-                  About Us
+                  {t("aboutUs")}
                 </Link>
               </li>
               <li>
@@ -135,7 +137,7 @@ const Footer = () => {
                   to="/properties"
                   className="text-gray-300 hover:text-primary-light transition-colors duration-300 font-inter"
                 >
-                  Properties
+                  {t("properties")}
                 </Link>
               </li>
               <li>
@@ -143,7 +145,7 @@ const Footer = () => {
                   to="/projects"
                   className="text-gray-300 hover:text-primary-light transition-colors duration-300 font-inter"
                 >
-                  Projects
+                  {t("projects")}
                 </Link>
               </li>
               <li>
@@ -151,7 +153,7 @@ const Footer = () => {
                   to="/contact"
                   className="text-gray-300 hover:text-primary-light transition-colors duration-300 font-inter"
                 >
-                  Contact
+                  {t("contact")}
                 </Link>
               </li>
               <li>
@@ -159,7 +161,7 @@ const Footer = () => {
                   to="/blog"
                   className="text-gray-300 hover:text-primary-light transition-colors duration-300 font-inter"
                 >
-                  Blog
+                  {t("blog")}
                 </Link>
               </li>
               <li>
@@ -167,7 +169,7 @@ const Footer = () => {
                   to="/careers"
                   className="text-gray-300 hover:text-primary-light transition-colors duration-300 font-inter"
                 >
-                  Careers
+                  {t("careers")}
                 </Link>
               </li>
             </ul>
@@ -176,15 +178,13 @@ const Footer = () => {
           {/* Contact Info */}
           <div>
             <h4 className="text-xl font-semibold font-inter mb-6 text-primary-light">
-              Get In Touch
+              {t("getInTouch")}
             </h4>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
                 <FaMapMarkerAlt className="text-accent mt-1 flex-shrink-0" />
-                <p className="text-gray-300 font-inter">
-                  123 Real Estate Avenue
-                  <br />
-                  Premium District, City 12345
+                <p className="text-gray-300 font-inter whitespace-pre-line">
+                  {t("address")}
                 </p>
               </div>
               <div className="flex items-center gap-3">
@@ -213,20 +213,19 @@ const Footer = () => {
         <div className="border-t border-primary-dark/30 pt-12 mb-12">
           <div className="max-w-2xl mx-auto text-center">
             <h4 className="text-2xl font-semibold font-inter mb-4 text-primary-light">
-              Stay Updated
+              {t("stayUpdated")}
             </h4>
             <p className="text-gray-300 font-inter mb-6">
-              Get the latest updates on new properties and market insights
-              delivered to your inbox.
+              {t("newsletterDesc")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <input
                 type="email"
-                placeholder="Enter your email"
+                placeholder={t("enterEmail")}
                 className="flex-1 px-4 py-3 bg-primary-dark/20 border border-primary-dark/40 rounded-full text-white placeholder-gray-400 focus:outline-none focus:border-primary-light focus:ring-2 focus:ring-primary-light/20 font-inter"
               />
               <button className="px-8 py-3 bg-gradient-to-r from-primary to-primary-light hover:from-primary-light hover:to-accent text-white font-medium rounded-full transition-all duration-300 hover:scale-105 font-inter">
-                Subscribe
+                {t("subscribe")}
               </button>
             </div>
           </div>
@@ -235,27 +234,25 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-primary-dark/30 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-400 font-inter">
-              © 2024 EbruLoria Real Estate. All rights reserved.
-            </p>
+            <p className="text-gray-400 font-inter">{t("copyright")}</p>
             <div className="flex gap-8">
               <Link
                 to="/privacy"
                 className="text-gray-400 hover:text-primary-light transition-colors duration-300 font-inter"
               >
-                Privacy Policy
+                {t("privacyPolicy")}
               </Link>
               <Link
                 to="/terms"
                 className="text-gray-400 hover:text-primary-light transition-colors duration-300 font-inter"
               >
-                Terms of Service
+                {t("termsOfService")}
               </Link>
               <Link
                 to="/cookies"
                 className="text-gray-400 hover:text-primary-light transition-colors duration-300 font-inter"
               >
-                Cookie Policy
+                {t("cookiePolicy")}
               </Link>
             </div>
           </div>
