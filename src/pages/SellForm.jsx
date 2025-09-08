@@ -9,7 +9,6 @@ import {
   MdLocationOn,
   MdSquareFoot,
   MdPhone,
-  MdEmail,
   MdCheckCircle,
   MdError,
   MdDescription,
@@ -17,10 +16,7 @@ import {
 
 const SellForm = () => {
   const navigate = useNavigate();
-  const { t } = useTranslation();
-
-  // Add missing state for language tabs
-  const [currentTab, setCurrentTab] = useState("en");
+  const { t, currentLanguage } = useTranslation();
 
   const [formData, setFormData] = useState({
     // Basic Info (matching your JSON structure - excluding auto-generated fields)
@@ -33,24 +29,10 @@ const SellForm = () => {
     baseSquare: "",
     status: [], // ["For Sale"] or ["For Rent"]
 
-    // Translations object (required by your JSON structure)
-    translations: {
-      en: {
-        description: "",
-        type: "",
-        amenities: [],
-      },
-      tr: {
-        description: "",
-        type: "",
-        amenities: [],
-      },
-      ar: {
-        description: "",
-        type: "",
-        amenities: [],
-      },
-    },
+    // Single language content (will be converted to translations object later)
+    description: "",
+    type: "",
+    amenities: [],
 
     // Contact Info (seller information - not in JSON but needed)
     ownerName: "",
@@ -76,39 +58,17 @@ const SellForm = () => {
     }));
   };
 
-  // Handle translation changes
-  const handleTranslationChange = (language, field, value) => {
+  // Handle amenity selection
+  const handleAmenityChange = (amenity, checked) => {
     setFormData((prev) => ({
       ...prev,
-      translations: {
-        ...prev.translations,
-        [language]: {
-          ...prev.translations[language],
-          [field]: value,
-        },
-      },
+      amenities: checked
+        ? [...prev.amenities, amenity]
+        : prev.amenities.filter((item) => item !== amenity),
     }));
   };
 
-  // Handle translation array changes (amenities) - Updated for modern design
-  const handleTranslationArrayChange = (language, field, value, checked) => {
-    setFormData((prev) => ({
-      ...prev,
-      translations: {
-        ...prev.translations,
-        [language]: {
-          ...prev.translations[language],
-          [field]: checked
-            ? [...prev.translations[language][field], value]
-            : prev.translations[language][field].filter(
-                (item) => item !== value
-              ),
-        },
-      },
-    }));
-  };
-
-  // Handle checkbox changes for arrays (status) - Updated for modern design
+  // Handle status selection
   const handleArrayChange = (name, value, checked) => {
     setFormData((prev) => ({
       ...prev,
@@ -170,15 +130,14 @@ const SellForm = () => {
       "email",
       "phone",
       "sellerNeeds",
+      "description",
+      "type",
     ];
     const basicValid = basicRequired.every((field) => formData[field]);
     const statusValid = formData.status.length > 0;
     const imagesValid = images.length > 0;
-    const descriptionValid = Object.values(formData.translations).some(
-      (lang) => lang.description
-    );
 
-    return basicValid && statusValid && imagesValid && descriptionValid;
+    return basicValid && statusValid && imagesValid;
   };
 
   // Handle form submission
@@ -197,7 +156,6 @@ const SellForm = () => {
 
     try {
       // Create the property object matching your JSON structure
-      // Auto-generate the fields that sellers don't fill
       const propertyData = {
         // Auto-generated fields (your system will handle these)
         id: Date.now(), // You'll generate this properly
@@ -218,7 +176,19 @@ const SellForm = () => {
         floorCount: parseInt(formData.floorCount),
         baseSquare: parseInt(formData.baseSquare),
         status: formData.status,
-        translations: formData.translations,
+
+        // Create translations object with user's language as primary
+        translations: {
+          [currentLanguage]: {
+            description: formData.description,
+            type: formData.type,
+            amenities: formData.amenities,
+          },
+          // Other languages will be added by your backend translation service
+        },
+
+        // Add metadata about the original language
+        originalLanguage: currentLanguage,
 
         // Seller contact info and needs (separate from property data)
         sellerInfo: {
@@ -228,6 +198,7 @@ const SellForm = () => {
           phone: formData.phone,
           sellerNeeds: formData.sellerNeeds,
           submittedAt: new Date().toISOString(),
+          preferredLanguage: currentLanguage,
         },
       };
 
@@ -259,7 +230,7 @@ const SellForm = () => {
     }
   };
 
-  // Property type options (matching your data)
+  // Property type options based on current language
   const propertyTypes = {
     en: [
       "Luxury Resort",
@@ -307,7 +278,7 @@ const SellForm = () => {
     { value: "For Rent", label: t("forRent") || "For Rent" },
   ];
 
-  // Amenities matching your data structure - Updated for modern design
+  // Amenities based on current language
   const amenitiesOptions = {
     en: [
       "WiFi",
@@ -567,7 +538,7 @@ const SellForm = () => {
 
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                {t("location") || "Location/District"} *
+                {t("locationDistrict") || "Location/District"} *
               </label>
               <input
                 type="text"
@@ -640,120 +611,82 @@ const SellForm = () => {
             </div>
           </div>
 
-          {/* Multi-language Content */}
+          {/* Property Content - Single Language */}
           <div className="space-y-6">
             <h2 className="text-xl font-semibold flex items-center border-b pb-2">
               <MdDescription className="w-6 h-6 mr-2 text-primary" />
-              {t("propertyContent") || "Property Content"} (
-              {t("multiLanguage") || "Multi-Language"})
+              {t("propertyContent") || "Property Content"}
             </h2>
 
-            {/* Language Tabs */}
-            <div className="flex space-x-1 bg-gray-100 p-1 rounded-lg">
-              {["en", "tr", "ar"].map((lang) => (
-                <button
-                  key={lang}
-                  type="button"
-                  onClick={() => setCurrentTab(lang)}
-                  className={`flex-1 py-2 px-4 text-sm font-medium rounded-md transition-all duration-200 ${
-                    currentTab === lang
-                      ? "bg-white text-primary shadow-sm border-2 border-primary/20"
-                      : "text-gray-500 hover:text-gray-700"
-                  }`}
+            <div className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  {t("propertyType") || "Property Type"} *
+                </label>
+                <select
+                  name="type"
+                  value={formData.type}
+                  onChange={handleInputChange}
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
+                  required
                 >
-                  {lang.toUpperCase()}
-                </button>
-              ))}
-            </div>
+                  <option value="">{t("selectType") || "Select Type"}</option>
+                  {propertyTypes[currentLanguage]?.map((type) => (
+                    <option key={type} value={type}>
+                      {type}
+                    </option>
+                  ))}
+                </select>
+              </div>
 
-            {/* Content for each language */}
-            {["en", "tr", "ar"].map((lang) => (
-              <div
-                key={lang}
-                className={`space-y-4 ${currentTab !== lang ? "hidden" : ""}`}
-              >
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    {t("propertyType") || "Property Type"} ({lang.toUpperCase()}
-                    ) *
-                  </label>
-                  <select
-                    value={formData.translations[lang].type}
-                    onChange={(e) =>
-                      handleTranslationChange(lang, "type", e.target.value)
-                    }
-                    className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
-                    required
-                  >
-                    <option value="">{t("selectType") || "Select Type"}</option>
-                    {propertyTypes[lang]?.map((type) => (
-                      <option key={type} value={type}>
-                        {type}
-                      </option>
-                    ))}
-                  </select>
-                </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  {t("description") || "Description"} *
+                </label>
+                <textarea
+                  name="description"
+                  value={formData.description}
+                  onChange={handleInputChange}
+                  placeholder={
+                    t("enterDetailedDescription") ||
+                    "Enter detailed property description, features, location benefits, etc."
+                  }
+                  rows={8}
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
+                  required
+                />
+              </div>
 
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    {t("description") || "Description"} ({lang.toUpperCase()}) *
-                  </label>
-                  <textarea
-                    value={formData.translations[lang].description}
-                    onChange={(e) =>
-                      handleTranslationChange(
-                        lang,
-                        "description",
-                        e.target.value
-                      )
-                    }
-                    placeholder={
-                      t("enterDetailedDescription") ||
-                      "Enter detailed property description, features, location benefits, etc."
-                    }
-                    rows={8}
-                    className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
-                    required={lang === "en"} // At least English description required
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    {t("amenities") || "Amenities"} ({lang.toUpperCase()})
-                  </label>
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                    {amenitiesOptions[lang]?.map((amenity) => (
-                      <button
-                        key={amenity}
-                        type="button"
-                        onClick={() =>
-                          handleTranslationArrayChange(
-                            lang,
-                            "amenities",
-                            amenity,
-                            !formData.translations[lang].amenities.includes(
-                              amenity
-                            )
-                          )
-                        }
-                        className={`px-3 py-2 text-sm rounded-lg font-medium transition-all duration-200 border-2 ${
-                          formData.translations[lang].amenities.includes(
-                            amenity
-                          )
-                            ? "bg-primary text-white border-primary shadow-md scale-105"
-                            : "bg-primary/5 text-primary border-primary/15 hover:bg-primary/10 hover:border-primary/25"
-                        }`}
-                      >
-                        {amenity}
-                      </button>
-                    ))}
-                  </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  {t("amenities") || "Amenities"}
+                </label>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                  {amenitiesOptions[currentLanguage]?.map((amenity) => (
+                    <button
+                      key={amenity}
+                      type="button"
+                      onClick={() =>
+                        handleAmenityChange(
+                          amenity,
+                          !formData.amenities.includes(amenity)
+                        )
+                      }
+                      className={`px-3 py-2 text-sm rounded-lg font-medium transition-all duration-200 border-2 ${
+                        formData.amenities.includes(amenity)
+                          ? "bg-primary text-white border-primary shadow-md scale-105"
+                          : "bg-primary/5 text-primary border-primary/15 hover:bg-primary/10 hover:border-primary/25"
+                      }`}
+                    >
+                      {amenity}
+                    </button>
+                  ))}
                 </div>
               </div>
-            ))}
+            </div>
           </div>
 
-          {/* Seller Needs/Expectations (instead of price) */}
+          {/* Seller Needs/Expectations */}
           <div className="space-y-6">
             <h2 className="text-xl font-semibold flex items-center border-b pb-2">
               <MdDescription className="w-6 h-6 mr-2 text-primary" />
