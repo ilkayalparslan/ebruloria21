@@ -1,7 +1,9 @@
 import React, { useState, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "../data/translations";
 import {
-  HOTEL_LISTINGS,
+  getHotelsWithTranslations,
+  getUniqueCities,
   getRoomDisplay,
   getHotelImages,
   getPrioritizedHotels,
@@ -10,6 +12,7 @@ import { MdLocationOn, MdHome, MdStar, MdClose } from "react-icons/md";
 
 const Hotel1 = () => {
   const navigate = useNavigate();
+  const { t, currentLanguage } = useTranslation(); // Add currentLanguage
   const [statusFilter, setStatusFilter] = useState("all");
   const [cityFilter, setCityFilter] = useState("all");
   const [expandedDescriptions, setExpandedDescriptions] = useState({});
@@ -27,17 +30,16 @@ const Hotel1 = () => {
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
 
+  // Get hotels with translations for current language
+  const HOTEL_LISTINGS = useMemo(() => {
+    return getHotelsWithTranslations(currentLanguage);
+  }, [currentLanguage]);
+
   // Get unique cities for filter dropdown
   const uniqueCities = useMemo(() => {
-    const cities = [
-      ...new Set(
-        HOTEL_LISTINGS.map((hotel) => `${hotel.city}, ${hotel.country}`)
-      ),
-    ];
-    return cities.sort();
-  }, []);
+    return getUniqueCities(HOTEL_LISTINGS);
+  }, [HOTEL_LISTINGS]);
 
-  // Filter hotels based on status and city
   // Filter and prioritize hotels
   const filteredHotels = useMemo(() => {
     const prioritized = getPrioritizedHotels(HOTEL_LISTINGS);
@@ -49,7 +51,7 @@ const Hotel1 = () => {
         `${hotel.city}, ${hotel.country}` === cityFilter;
       return statusMatch && cityMatch;
     });
-  }, [statusFilter, cityFilter]);
+  }, [statusFilter, cityFilter, HOTEL_LISTINGS]);
 
   // Toggle description expansion
   const toggleDescription = (index) => {
@@ -72,9 +74,9 @@ const Hotel1 = () => {
       lastName: "",
       email: "",
       phone: "",
-      message: `Hello, I am interested in ${hotel.type} with ${getRoomDisplay(
+      message: `${t("interestedInProperty")} ${hotel.type} ${getRoomDisplay(
         hotel.roomNumber
-      )}. Please contact me for more information.`,
+      )} ${t("rooms")}. ${t("pleaseContactMe")}`,
     });
     setShowContactModal(true);
   };
@@ -102,7 +104,7 @@ const Hotel1 = () => {
     e.preventDefault();
     // Handle form submission here
     console.log("Contact form submitted:", formData);
-    alert("Thank you for your inquiry! We'll contact you soon.");
+    alert(t("thankYouInquiry"));
     closeContactModal();
   };
 
@@ -169,7 +171,7 @@ const Hotel1 = () => {
                   : "bg-white text-gray-700 hover:bg-gray-100"
               }`}
             >
-              All
+              {t("all")}
             </button>
             <button
               onClick={() => setStatusFilter("For Sale")}
@@ -179,7 +181,7 @@ const Hotel1 = () => {
                   : "bg-white text-gray-700 hover:bg-gray-100"
               }`}
             >
-              For Sale
+              {t("forSale")}
             </button>
             <button
               onClick={() => setStatusFilter("For Rent")}
@@ -189,7 +191,7 @@ const Hotel1 = () => {
                   : "bg-white text-gray-700 hover:bg-gray-100"
               }`}
             >
-              For Rent
+              {t("forRent")}
             </button>
           </div>
 
@@ -199,7 +201,7 @@ const Hotel1 = () => {
             onChange={(e) => setCityFilter(e.target.value)}
             className="w-full md:w-auto px-4 py-2 rounded-lg border border-gray-300 bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
-            <option value="all">All Cities</option>
+            <option value="all">{t("allCities")}</option>
             {uniqueCities.map((city) => (
               <option key={city} value={city}>
                 {city}
@@ -208,16 +210,15 @@ const Hotel1 = () => {
           </select>
         </div>
 
-        {/* Hotel Cards Grid */}
+        {/* Hotel Cards Grid - Rest remains the same but hotel content is now translated */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredHotels.map((hotel, index) => (
             <div
               key={index}
               className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
             >
-              {/* Hotel Image - Increased height */}
+              {/* Hotel Image carousel - no changes needed */}
               <div className="relative h-80 overflow-hidden">
-                {/* Carousel Container - Transform based on currentImageIndex */}
                 <div
                   className="flex h-full transition-transform duration-300 ease-in-out"
                   style={{
@@ -231,7 +232,6 @@ const Hotel1 = () => {
                     handleTouchEnd(index, hotel.imageCount || 1)
                   }
                 >
-                  {/* Generate 6 images */}
                   {getHotelImages(hotel)
                     .slice(0, 6)
                     .map((image, imgIndex) => (
@@ -270,7 +270,7 @@ const Hotel1 = () => {
                         status === "For Sale" ? "bg-green-500" : "bg-blue-500"
                       }`}
                     >
-                      {status}
+                      {status === "For Sale" ? t("forSale") : t("forRent")}
                     </span>
                   ))}
                 </div>
@@ -281,11 +281,12 @@ const Hotel1 = () => {
                     onClick={() => openContactModal(hotel)}
                     className="btn-primary-gradient text-white px-4 py-2 rounded-lg text-sm font-medium"
                   >
-                    Contact Agent
+                    {t("contactAgent")}
                   </button>
                 </div>
               </div>
-              {/* Hotel Details - Reduced padding and spacing */}
+
+              {/* Hotel Details - Now shows translated content */}
               <div className="p-4">
                 {/* Location */}
                 <div className="flex items-center text-gray-600 mb-2">
@@ -295,7 +296,7 @@ const Hotel1 = () => {
                   </span>
                 </div>
 
-                {/* Description with toggle */}
+                {/* Description with toggle - Now uses translated description */}
                 <div className="mb-3">
                   <div className="flex items-start justify-between">
                     <p className="text-gray-600 text-xs leading-relaxed flex-1 mr-2">
@@ -335,11 +336,11 @@ const Hotel1 = () => {
                 <div className="flex items-center text-gray-600 mb-3">
                   <MdHome className="w-4 h-4 mr-2" />
                   <span className="font-medium text-sm">
-                    {getRoomDisplay(hotel.roomNumber)} Rooms
+                    {getRoomDisplay(hotel.roomNumber)} {t("rooms")}
                   </span>
                 </div>
 
-                {/* Property Type & Rating */}
+                {/* Property Type & Rating - Now uses translated type */}
                 <div className="flex items-center justify-between mb-3">
                   <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
                     {hotel.type}
@@ -354,7 +355,7 @@ const Hotel1 = () => {
                   )}
                 </div>
 
-                {/* Amenities - Reduced spacing */}
+                {/* Amenities - Now uses translated amenities */}
                 {hotel.amenities && hotel.amenities.length > 0 && (
                   <div className="mb-3">
                     <div className="flex flex-wrap gap-1">
@@ -368,7 +369,7 @@ const Hotel1 = () => {
                       ))}
                       {hotel.amenities.length > 3 && (
                         <span className="text-gray-500 text-xs">
-                          +{hotel.amenities.length - 3} more
+                          +{hotel.amenities.length - 3} {t("more")}
                         </span>
                       )}
                     </div>
@@ -381,7 +382,7 @@ const Hotel1 = () => {
                     <div className="text-xl font-bold text-gray-900">
                       ${hotel.price}
                       <span className="text-sm text-gray-500 font-normal">
-                        /night
+                        {t("night")}
                       </span>
                     </div>
                   )}
@@ -392,7 +393,7 @@ const Hotel1 = () => {
                   onClick={() => handleGetDetails(hotel)}
                   className="w-full btn-primary-gradient text-white py-2 px-4 rounded-lg font-medium text-sm"
                 >
-                  Get Details
+                  {t("getDetails")}
                 </button>
               </div>
             </div>
@@ -402,20 +403,19 @@ const Hotel1 = () => {
         {/* No results message */}
         {filteredHotels.length === 0 && (
           <div className="text-center py-12">
-            <p className="text-gray-500 text-lg">
-              No properties found matching your filters.
-            </p>
+            <p className="text-gray-500 text-lg">{t("noPropertiesFound")}</p>
           </div>
         )}
       </div>
 
-      {/* Contact Modal */}
+      {/* Contact Modal - No changes needed, already translated */}
       {showContactModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
           <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto">
-            {/* Modal Header */}
             <div className="relative gradient-primary text-white p-6 rounded-t-2xl">
-              <h3 className="text-xl font-semibold">Contact Agent</h3>
+              <h3 className="text-xl font-semibold">
+                {t("contactAgentModal")}
+              </h3>
               <p className="text-primary-light text-sm mt-1">
                 {selectedHotel?.city}, {selectedHotel?.country}
               </p>
@@ -427,12 +427,11 @@ const Hotel1 = () => {
               </button>
             </div>
 
-            {/* Modal Body */}
             <form onSubmit={handleSubmit} className="p-6">
               <div className="grid grid-cols-2 gap-4 mb-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    First Name *
+                    {t("firstName")} *
                   </label>
                   <input
                     type="text"
@@ -441,12 +440,12 @@ const Hotel1 = () => {
                     onChange={handleInputChange}
                     required
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-opacity-50 focus:border-transparent transition-colors custom-focus"
-                    placeholder="John"
+                    placeholder={t("yourName")}
                   />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Last Name *
+                    {t("lastName")} *
                   </label>
                   <input
                     type="text"
@@ -455,14 +454,14 @@ const Hotel1 = () => {
                     onChange={handleInputChange}
                     required
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-opacity-50 focus:border-transparent transition-colors custom-focus"
-                    placeholder="Doe"
+                    placeholder={t("yourSurname")}
                   />
                 </div>
               </div>
 
               <div className="mb-4">
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Email Address *
+                  {t("emailAddress")} *
                 </label>
                 <input
                   type="email"
@@ -471,13 +470,13 @@ const Hotel1 = () => {
                   onChange={handleInputChange}
                   required
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-opacity-50 focus:border-transparent transition-colors custom-focus"
-                  placeholder="john.doe@example.com"
+                  placeholder={t("yourEmail")}
                 />
               </div>
 
               <div className="mb-4">
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Phone Number *
+                  {t("phoneNumber")} *
                 </label>
                 <input
                   type="tel"
@@ -486,13 +485,13 @@ const Hotel1 = () => {
                   onChange={handleInputChange}
                   required
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-opacity-50 focus:border-transparent transition-colors custom-focus"
-                  placeholder="+1 (555) 123-4567"
+                  placeholder={t("yourPhone")}
                 />
               </div>
 
               <div className="mb-6">
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Message
+                  {t("message")}
                 </label>
                 <textarea
                   name="message"
@@ -503,36 +502,36 @@ const Hotel1 = () => {
                 />
               </div>
 
-              {/* Property Details Card */}
+              {/* Property Details Card - Now shows translated type */}
               <div className="bg-gray-50 rounded-lg p-4 mb-6">
                 <div className="flex items-center justify-between text-sm">
-                  <span className="text-gray-600">Property Type:</span>
+                  <span className="text-gray-600">{t("propertyType")}:</span>
                   <span className="font-medium text-gray-800">
                     {selectedHotel?.type}
                   </span>
                 </div>
                 <div className="flex items-center justify-between text-sm mt-2">
-                  <span className="text-gray-600">Rooms:</span>
+                  <span className="text-gray-600">{t("rooms")}:</span>
                   <span className="font-medium text-gray-800">
                     {getRoomDisplay(selectedHotel?.roomNumber)}
                   </span>
                 </div>
                 {selectedHotel?.price && (
                   <div className="flex items-center justify-between text-sm mt-2">
-                    <span className="text-gray-600">Price:</span>
+                    <span className="text-gray-600">{t("price")}:</span>
                     <span className="font-medium text-gray-800">
-                      ${selectedHotel.price}/night
+                      ${selectedHotel.price}
+                      {t("night")}
                     </span>
                   </div>
                 )}
               </div>
 
-              {/* Submit Button */}
               <button
                 type="submit"
                 className="w-full btn-primary-gradient text-white py-3 px-6 rounded-lg font-semibold"
               >
-                Send Message
+                {t("sendMessage")}
               </button>
             </form>
           </div>

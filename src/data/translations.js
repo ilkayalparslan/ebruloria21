@@ -96,6 +96,35 @@ export const translations = {
     privacyPolicy: "Privacy Policy",
     termsOfService: "Terms of Service",
     cookiePolicy: "Cookie Policy",
+
+    // Form placeholders - Updated
+    yourName: "Your Name",
+    yourSurname: "Your Surname",
+    yourEmail: "youremail@example.com",
+    yourPhone: "Your Phone Number",
+
+    // Hotel1 component translations - ADD THESE
+    all: "All",
+    forSale: "For Sale",
+    forRent: "For Rent",
+    allCities: "All Cities",
+    rooms: "Rooms",
+    more: "more",
+    night: "/night",
+    getDetails: "Get Details",
+    noPropertiesFound: "No properties found matching your criteria",
+    contactAgentModal: "Contact Agent",
+    firstName: "First Name",
+    lastName: "Last Name",
+    emailAddress: "Email Address",
+    phoneNumber: "Phone Number",
+    message: "Message",
+    propertyType: "Property Type",
+    price: "Price",
+    sendMessage: "Send Message",
+    interestedInProperty: "I'm interested in this",
+    pleaseContactMe: "Please contact me.",
+    thankYouInquiry: "Thank you for your inquiry! We'll get back to you soon.",
   },
   tr: {
     // Navigation
@@ -192,6 +221,36 @@ export const translations = {
     privacyPolicy: "Gizlilik Politikası",
     termsOfService: "Hizmet Şartları",
     cookiePolicy: "Çerez Politikası",
+
+    // Form placeholders - Updated
+    yourName: "Adınız",
+    yourSurname: "Soyadınız",
+    yourEmail: "emailiniz@example.com",
+    yourPhone: "Telefon Numaranız",
+
+    // Hotel1 component translations - ADD THESE
+    all: "Tümü",
+    forSale: "Satılık",
+    forRent: "Kiralık",
+    allCities: "Tüm Şehirler",
+    rooms: "Oda",
+    more: "daha fazla",
+    night: "/gece",
+    getDetails: "Detayları Gör",
+    noPropertiesFound: "Kriterlerinize uygun mülk bulunamadı",
+    contactAgentModal: "Temsilci ile İletişim",
+    firstName: "Ad",
+    lastName: "Soyad",
+    emailAddress: "E-posta Adresi",
+    phoneNumber: "Telefon Numarası",
+    message: "Mesaj",
+    propertyType: "Mülk Türü",
+    price: "Fiyat",
+    sendMessage: "Mesaj Gönder",
+    interestedInProperty: "Bu mülkle ilgileniyorum",
+    pleaseContactMe: "Lütfen benimle iletişime geçin.",
+    thankYouInquiry:
+      "Sorgunuz için teşekkürler! En kısa sürede size dönüş yapacağız.",
   },
   ar: {
     // Navigation
@@ -288,6 +347,35 @@ export const translations = {
     privacyPolicy: "سياسة الخصوصية",
     termsOfService: "شروط الخدمة",
     cookiePolicy: "سياسة ملفات تعريف الارتباط",
+
+    // Form placeholders - Updated
+    yourName: "اسمك",
+    yourSurname: "اسم عائلتك",
+    yourEmail: "ايميلك@example.com",
+    yourPhone: "رقم هاتفك",
+
+    // Hotel1 component translations - ADD THESE
+    all: "الكل",
+    forSale: "للبيع",
+    forRent: "للإيجار",
+    allCities: "جميع المدن",
+    rooms: "غرف",
+    more: "المزيد",
+    night: "/ليلة",
+    getDetails: "عرض التفاصيل",
+    noPropertiesFound: "لا توجد عقارات تطابق معاييرك",
+    contactAgentModal: "اتصل بالوكيل",
+    firstName: "الاسم الأول",
+    lastName: "اسم العائلة",
+    emailAddress: "عنوان البريد الإلكتروني",
+    phoneNumber: "رقم الهاتف",
+    message: "رسالة",
+    propertyType: "نوع العقار",
+    price: "السعر",
+    sendMessage: "إرسال رسالة",
+    interestedInProperty: "أنا مهتم بهذا",
+    pleaseContactMe: "يرجى الاتصال بي.",
+    thankYouInquiry: "شكراً لك على استفسارك! سنعاود الاتصال بك قريباً.",
   },
 };
 
@@ -296,5 +384,5 @@ export const useTranslation = () => {
 
   const t = (key) => translations[language][key] || key;
 
-  return { t };
+  return { t, currentLanguage: language };
 };

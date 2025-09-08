@@ -8,11 +8,59 @@
   "roomNumber": 80,
   "imageCount": 82,
   "imageFolderName": "hermanos",
-  "amenities": ["WiFi", "Gym", "Restaurant", "Parking"],
-  "type": "Business Hotel",
   "status": ["For Sale", "For Rent"],
   "floorCount": 6,
   "baseSquare": 210,
   "tier": "premium",
-  "description": "**Modern Business Hotel in Central Istanbul**\n\nStrategically positioned in the dynamic Aksaray district of Fatih, this contemporary 3-star business hotel offers an ideal base for both corporate and leisure travelers. Located within a 5-minute drive of Grand Bazaar and Süleymaniye Mosque, the hotel is 1.7 miles from Sultanahmet Square and 1.9 miles from Blue Mosque, providing excellent access to Istanbul's most significant historical and commercial areas.\n\n**Prime Business Location & Connectivity**\nLocated in Aksaray, one of the commercial centers of Istanbul, the hotel benefits from exceptional transportation links. Süleymaniye Camii is the closest landmark, while the property sits just 10 minutes' walk from the nearest underground station and close to major bus routes, ensuring seamless connectivity throughout the city.\n\n**Comprehensive Accommodation & Facilities**\nThe hotel features 70 well-appointed rooms equipped with modern business amenities including individually controlled air-conditioning, satellite television, minibar, free Wi-Fi, and business desks. All accommodations include safes, LCD televisions with satellite channels, and private bathrooms with deep soaking bathtubs.\n\n**Business & Leisure Amenities**\nThe hotel offers complimentary breakfast buffet, free Wi-Fi, free parking, 24-hour room service, and multilingual staff. Additional facilities include a sauna, on-site restaurant serving breakfast, lunch and dinner, bar/lounge, and tour assistance services. Services include laundry, ironing, dry cleaning, and currency exchange.\n\n**Guest Experience & Value**\nThe friendly, helpful, and multilingual staff provide excellent customer service, with particular praise for assistance in planning sightseeing trips. The hotel maintains high standards with daily housekeeping, contactless check-in/check-out, and enhanced cleaning protocols.\n\n**Investment Opportunity**\nThis established business hotel represents an excellent investment opportunity in one of Istanbul's key commercial districts. With its strategic location, comprehensive facilities, and strong operational foundation, the property offers significant potential for investors seeking a profitable hospitality asset in Turkey's economic capital."
+  "rating": 8.5,
+  "translations": {
+    "en": {
+      "description": "**Modern Business Hotel in Central Istanbul**\n\nStrategically positioned in the dynamic Aksaray district of Fatih, this contemporary 3-star business hotel offers an ideal base for both corporate and leisure travelers. Located within a 5-minute drive of Grand Bazaar and Süleymaniye Mosque, the hotel is 1.7 miles from Sultanahmet Square and 1.9 miles from Blue Mosque, providing excellent access to Istanbul's most significant historical and commercial areas.\n\n**Prime Business Location & Connectivity**\nLocated in Aksaray, one of the commercial centers of Istanbul, the hotel benefits from exceptional transportation links. Süleymaniye Camii is the closest landmark, while the property sits just 10 minutes' walk from the nearest underground station and close to major bus routes, ensuring seamless connectivity throughout the city.\n\n**Comprehensive Accommodation & Facilities**\nThe hotel features 80 well-appointed rooms equipped with modern business amenities including individually controlled air-conditioning, satellite television, minibar, free Wi-Fi, and business desks. All accommodations include safes, LCD televisions with satellite channels, and private bathrooms with deep soaking bathtubs.\n\n**Business & Leisure Amenities**\nThe hotel offers complimentary breakfast buffet, free Wi-Fi, free parking, 24-hour room service, and multilingual staff. Additional facilities include a sauna, on-site restaurant serving breakfast, lunch and dinner, bar/lounge, and tour assistance services. Services include laundry, ironing, dry cleaning, and currency exchange.\n\n**Guest Experience & Value**\nThe friendly, helpful, and multilingual staff provide excellent customer service, with particular praise for assistance in planning sightseeing trips. The hotel maintains high standards with daily housekeeping, contactless check-in/check-out, and enhanced cleaning protocols.\n\n**Investment Opportunity**\nThis established business hotel represents an excellent investment opportunity in one of Istanbul's key commercial districts. With its strategic location, comprehensive facilities, and strong operational foundation, the property offers significant potential for investors seeking a profitable hospitality asset in Turkey's economic capital.",
+      "type": "Business Hotel",
+      "amenities": [
+        "WiFi",
+        "Fitness Center",
+        "Restaurant",
+        "Free Parking",
+        "Business Center",
+        "Conference Rooms",
+        "Sauna",
+        "24/7 Room Service",
+        "Bar & Lounge",
+        "Tour Assistance"
+      ]
+    },
+    "tr": {
+      "description": "**Merkezi İstanbul'da Modern İş Oteli**\n\nFatih'in dinamik Aksaray semtinde stratejik olarak konumlandırılan bu çağdaş 3 yıldızlı iş oteli, hem kurumsal hem de tatil seyahatçileri için ideal bir üs sunuyor. Kapalıçarşı ve Süleymaniye Camii'ne 5 dakikalık araç mesafesinde, Sultanahmet Meydanı'na 1.7 mil ve Sultan Ahmet Camii'ne 1.9 mil uzaklıkta yer alan otel, İstanbul'un en önemli tarihi ve ticari alanlarına mükemmel erişim sağlıyor.\n\n**Prime İş Lokasyonu ve Bağlantı**\nİstanbul'un ticaret merkezlerinden biri olan Aksaray'da yer alan otel, istisnai ulaşım bağlantılarından faydalanıyor. Süleymaniye Camii en yakın simge yapı iken, mülk en yakın metro istasyonuna sadece 10 dakikalık yürüme mesafesinde ve ana otobüs hatlarına yakın konumlanarak şehir genelinde kesintisiz bağlantı sağlıyor.\n\n**Kapsamlı Konaklama ve Tesisler**\nOtel, bireysel kontrollü klima, uydu televizyon, minibar, ücretsiz Wi-Fi ve iş masaları dahil modern iş olanaklarıyla donatılmış 80 iyi döşenmiş oda barındırıyor. Tüm konaklama alanları kasalar, uydu kanallı LCD televizyonlar ve derin banyo küvetli özel banyolar içeriyor.\n\n**İş ve Eğlence Olanakları**\nOtel ücretsiz kahvaltı büfesi, ücretsiz Wi-Fi, ücretsiz park, 24 saat oda servisi ve çok dilli personel sunuyor. Ek tesisler arasında sauna, kahvaltı, öğle ve akşam yemeği sunan yerinde restoran, bar/salon ve tur yardım hizmetleri bulunuyor. Hizmetler arasında çamaşırhane, ütüleme, kuru temizleme ve döviz değişimi yer alıyor.\n\n**Misafir Deneyimi ve Değer**\nSamimi, yardımsever ve çok dilli personel, özellikle gezi planlaması konusundaki yardım için övgü alan mükemmel müşteri hizmeti sağlıyor. Otel, günlük temizlik, temassız check-in/check-out ve gelişmiş temizlik protokolleriyle yüksek standartları koruyor.\n\n**Yatırım Fırsatı**\nBu köklü iş oteli, İstanbul'un kilit ticaret bölgelerinden birinde mükemmel bir yatırım fırsatını temsil ediyor. Stratejik konumu, kapsamlı tesisleri ve güçlü operasyonel temeli ile mülk, Türkiye'nin ekonomi başkentinde kârlı bir konaklama varlığı arayan yatırımcılar için önemli potansiyel sunuyor.",
+      "type": "İş Oteli",
+      "amenities": [
+        "WiFi",
+        "Fitness Merkezi",
+        "Restoran",
+        "Ücretsiz Park",
+        "İş Merkezi",
+        "Konferans Salonları",
+        "Sauna",
+        "7/24 Oda Servisi",
+        "Bar ve Salon",
+        "Tur Yardımı"
+      ]
+    },
+    "ar": {
+      "description": "**فندق أعمال عصري في وسط إسطنبول**\n\nيقع هذا الفندق التجاري المعاصر من فئة 3 نجوم في موقع استراتيجي في منطقة أكسراي الديناميكية في فاتح، ويوفر قاعدة مثالية لكل من مسافري الأعمال والترفيه. يقع على بعد 5 دقائق بالسيارة من البازار الكبير ومسجد السليمانية، والفندق على بعد 1.7 ميل من ميدان السلطان أحمد و1.9 ميل من المسجد الأزرق، مما يوفر وصولاً ممتازاً لأهم المناطق التاريخية والتجارية في إسطنبول.\n\n**موقع أعمال متميز وإمكانية الوصول**\nيقع الفندق في أكسراي، أحد المراكز التجارية في إسطنبول، ويستفيد من روابط نقل استثنائية. مسجد السليمانية هو أقرب معلم، بينما تقع العقار على بعد 10 دقائق فقط سيراً من أقرب محطة مترو وقريب من خطوط الحافلات الرئيسية، مما يضمن اتصالاً سلساً في جميع أنحاء المدينة.\n\n**إقامة ومرافق شاملة**\nيضم الفندق 80 غرفة مُؤثثة جيداً مُجهزة بوسائل راحة أعمال عصرية تشمل تكييف هواء مُتحكم فيه فردياً وتلفزيون أقمار صناعية وميني بار وواي فاي مجاني ومكاتب عمل. تشمل جميع أماكن الإقامة خزائن أمان وتلفزيونات LCD مع قنوات الأقمار الصناعية وحمامات خاصة مع أحواض استحمام عميقة.\n\n**مرافق الأعمال والترفيه**\nيوفر الفندق بوفيه إفطار مجاني وواي فاي مجاني وموقف مجاني وخدمة غرف على مدار 24 ساعة وطاقم متعدد اللغات. تشمل المرافق الإضافية ساونا ومطعم في الموقع يقدم وجبات الإفطار والغداء والعشاء وبار/صالة وخدمات مساعدة الجولات. تشمل الخدمات الغسيل والكي والتنظيف الجاف وصرف العملات.\n\n**تجربة الضيوف والقيمة**\nيوفر الطاقم الودود والمفيد ومتعدد اللغات خدمة عملاء ممتازة، مع إشادة خاصة للمساعدة في تخطيط رحلات مشاهدة المعالم. يحافظ الفندق على معايير عالية مع التنظيف اليومي وتسجيل الدخول/الخروج بدون تلامس وبروتوكولات تنظيف محسنة.\n\n**فرصة استثمارية**\nيمثل فندق الأعمال الراسخ هذا فرصة استثمارية ممتازة في واحدة من المناطق التجارية الرئيسية في إسطنبول. مع موقعه الاستراتيجي ومرافقه الشاملة وأساسه التشغيلي القوي، توفر العقار إمكانات كبيرة للمستثمرين الذين يسعون لأصل ضيافة مربح في عاصمة تركيا الاقتصادية.",
+      "type": "فندق أعمال",
+      "amenities": [
+        "واي فاي",
+        "مركز اللياقة",
+        "مطعم",
+        "موقف مجاني",
+        "مركز الأعمال",
+        "قاعات المؤتمرات",
+        "ساونا",
+        "خدمة غرف 7/24",
+        "بار وصالة",
+        "مساعدة الجولات"
+      ]
+    }
+  }
 }

@@ -19,6 +19,12 @@ TIER SYSTEM: Hotels are prioritized by tier with randomization within each tier
 - Premium hotels show first (but in random order each visit)
 - Gold, Silver, Bronze, Basic follow in priority order
 - Each tier is shuffled randomly to keep browsing fresh
+
+MULTILINGUAL SUPPORT: Hotels now support multiple languages
+- Each hotel JSON contains translations object with en, tr, ar
+- Browser language detection for initial language
+- Language preference persisted in localStorage
+- Use getTranslatedHotel() or getHotelsWithTranslations() for localized content
 */
 
 // Import individual hotel JSON files (same level as hotelData.js)
@@ -30,7 +36,8 @@ import newhotelData from "./newhotel.json";
 import pelicanhouseData from "./pelicanhouse.json";
 import raimondData from "./raimond.json";
 
-export const HOTEL_LISTINGS = [
+// Raw hotel listings (with translations object)
+export const RAW_HOTEL_LISTINGS = [
   arachData,
   gulsultanData,
   hermanosData,
@@ -39,6 +46,25 @@ export const HOTEL_LISTINGS = [
   pelicanhouseData,
   raimondData,
 ];
+
+// Helper function to get translated content for a single hotel
+export const getTranslatedHotel = (hotel, language = "en") => {
+  const translations = hotel.translations[language] || hotel.translations.en;
+  return {
+    ...hotel,
+    description: translations.description,
+    type: translations.type,
+    amenities: translations.amenities,
+  };
+};
+
+// Function to get all hotels with translations for a specific language
+export const getHotelsWithTranslations = (language = "en") => {
+  return RAW_HOTEL_LISTINGS.map((hotel) => getTranslatedHotel(hotel, language));
+};
+
+// Default export (for backward compatibility) - returns English translations
+export const HOTEL_LISTINGS = getHotelsWithTranslations("en");
 
 export const HOTEL_TYPES = [
   "All Types",
@@ -58,6 +84,7 @@ export const LOCATIONS = [
   "Financial District",
   "Seaside",
   "Modern District",
+  "Aksaray",
   "Kumkapi Historic District",
   "Marina District",
 ];
@@ -68,11 +95,20 @@ export const STATUS_OPTIONS = ["All Status", "For Sale", "For Rent"];
 
 export const AMENITY_ICONS = {
   WiFi: "FaWifi",
-  Pool: "FaSwimmingPool",
-  Gym: "FaDumbbell",
+  "Swimming Pool": "FaSwimmingPool",
+  "Fitness Center": "FaDumbbell",
   Restaurant: "FaUtensils",
-  Parking: "FaParking",
+  "Free Parking": "FaParking",
   "Airport Shuttle": "FaPlane",
+  "24/7 Reception": "FaClock",
+  "Business Center": "FaBriefcase",
+  "Conference Rooms": "FaUsers",
+  "Room Service": "FaBell",
+  Sauna: "FaHotTub",
+  "Air Conditioning": "FaSnowflake",
+  "Buffet Breakfast": "FaCoffee",
+  "Concierge Service": "FaConciergeAbell",
+  Elevator: "FaArrowUp",
 };
 
 // TIER SYSTEM CONFIGURATION
@@ -94,7 +130,7 @@ export const TIER_LABELS = {
   basic: "Basic",
 };
 
-// TIER-BASED PRIORITIZATION FUNCTION
+// TIER-BASED PRIORITIZATION FUNCTION (works with translated hotels)
 export const getPrioritizedHotels = (hotels) => {
   // Group hotels by tier
   const tiers = {
@@ -177,14 +213,14 @@ export const getHotelImages = (hotel, count = null) => {
 
   return Array.from({ length: imageCount }, (_, i) => {
     const imageNumber = i + 1;
-    return `/images/hotels/${folderName}/${folderName}-${imageNumber}.jpg`; // CORRECT PATH
+    return `/images/hotels/${folderName}/${folderName}-${imageNumber}.jpg`;
   });
 };
 
 // Get only the first image (hero image) for performance
 export const getHotelHeroImage = (hotel) => {
   const folderName = hotel.imageFolderName;
-  return `/images/hotels/${folderName}/${folderName}-1.jpg`; // CORRECT
+  return `/images/hotels/${folderName}/${folderName}-1.jpg`;
 };
 
 // Get thumbnail images (first 5 for gallery previews)
@@ -192,7 +228,7 @@ export const getHotelThumbnails = (hotel, count = 5) => {
   return getHotelImages(hotel, Math.min(count, hotel.imageCount));
 };
 
-// EXISTING HELPER FUNCTIONS
+// EXISTING HELPER FUNCTIONS (updated to work with translated hotels)
 
 // Helper function to filter hotels (works with prioritized hotels)
 export const filterHotels = (hotels, filters) => {
@@ -250,5 +286,36 @@ export const getDisplayTitle = (hotel) => {
 
 // Helper function to get room count display
 export const getRoomDisplay = (roomNumber) => {
-  return `${roomNumber} Rooms`;
+  if (roomNumber >= 100) return "100+";
+  if (roomNumber >= 50) return "50+";
+  if (roomNumber >= 20) return "20+";
+  if (roomNumber >= 10) return "10+";
+  return roomNumber.toString();
+};
+
+// MULTILINGUAL HELPER FUNCTIONS
+
+// Get unique cities from translated hotels
+export const getUniqueCities = (hotels) => {
+  const cities = [
+    ...new Set(hotels.map((hotel) => `${hotel.city}, ${hotel.country}`)),
+  ];
+  return cities.sort();
+};
+
+// Get unique amenities from translated hotels
+export const getUniqueAmenities = (hotels) => {
+  const amenities = new Set();
+  hotels.forEach((hotel) => {
+    if (hotel.amenities) {
+      hotel.amenities.forEach((amenity) => amenities.add(amenity));
+    }
+  });
+  return Array.from(amenities).sort();
+};
+
+// Get unique hotel types from translated hotels
+export const getUniqueHotelTypes = (hotels) => {
+  const types = [...new Set(hotels.map((hotel) => hotel.type))];
+  return ["All Types", ...types.sort()];
 };
