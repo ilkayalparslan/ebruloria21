@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { useTranslation } from "../data/translations";
 import Navigation from "../components/Navigation";
 import {
-  MdArrowBack,
   MdCloudUpload,
   MdDelete,
   MdHome,
@@ -13,47 +12,56 @@ import {
   MdEmail,
   MdCheckCircle,
   MdError,
-  MdHotel,
-  MdLayers,
+  MdDescription,
 } from "react-icons/md";
 
 const SellForm = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
-  
+
+  // Add missing state for language tabs
+  const [currentTab, setCurrentTab] = useState("en");
+
   const [formData, setFormData] = useState({
-    // Property Details
-    type: "",
-    title: "",
-    description: "",
-    price: "",
-    currency: "USD",
-    status: [],
-    
-    // Location
-    country: "",
+    // Basic Info (matching your JSON structure - excluding auto-generated fields)
+    name: "",
+    location: "",
     city: "",
-    district: "",
-    address: "",
-    
-    // Property Specs
-    baseSquare: "",
+    country: "",
     roomNumber: "",
     floorCount: "",
-    buildingAge: "",
-    
-    // Contact Info
+    baseSquare: "",
+    status: [], // ["For Sale"] or ["For Rent"]
+
+    // Translations object (required by your JSON structure)
+    translations: {
+      en: {
+        description: "",
+        type: "",
+        amenities: [],
+      },
+      tr: {
+        description: "",
+        type: "",
+        amenities: [],
+      },
+      ar: {
+        description: "",
+        type: "",
+        amenities: [],
+      },
+    },
+
+    // Contact Info (seller information - not in JSON but needed)
     ownerName: "",
     ownerSurname: "",
     email: "",
     phone: "",
-    
-    // Additional
-    amenities: [],
-    furnished: "",
-    availableFrom: "",
+
+    // Seller Needs/Expectations (instead of price)
+    sellerNeeds: "",
   });
-  
+
   const [images, setImages] = useState([]);
   const [dragActive, setDragActive] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -62,31 +70,63 @@ const SellForm = () => {
   // Handle input changes
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
-  // Handle checkbox changes for arrays (status, amenities)
-  const handleArrayChange = (name, value, checked) => {
-    setFormData(prev => ({
+  // Handle translation changes
+  const handleTranslationChange = (language, field, value) => {
+    setFormData((prev) => ({
       ...prev,
-      [name]: checked 
+      translations: {
+        ...prev.translations,
+        [language]: {
+          ...prev.translations[language],
+          [field]: value,
+        },
+      },
+    }));
+  };
+
+  // Handle translation array changes (amenities)
+  const handleTranslationArrayChange = (language, field, value, checked) => {
+    setFormData((prev) => ({
+      ...prev,
+      translations: {
+        ...prev.translations,
+        [language]: {
+          ...prev.translations[language],
+          [field]: checked
+            ? [...prev.translations[language][field], value]
+            : prev.translations[language][field].filter(
+                (item) => item !== value
+              ),
+        },
+      },
+    }));
+  };
+
+  // Handle checkbox changes for arrays (status)
+  const handleArrayChange = (name, value, checked) => {
+    setFormData((prev) => ({
+      ...prev,
+      [name]: checked
         ? [...prev[name], value]
-        : prev[name].filter(item => item !== value)
+        : prev[name].filter((item) => item !== value),
     }));
   };
 
   // Handle image upload
   const handleImageUpload = (files) => {
-    const newImages = Array.from(files).map(file => ({
+    const newImages = Array.from(files).map((file) => ({
       file,
       url: URL.createObjectURL(file),
-      id: Math.random().toString(36).substr(2, 9)
+      id: Math.random().toString(36).substr(2, 9),
     }));
-    
-    setImages(prev => [...prev, ...newImages].slice(0, 20)); // Max 20 images
+
+    setImages((prev) => [...prev, ...newImages].slice(0, 50)); // Max 50 images
   };
 
   // Handle drag and drop
@@ -104,7 +144,7 @@ const SellForm = () => {
     e.preventDefault();
     e.stopPropagation();
     setDragActive(false);
-    
+
     if (e.dataTransfer.files && e.dataTransfer.files[0]) {
       handleImageUpload(e.dataTransfer.files);
     }
@@ -112,86 +152,234 @@ const SellForm = () => {
 
   // Remove image
   const removeImage = (imageId) => {
-    setImages(prev => prev.filter(img => img.id !== imageId));
+    setImages((prev) => prev.filter((img) => img.id !== imageId));
   };
 
   // Form validation
   const validateForm = () => {
-    const required = ['type', 'title', 'price', 'country', 'city', 'address', 'baseSquare', 'roomNumber', 'floorCount', 'ownerName', 'ownerSurname', 'email', 'phone'];
-    return required.every(field => formData[field]) && formData.status.length > 0 && images.length > 0;
+    const basicRequired = [
+      "name",
+      "location",
+      "city",
+      "country",
+      "roomNumber",
+      "floorCount",
+      "baseSquare",
+      "ownerName",
+      "ownerSurname",
+      "email",
+      "phone",
+    ];
+    const basicValid = basicRequired.every((field) => formData[field]);
+    const statusValid = formData.status.length > 0;
+    const imagesValid = images.length > 0;
+    const descriptionValid = Object.values(formData.translations).some(
+      (lang) => lang.description
+    );
+
+    return basicValid && statusValid && imagesValid && descriptionValid;
   };
 
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (!validateForm()) {
-      alert(t("pleaseFillAllFields") || "Please fill all required fields and upload at least one image");
+      alert(
+        t("pleaseFillAllFields") ||
+          "Please fill all required fields and upload at least one image"
+      );
       return;
     }
 
     setIsSubmitting(true);
-    
+
     try {
+      // Create the property object matching your JSON structure
+      // Auto-generate the fields that sellers don't fill
+      const propertyData = {
+        // Auto-generated fields (your system will handle these)
+        id: Date.now(), // You'll generate this properly
+        adNumber: Math.random().toString().slice(2, 12), // You'll generate this properly
+        imageCount: images.length,
+        imageFolderName: formData.name
+          .toLowerCase()
+          .replace(/\s+/g, "-")
+          .replace(/[^a-z0-9-]/g, ""),
+        tier: "standard", // You can set default tier or determine based on other factors
+
+        // Fields from the form
+        name: formData.name,
+        location: formData.location,
+        city: formData.city,
+        country: formData.country,
+        roomNumber: parseInt(formData.roomNumber),
+        floorCount: parseInt(formData.floorCount),
+        baseSquare: parseInt(formData.baseSquare),
+        status: formData.status,
+        translations: formData.translations,
+
+        // Seller contact info and needs (separate from property data)
+        sellerInfo: {
+          ownerName: formData.ownerName,
+          ownerSurname: formData.ownerSurname,
+          email: formData.email,
+          phone: formData.phone,
+          sellerNeeds: formData.sellerNeeds,
+          submittedAt: new Date().toISOString(),
+        },
+      };
+
       // Create FormData for file upload
       const submitData = new FormData();
-      
-      // Add form fields
-      Object.keys(formData).forEach(key => {
-        if (Array.isArray(formData[key])) {
-          submitData.append(key, JSON.stringify(formData[key]));
-        } else {
-          submitData.append(key, formData[key]);
-        }
-      });
-      
+      submitData.append("propertyData", JSON.stringify(propertyData));
+
       // Add images
       images.forEach((image, index) => {
         submitData.append(`images[${index}]`, image.file);
       });
-      
+
       // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      setSubmitStatus('success');
-      
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+
+      console.log("Property Data to Submit:", propertyData);
+
+      setSubmitStatus("success");
+
       // Redirect after success
       setTimeout(() => {
-        navigate('/');
+        navigate("/");
       }, 3000);
-      
     } catch (error) {
-      console.error('Submission error:', error);
-      setSubmitStatus('error');
+      console.error("Submission error:", error);
+      setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  // Property type options
-  const propertyTypes = [
-    { value: "apartment", label: t("apartment") || "Apartment" },
-    { value: "villa", label: t("villa") || "Villa" },
-    { value: "house", label: t("house") || "House" },
-    { value: "office", label: t("office") || "Office" },
-    { value: "shop", label: t("shop") || "Shop" },
-    { value: "hotel", label: t("hotel") || "Hotel" },
-    { value: "land", label: t("land") || "Land" },
-    { value: "warehouse", label: t("warehouse") || "Warehouse" },
-  ];
+  // Property type options (matching your data)
+  const propertyTypes = {
+    en: [
+      "Luxury Resort",
+      "Hotel",
+      "Boutique Hotel",
+      "Resort",
+      "Hostel",
+      "Apartment",
+      "Villa",
+      "House",
+      "Office",
+      "Shop",
+      "Land",
+    ],
+    tr: [
+      "Lüks Tatil Köyü",
+      "Otel",
+      "Butik Otel",
+      "Tatil Köyü",
+      "Hostel",
+      "Apartman",
+      "Villa",
+      "Ev",
+      "Ofis",
+      "Dükkan",
+      "Arsa",
+    ],
+    ar: [
+      "منتجع فاخر",
+      "فندق",
+      "فندق بوتيك",
+      "منتجع",
+      "نزل",
+      "شقة",
+      "فيلا",
+      "منزل",
+      "مكتب",
+      "متجر",
+      "أرض",
+    ],
+  };
 
   const statusOptions = [
-    { value: "For Sale", label: t("forSale") },
-    { value: "For Rent", label: t("forRent") },
+    { value: "For Sale", label: t("forSale") || "For Sale" },
+    { value: "For Rent", label: t("forRent") || "For Rent" },
   ];
 
-  const amenitiesOptions = [
-    "Swimming Pool", "Gym", "Parking", "Garden", "Balcony", "Terrace", 
-    "Elevator", "Security", "Air Conditioning", "Heating", "Internet", 
-    "Pet Friendly", "Sea View", "Mountain View", "Near Metro", "Shopping Mall"
-  ];
+  // Amenities matching your data structure
+  const amenitiesOptions = {
+    en: [
+      "WiFi",
+      "Swimming Pool",
+      "Fitness Center",
+      "Restaurant",
+      "Free Parking",
+      "Business Center",
+      "Conference Rooms",
+      "Spa Services",
+      "Room Service",
+      "24/7 Reception",
+      "Air Conditioning",
+      "Heating",
+      "Elevator",
+      "Garden",
+      "Terrace",
+      "Beach Access",
+      "Airport Shuttle",
+      "Pet Friendly",
+    ],
+    tr: [
+      "WiFi",
+      "Yüzme Havuzu",
+      "Fitness Merkezi",
+      "Restoran",
+      "Ücretsiz Park",
+      "İş Merkezi",
+      "Konferans Salonları",
+      "Spa Hizmetleri",
+      "Oda Servisi",
+      "7/24 Resepsiyon",
+      "Klima",
+      "Isıtma",
+      "Asansör",
+      "Bahçe",
+      "Teras",
+      "Plaj Erişimi",
+      "Havaalanı Servisi",
+      "Evcil Hayvan Dostu",
+    ],
+    ar: [
+      "واي فاي",
+      "حمام السباحة",
+      "مركز اللياقة",
+      "مطعم",
+      "موقف مجاني",
+      "مركز الأعمال",
+      "قاعات المؤتمرات",
+      "خدمات السبا",
+      "خدمة الغرف",
+      "استقبال 7/24",
+      "تكييف",
+      "تدفئة",
+      "مصعد",
+      "حديقة",
+      "شرفة",
+      "الوصول للشاطئ",
+      "خدمة المطار",
+      "يسمح بالحيوانات",
+    ],
+  };
 
-  const countries = ["Turkey", "Germany", "UAE", "USA", "UK", "France", "Italy", "Spain"];
+  const countries = [
+    "Turkey",
+    "Germany",
+    "UAE",
+    "USA",
+    "UK",
+    "France",
+    "Italy",
+    "Spain",
+  ];
   const cities = {
     Turkey: ["Istanbul", "Ankara", "Antalya", "Bodrum", "Izmir", "Bursa"],
     Germany: ["Berlin", "Munich", "Hamburg", "Frankfurt"],
@@ -200,7 +388,7 @@ const SellForm = () => {
     UK: ["London", "Manchester", "Birmingham"],
     France: ["Paris", "Lyon", "Marseille"],
     Italy: ["Rome", "Milan", "Naples"],
-    Spain: ["Madrid", "Barcelona", "Valencia"]
+    Spain: ["Madrid", "Barcelona", "Valencia"],
   };
 
   // Success/Error Modal
@@ -208,14 +396,15 @@ const SellForm = () => {
     return (
       <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
         <div className="bg-white rounded-xl p-8 max-w-md w-full text-center shadow-lg">
-          {submitStatus === 'success' ? (
+          {submitStatus === "success" ? (
             <>
               <MdCheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
               <h2 className="text-2xl font-bold text-gray-800 mb-2">
                 {t("propertySubmitted") || "Property Submitted Successfully!"}
               </h2>
               <p className="text-gray-600 mb-6">
-                {t("propertyReviewMessage") || "Your property has been submitted for review. We'll contact you within 24 hours."}
+                {t("propertyReviewMessage") ||
+                  "Your property has been submitted for review. We'll contact you within 24 hours."}
               </p>
               <div className="animate-pulse text-blue-600 font-medium">
                 {t("redirectingHome") || "Redirecting to homepage..."}
@@ -228,7 +417,8 @@ const SellForm = () => {
                 {t("submissionError") || "Submission Error"}
               </h2>
               <p className="text-gray-600 mb-6">
-                {t("submissionErrorMessage") || "Something went wrong. Please try again."}
+                {t("submissionErrorMessage") ||
+                  "Something went wrong. Please try again."}
               </p>
               <button
                 onClick={() => setSubmitStatus(null)}
@@ -246,112 +436,47 @@ const SellForm = () => {
   return (
     <div className="min-h-screen bg-gray-100">
       {/* Modified Navigation */}
-      <Navigation 
-        sellButtonText={t("goBack") || "Go Back"} 
-        sellButtonAction={() => navigate('/')} 
+      <Navigation
+        sellButtonText={t("goBack") || "Go Back"}
+        sellButtonAction={() => navigate("/")}
       />
-      
+
       <div className="max-w-4xl mx-auto py-8 px-4">
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-gray-800 mb-2">
-            {t("sellYourProperty") || "Sell Your Property"}
+            {t("sellYourProperty") || "List Your Property"}
           </h1>
           <p className="text-gray-600">
-            {t("sellPropertyDescription") || "List your property on EbruLoria and reach thousands of potential buyers"}
+            {t("sellPropertyDescription") ||
+              "List your property on EbruLoria and reach thousands of potential buyers"}
           </p>
         </div>
 
-        <form onSubmit={handleSubmit} className="bg-white rounded-xl shadow-lg p-6 space-y-8">
-          
-          {/* Property Information */}
+        <form
+          onSubmit={handleSubmit}
+          className="bg-white rounded-xl shadow-lg p-6 space-y-8"
+        >
+          {/* Basic Property Information */}
           <div className="space-y-6">
             <h2 className="text-xl font-semibold flex items-center border-b pb-2">
               <MdHome className="w-6 h-6 mr-2 text-blue-600" />
-              {t("propertyInformation") || "Property Information"}
+              {t("basicInformation") || "Basic Information"}
             </h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  {t("propertyType") || "Property Type"} *
-                </label>
-                <select
-                  name="type"
-                  value={formData.type}
-                  onChange={handleInputChange}
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  required
-                >
-                  <option value="">{t("selectType") || "Select Type"}</option>
-                  {propertyTypes.map(type => (
-                    <option key={type.value} value={type.value}>
-                      {type.label}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  {t("status") || "Status"} *
-                </label>
-                <div className="flex gap-4 pt-2">
-                  {statusOptions.map(status => (
-                    <label key={status.value} className="flex items-center">
-                      <input
-                        type="checkbox"
-                        checked={formData.status.includes(status.value)}
-                        onChange={(e) => handleArrayChange('status', status.value, e.target.checked)}
-                        className="mr-2 text-blue-600 focus:ring-blue-500 rounded"
-                      />
-                      {status.label}
-                    </label>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                {t("propertyTitle") || "Property Title"} *
-              </label>
-              <input
-                type="text"
-                name="title"
-                value={formData.title}
-                onChange={handleInputChange}
-                placeholder={t("enterPropertyTitle") || "e.g., Luxury 3+1 Apartment in Beşiktaş"}
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                required
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                {t("description") || "Description"}
-              </label>
-              <textarea
-                name="description"
-                value={formData.description}
-                onChange={handleInputChange}
-                placeholder={t("enterDescription") || "Describe your property, features, neighborhood, etc."}
-                rows={4}
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              />
-            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  {t("price") || "Price"} *
+                  {t("propertyName") || "Property Name"} *
                 </label>
                 <input
-                  type="number"
-                  name="price"
-                  value={formData.price}
+                  type="text"
+                  name="name"
+                  value={formData.name}
                   onChange={handleInputChange}
-                  placeholder="0"
+                  placeholder={
+                    t("enterPropertyName") || "e.g., Luxury Beachfront Hotel"
+                  }
                   className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   required
                 />
@@ -359,19 +484,27 @@ const SellForm = () => {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  {t("currency") || "Currency"} *
+                  {t("status") || "Status"} *
                 </label>
-                <select
-                  name="currency"
-                  value={formData.currency}
-                  onChange={handleInputChange}
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                >
-                  <option value="USD">USD ($)</option>
-                  <option value="EUR">EUR (€)</option>
-                  <option value="TRY">TRY (₺)</option>
-                  <option value="GBP">GBP (£)</option>
-                </select>
+                <div className="flex gap-4 pt-2">
+                  {statusOptions.map((status) => (
+                    <label key={status.value} className="flex items-center">
+                      <input
+                        type="checkbox"
+                        checked={formData.status.includes(status.value)}
+                        onChange={(e) =>
+                          handleArrayChange(
+                            "status",
+                            status.value,
+                            e.target.checked
+                          )
+                        }
+                        className="mr-2 text-blue-600 focus:ring-blue-500 rounded"
+                      />
+                      {status.label}
+                    </label>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -395,8 +528,10 @@ const SellForm = () => {
                   className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   required
                 >
-                  <option value="">{t("selectCountry") || "Select Country"}</option>
-                  {countries.map(country => (
+                  <option value="">
+                    {t("selectCountry") || "Select Country"}
+                  </option>
+                  {countries.map((country) => (
                     <option key={country} value={country}>
                       {country}
                     </option>
@@ -416,39 +551,28 @@ const SellForm = () => {
                   required
                 >
                   <option value="">{t("selectCity") || "Select City"}</option>
-                  {formData.country && cities[formData.country]?.map(city => (
-                    <option key={city} value={city}>
-                      {city}
-                    </option>
-                  ))}
+                  {formData.country &&
+                    cities[formData.country]?.map((city) => (
+                      <option key={city} value={city}>
+                        {city}
+                      </option>
+                    ))}
                 </select>
               </div>
             </div>
 
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                {t("district") || "District"}
+                {t("location") || "Location/District"} *
               </label>
               <input
                 type="text"
-                name="district"
-                value={formData.district}
+                name="location"
+                value={formData.location}
                 onChange={handleInputChange}
-                placeholder={t("enterDistrict") || "e.g., Beşiktaş, Kadıköy"}
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                {t("address") || "Address"} *
-              </label>
-              <textarea
-                name="address"
-                value={formData.address}
-                onChange={handleInputChange}
-                placeholder={t("enterAddress") || "Full address of the property"}
-                rows={2}
+                placeholder={
+                  t("enterLocation") || "e.g., Beachfront District, City Center"
+                }
                 className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 required
               />
@@ -465,14 +589,14 @@ const SellForm = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  {t("area") || "Area"} (m²) *
+                  {t("baseSquare") || "Base Square"} (m²) *
                 </label>
                 <input
                   type="number"
                   name="baseSquare"
                   value={formData.baseSquare}
                   onChange={handleInputChange}
-                  placeholder="120"
+                  placeholder="65"
                   className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   required
                 />
@@ -480,92 +604,169 @@ const SellForm = () => {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  {t("rooms") || "Rooms"} *
+                  {t("roomNumber") || "Number of Rooms"} *
                 </label>
-                <select
+                <input
+                  type="number"
                   name="roomNumber"
                   value={formData.roomNumber}
                   onChange={handleInputChange}
+                  placeholder="50"
+                  min="1"
                   className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   required
-                >
-                  <option value="">{t("selectRooms") || "Select Rooms"}</option>
-                  {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(num => (
-                    <option key={num} value={num}>
-                      {num} {t("rooms") || "Rooms"}
-                    </option>
-                  ))}
-                </select>
+                />
               </div>
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  {t("floors") || "Floors"} *
+                  {t("floorCount") || "Floor Count"} *
                 </label>
                 <input
                   type="number"
                   name="floorCount"
                   value={formData.floorCount}
                   onChange={handleInputChange}
-                  placeholder="1"
+                  placeholder="5"
                   min="1"
                   className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   required
                 />
               </div>
             </div>
+          </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  {t("buildingAge") || "Building Age"} ({t("years") || "years"})
-                </label>
-                <input
-                  type="number"
-                  name="buildingAge"
-                  value={formData.buildingAge}
-                  onChange={handleInputChange}
-                  placeholder="5"
-                  min="0"
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                />
-              </div>
+          {/* Multi-language Content */}
+          <div className="space-y-6">
+            <h2 className="text-xl font-semibold flex items-center border-b pb-2">
+              <MdDescription className="w-6 h-6 mr-2 text-blue-600" />
+              {t("propertyContent") || "Property Content"} (
+              {t("multiLanguage") || "Multi-Language"})
+            </h2>
 
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  {t("furnished") || "Furnished"}
-                </label>
-                <select
-                  name="furnished"
-                  value={formData.furnished}
-                  onChange={handleInputChange}
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            {/* Language Tabs */}
+            <div className="flex space-x-1 bg-gray-100 p-1 rounded-lg">
+              {["en", "tr", "ar"].map((lang) => (
+                <button
+                  key={lang}
+                  type="button"
+                  onClick={() => setCurrentTab(lang)}
+                  className={`flex-1 py-2 px-4 text-sm font-medium rounded-md ${
+                    currentTab === lang
+                      ? "bg-white text-blue-600 shadow-sm"
+                      : "text-gray-500 hover:text-gray-700"
+                  }`}
                 >
-                  <option value="">{t("selectFurnished") || "Select Option"}</option>
-                  <option value="yes">{t("yes") || "Yes"}</option>
-                  <option value="no">{t("no") || "No"}</option>
-                  <option value="partial">{t("partial") || "Partially"}</option>
-                </select>
-              </div>
+                  {lang.toUpperCase()}
+                </button>
+              ))}
             </div>
+
+            {/* Content for each language */}
+            {["en", "tr", "ar"].map((lang) => (
+              <div
+                key={lang}
+                className={`space-y-4 ${currentTab !== lang ? "hidden" : ""}`}
+              >
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    {t("propertyType") || "Property Type"} ({lang.toUpperCase()}
+                    ) *
+                  </label>
+                  <select
+                    value={formData.translations[lang].type}
+                    onChange={(e) =>
+                      handleTranslationChange(lang, "type", e.target.value)
+                    }
+                    className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    required
+                  >
+                    <option value="">{t("selectType") || "Select Type"}</option>
+                    {propertyTypes[lang]?.map((type) => (
+                      <option key={type} value={type}>
+                        {type}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    {t("description") || "Description"} ({lang.toUpperCase()}) *
+                  </label>
+                  <textarea
+                    value={formData.translations[lang].description}
+                    onChange={(e) =>
+                      handleTranslationChange(
+                        lang,
+                        "description",
+                        e.target.value
+                      )
+                    }
+                    placeholder={
+                      t("enterDetailedDescription") ||
+                      "Enter detailed property description, features, location benefits, etc."
+                    }
+                    rows={8}
+                    className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    required={lang === "en"} // At least English description required
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    {t("amenities") || "Amenities"} ({lang.toUpperCase()})
+                  </label>
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-2 max-h-48 overflow-y-auto border border-gray-200 p-3 rounded-lg">
+                    {amenitiesOptions[lang]?.map((amenity) => (
+                      <label key={amenity} className="flex items-center">
+                        <input
+                          type="checkbox"
+                          checked={formData.translations[
+                            lang
+                          ].amenities.includes(amenity)}
+                          onChange={(e) =>
+                            handleTranslationArrayChange(
+                              lang,
+                              "amenities",
+                              amenity,
+                              e.target.checked
+                            )
+                          }
+                          className="mr-2 text-blue-600 focus:ring-blue-500 rounded"
+                        />
+                        <span className="text-sm">{amenity}</span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Seller Needs/Expectations (instead of price) */}
+          <div className="space-y-6">
+            <h2 className="text-xl font-semibold flex items-center border-b pb-2">
+              <MdDescription className="w-6 h-6 mr-2 text-blue-600" />
+              {t("sellerExpectations") || "Your Needs & Expectations"}
+            </h2>
 
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                {t("amenities") || "Amenities"}
+                {t("whatAreYouLookingFor") || "What are you looking for?"} *
               </label>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
-                {amenitiesOptions.map(amenity => (
-                  <label key={amenity} className="flex items-center">
-                    <input
-                      type="checkbox"
-                      checked={formData.amenities.includes(amenity)}
-                      onChange={(e) => handleArrayChange('amenities', amenity, e.target.checked)}
-                      className="mr-2 text-blue-600 focus:ring-blue-500 rounded"
-                    />
-                    <span className="text-sm">{amenity}</span>
-                  </label>
-                ))}
-              </div>
+              <textarea
+                name="sellerNeeds"
+                value={formData.sellerNeeds}
+                onChange={handleInputChange}
+                placeholder={
+                  t("sellerNeedsPlaceholder") ||
+                  "Tell us about your expectations: price range, timeline, specific requirements, negotiation preferences, etc."
+                }
+                rows={4}
+                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                required
+              />
             </div>
           </div>
 
@@ -639,19 +840,6 @@ const SellForm = () => {
                 />
               </div>
             </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                {t("availableFrom") || "Available From"}
-              </label>
-              <input
-                type="date"
-                name="availableFrom"
-                value={formData.availableFrom}
-                onChange={handleInputChange}
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              />
-            </div>
           </div>
 
           {/* Image Upload */}
@@ -664,9 +852,9 @@ const SellForm = () => {
             {/* Image Upload Area */}
             <div
               className={`border-2 border-dashed rounded-lg p-8 text-center transition-colors ${
-                dragActive 
-                  ? 'border-blue-500 bg-blue-50' 
-                  : 'border-gray-300 hover:border-gray-400'
+                dragActive
+                  ? "border-blue-500 bg-blue-50"
+                  : "border-gray-300 hover:border-gray-400"
               }`}
               onDragEnter={handleDrag}
               onDragLeave={handleDrag}
@@ -695,7 +883,8 @@ const SellForm = () => {
                 {t("selectImages") || "Select Images"}
               </label>
               <p className="text-sm text-gray-500 mt-4">
-                {t("maxImages") || "Maximum 20 images, JPG, PNG, or WEBP format"}
+                {t("maxImagesProperty") ||
+                  "Upload high-quality images of your property (JPG, PNG, WEBP)"}
               </p>
             </div>
 
@@ -703,7 +892,7 @@ const SellForm = () => {
             {images.length > 0 && (
               <div>
                 <h3 className="text-lg font-medium mb-4">
-                  {t("uploadedImages") || "Uploaded Images"} ({images.length}/20)
+                  {t("uploadedImages") || "Uploaded Images"} ({images.length})
                 </h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
                   {images.map((image) => (
@@ -734,8 +923,8 @@ const SellForm = () => {
               disabled={isSubmitting || !validateForm()}
               className={`px-8 py-3 rounded-lg font-semibold text-white transition-colors ${
                 isSubmitting || !validateForm()
-                  ? 'bg-gray-400 cursor-not-allowed'
-                  : 'bg-blue-600 hover:bg-blue-700'
+                  ? "bg-gray-400 cursor-not-allowed"
+                  : "bg-blue-600 hover:bg-blue-700"
               }`}
             >
               {isSubmitting ? (
