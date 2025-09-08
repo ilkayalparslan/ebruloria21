@@ -49,6 +49,24 @@ export const translations = {
       "Let our expert team help you discover the ideal home or investment opportunity.",
     scheduleConsultation: "Schedule Consultation",
     browseListings: "Browse Listings",
+
+    // Home4 component content
+    explorePortfolioTitle: "Explore Our",
+    portfolioHighlight: "Property Portfolio",
+    portfolioSubtitle:
+      "Take a journey through our curated collection of exceptional properties and investment opportunities.",
+    modernLivingSpaces: "Modern Living Spaces",
+    modernLivingDesc: "Contemporary design meets functionality",
+    luxuryInteriors: "Luxury Interiors",
+    luxuryInteriorsDesc: "Sophisticated spaces for refined living",
+    urbanArchitecture: "Urban Architecture",
+    urbanArchitectureDesc: "Innovative solutions for city life",
+    scenicProperties: "Scenic Properties",
+    scenicPropertiesDesc: "Properties with breathtaking views",
+    smartHomes: "Smart Homes",
+    smartHomesDesc: "Technology integrated living",
+    viewAllProperties: "View All Properties",
+    contactAgent: "Contact Agent",
   },
   tr: {
     // Navigation
@@ -98,6 +116,24 @@ export const translations = {
       "Uzman ekibimizin ideal ev veya yatırım fırsatını keşfetmenize yardım etmesine izin verin.",
     scheduleConsultation: "Danışmanlık Planlayın",
     browseListings: "İlanları Gözden Geçirin",
+
+    // Home4 component content
+    explorePortfolioTitle: "Mülk",
+    portfolioHighlight: "Portföyümüzü Keşfedin",
+    portfolioSubtitle:
+      "İstisnai mülkler ve yatırım fırsatlarından oluşan özenle seçilmiş koleksiyonumuzda bir yolculuğa çıkın.",
+    modernLivingSpaces: "Modern Yaşam Alanları",
+    modernLivingDesc: "Çağdaş tasarım işlevsellikle buluşuyor",
+    luxuryInteriors: "Lüks İç Mekanlar",
+    luxuryInteriorsDesc: "Rafine yaşam için sofistike alanlar",
+    urbanArchitecture: "Kentsel Mimari",
+    urbanArchitectureDesc: "Şehir yaşamı için yenilikçi çözümler",
+    scenicProperties: "Manzaralı Mülkler",
+    scenicPropertiesDesc: "Nefes kesen manzaralı mülkler",
+    smartHomes: "Akıllı Evler",
+    smartHomesDesc: "Teknoloji entegre yaşam",
+    viewAllProperties: "Tüm Mülkleri Görüntüle",
+    contactAgent: "Temsilci ile İletişim",
   },
   ar: {
     // Navigation
@@ -148,6 +184,24 @@ export const translations = {
     "دع فريقنا الخبير يساعدك في اكتشاف المنزل أو فرصة الاستثمار المثالية.",
   scheduleConsultation: "جدولة استشارة",
   browseListings: "تصفح القوائم",
+
+  // Home4 component content
+  explorePortfolioTitle: "استكشف",
+  portfolioHighlight: "محفظة العقارات",
+  portfolioSubtitle:
+    "قم برحلة عبر مجموعتنا المنتقاة من العقارات الاستثنائية وفرص الاستثمار.",
+  modernLivingSpaces: "مساحات المعيشة الحديثة",
+  modernLivingDesc: "التصميم المعاصر يلتقي بالوظائف",
+  luxuryInteriors: "التصاميم الداخلية الفاخرة",
+  luxuryInteriorsDesc: "مساحات أنيقة للعيش الراقي",
+  urbanArchitecture: "العمارة الحضرية",
+  urbanArchitectureDesc: "حلول مبتكرة لحياة المدينة",
+  scenicProperties: "العقارات ذات المناظر الخلابة",
+  scenicPropertiesDesc: "عقارات بإطلالات خلابة",
+  smartHomes: "المنازل الذكية",
+  smartHomesDesc: "المعيشة المتكاملة مع التكنولوجيا",
+  viewAllProperties: "عرض جميع العقارات",
+  contactAgent: "اتصل بالوكيل",
 };
 
 export const useTranslation = () => {

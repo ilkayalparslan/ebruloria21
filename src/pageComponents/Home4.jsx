@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useTranslation } from "../translations.js";
 
 // Import home images
 import pic8 from "../assets/images/home/pic-8.jpg";
@@ -7,42 +8,43 @@ import pic10 from "../assets/images/home/pic-10.jpg";
 import pic11 from "../assets/images/home/pic-11.jpg";
 import pic12 from "../assets/images/home/pic-12.jpg";
 
-const PORTFOLIO_ITEMS = [
-  {
-    id: 1,
-    title: "Modern Living Spaces",
-    image: pic8,
-    description: "Contemporary design meets functionality",
-  },
-  {
-    id: 2,
-    title: "Luxury Interiors",
-    image: pic9,
-    description: "Sophisticated spaces for refined living",
-  },
-  {
-    id: 3,
-    title: "Urban Architecture",
-    image: pic10,
-    description: "Innovative solutions for city life",
-  },
-  {
-    id: 4,
-    title: "Scenic Properties",
-    image: pic11,
-    description: "Properties with breathtaking views",
-  },
-  {
-    id: 5,
-    title: "Smart Homes",
-    image: pic12,
-    description: "Technology integrated living",
-  },
-];
-
 function Home4() {
+  const { t } = useTranslation();
   const [activeIndex, setActiveIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+
+  const PORTFOLIO_ITEMS = [
+    {
+      id: 1,
+      title: t("modernLivingSpaces"),
+      image: pic8,
+      description: t("modernLivingDesc"),
+    },
+    {
+      id: 2,
+      title: t("luxuryInteriors"),
+      image: pic9,
+      description: t("luxuryInteriorsDesc"),
+    },
+    {
+      id: 3,
+      title: t("urbanArchitecture"),
+      image: pic10,
+      description: t("urbanArchitectureDesc"),
+    },
+    {
+      id: 4,
+      title: t("scenicProperties"),
+      image: pic11,
+      description: t("scenicPropertiesDesc"),
+    },
+    {
+      id: 5,
+      title: t("smartHomes"),
+      image: pic12,
+      description: t("smartHomesDesc"),
+    },
+  ];
 
   // Auto-play functionality
   useEffect(() => {
@@ -53,7 +55,7 @@ function Home4() {
     }, 4000);
 
     return () => clearInterval(interval);
-  }, [isAutoPlaying]);
+  }, [isAutoPlaying, PORTFOLIO_ITEMS.length]);
 
   const nextSlide = () => {
     setIsAutoPlaying(false);
@@ -102,14 +104,13 @@ function Home4() {
           {/* Header Section */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 font-inter">
-              Explore Our{" "}
+              {t("explorePortfolioTitle")}{" "}
               <span className="text-primary-light bg-gradient-to-r from-primary-light to-accent bg-clip-text text-transparent">
-                Property Portfolio
+                {t("portfolioHighlight")}
               </span>
             </h2>
             <p className="text-xl text-white/90 max-w-2xl mx-auto font-inter leading-relaxed">
-              Take a journey through our curated collection of exceptional
-              properties and investment opportunities.
+              {t("portfolioSubtitle")}
             </p>
           </div>
 
@@ -186,7 +187,7 @@ function Home4() {
           {/* Navigation Links */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
             <button className="group flex items-center gap-3 text-white hover:text-primary-light transition-all duration-300 text-lg font-medium bg-white/10 hover:bg-white/20 px-6 py-3 rounded-full backdrop-blur-sm">
-              <span className="relative">View All Properties</span>
+              <span className="relative">{t("viewAllProperties")}</span>
               <svg
                 className="w-5 h-5 transform group-hover:translate-x-2 transition-transform duration-300"
                 fill="none"
@@ -202,7 +203,7 @@ function Home4() {
               </svg>
             </button>
             <button className="group flex items-center gap-3 text-white hover:text-accent transition-all duration-300 text-lg font-medium bg-white/10 hover:bg-white/20 px-6 py-3 rounded-full backdrop-blur-sm">
-              <span className="relative">Contact Agent</span>
+              <span className="relative">{t("contactAgent")}</span>
               <svg
                 className="w-5 h-5 transform group-hover:translate-x-2 transition-transform duration-300"
                 fill="none"
