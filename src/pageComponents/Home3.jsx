@@ -1,24 +1,26 @@
 import React from "react";
+import { useTranslation } from "../data/translations";
 
 // Import home images
 import pic6 from "../assets/images/home/pic-6.jpg";
 import pic7 from "../assets/images/home/pic-7.jpg";
 
 function Home3() {
+  const { t } = useTranslation();
+
   return (
     <section className="w-full min-h-screen bg-gray-50 py-20 flex flex-col items-center justify-start relative">
       <div className="w-full max-w-7xl mx-auto px-6 md:px-12 flex flex-col items-center gap-16">
         {/* Header Section */}
         <div className="text-center max-w-4xl flex flex-col items-center gap-6">
           <h2 className="text-5xl md:text-6xl font-light text-gray-800 font-inter leading-tight tracking-tight">
-            Premium Real Estate Solutions
+            {t("home3Title")}
           </h2>
           <p className="text-xl text-gray-600 font-inter leading-relaxed max-w-2xl">
-            Discover exceptional homes and luxury hotel investments with
-            EbruLoria. From modern residences to premium hospitality properties.
+            {t("home3Subtitle")}
           </p>
           <button className="group flex items-center gap-3 text-gray-800 hover:text-primary-dark transition-colors duration-300 text-lg font-medium font-inter mt-4">
-            <span>Explore Our Portfolio</span>
+            <span>{t("explorePortfolio")}</span>
             <svg
               className="w-6 h-6 transform group-hover:translate-x-2 transition-transform duration-300"
               fill="none"
@@ -51,7 +53,7 @@ function Home3() {
                 {/* Top Badge */}
                 <div className="self-start">
                   <span className="inline-block bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium">
-                    Residential
+                    {t("residential")}
                   </span>
                 </div>
 
@@ -60,21 +62,23 @@ function Home3() {
                   <h3 className="text-4xl md:text-5xl font-light font-inter tracking-wider opacity-90">
                     EbruLoria
                   </h3>
-                  <p className="text-lg font-inter mt-2 opacity-80">Homes</p>
+                  <p className="text-lg font-inter mt-2 opacity-80">
+                    {t("homes")}
+                  </p>
                 </div>
 
                 {/* Bottom Content */}
                 <div className="space-y-3">
                   <h4 className="text-2xl font-semibold font-inter">
-                    Modern Living Spaces
+                    {t("modernLiving")}
                   </h4>
                   <p className="text-white/90 font-inter leading-relaxed">
-                    Contemporary apartments, luxury villas, and family homes
-                    designed for modern living with premium amenities and prime
-                    locations.
+                    {t("modernLivingDesc")}
                   </p>
                   <div className="flex items-center gap-2 text-primary-light">
-                    <span className="text-sm font-medium">View Properties</span>
+                    <span className="text-sm font-medium">
+                      {t("viewProperties")}
+                    </span>
                     <svg
                       className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300"
                       fill="none"
@@ -108,7 +112,7 @@ function Home3() {
                 {/* Top Badge */}
                 <div className="self-start">
                   <span className="inline-block bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium">
-                    Commercial
+                    {t("commercial")}
                   </span>
                 </div>
 
@@ -117,21 +121,23 @@ function Home3() {
                   <h3 className="text-4xl md:text-5xl font-light font-inter tracking-wider opacity-90">
                     EbruLoria
                   </h3>
-                  <p className="text-lg font-inter mt-2 opacity-80">Hotels</p>
+                  <p className="text-lg font-inter mt-2 opacity-80">
+                    {t("hotels")}
+                  </p>
                 </div>
 
                 {/* Bottom Content */}
                 <div className="space-y-3">
                   <h4 className="text-2xl font-semibold font-inter">
-                    Luxury Hotel Investments
+                    {t("luxuryHotels")}
                   </h4>
                   <p className="text-white/90 font-inter leading-relaxed">
-                    Premium hospitality properties, boutique hotels, and
-                    commercial real estate opportunities with excellent ROI
-                    potential.
+                    {t("luxuryHotelsDesc")}
                   </p>
                   <div className="flex items-center gap-2 text-accent-light">
-                    <span className="text-sm font-medium">View Hotels</span>
+                    <span className="text-sm font-medium">
+                      {t("viewHotels")}
+                    </span>
                     <svg
                       className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300"
                       fill="none"
@@ -158,37 +164,42 @@ function Home3() {
             <div className="text-3xl font-bold text-primary-dark mb-2 font-inter">
               500+
             </div>
-            <div className="text-gray-600 font-inter">Properties Sold</div>
+            <div className="text-gray-600 font-inter">
+              {t("propertiesSold")}
+            </div>
           </div>
           <div className="text-center">
             <div className="text-3xl font-bold text-primary-dark mb-2 font-inter">
               15+
             </div>
-            <div className="text-gray-600 font-inter">Years Experience</div>
+            <div className="text-gray-600 font-inter">
+              {t("yearsExperience")}
+            </div>
           </div>
           <div className="text-center">
             <div className="text-3xl font-bold text-primary-dark mb-2 font-inter">
               98%
             </div>
-            <div className="text-gray-600 font-inter">Client Satisfaction</div>
+            <div className="text-gray-600 font-inter">
+              {t("clientSatisfaction")}
+            </div>
           </div>
         </div>
 
         {/* Call-to-Action */}
         <div className="text-center bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl p-8 max-w-3xl">
           <h3 className="text-2xl font-semibold text-gray-800 mb-4 font-inter">
-            Ready to Find Your Perfect Property?
+            {t("readyToFind")}
           </h3>
           <p className="text-gray-600 mb-6 font-inter">
-            Let our expert team help you discover the ideal home or investment
-            opportunity.
+            {t("readyToFindDesc")}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-full font-medium transition-colors duration-300 font-inter">
-              Schedule Consultation
+              {t("scheduleConsultation")}
             </button>
             <button className="bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 rounded-full font-medium transition-all duration-300 font-inter">
-              Browse Listings
+              {t("browseListings")}
             </button>
           </div>
         </div>

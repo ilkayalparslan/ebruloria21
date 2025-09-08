@@ -23,6 +23,32 @@ export const translations = {
     ourTeam: "Our Team",
     since2010: "SINCE 2010",
     scroll: "SCROLL",
+
+    // Home3 component content
+    home3Title: "Premium Real Estate Solutions",
+    home3Subtitle:
+      "Discover exceptional homes and luxury hotel investments with EbruLoria. From modern residences to premium hospitality properties.",
+    explorePortfolio: "Explore Our Portfolio",
+    residential: "Residential",
+    commercial: "Commercial",
+    homes: "Homes",
+    hotels: "Hotels",
+    modernLiving: "Modern Living Spaces",
+    modernLivingDesc:
+      "Contemporary apartments, luxury villas, and family homes designed for modern living with premium amenities and prime locations.",
+    viewProperties: "View Properties",
+    luxuryHotels: "Luxury Hotel Investments",
+    luxuryHotelsDesc:
+      "Premium hospitality properties, boutique hotels, and commercial real estate opportunities with excellent ROI potential.",
+    viewHotels: "View Hotels",
+    propertiesSold: "Properties Sold",
+    yearsExperience: "Years Experience",
+    clientSatisfaction: "Client Satisfaction",
+    readyToFind: "Ready to Find Your Perfect Property?",
+    readyToFindDesc:
+      "Let our expert team help you discover the ideal home or investment opportunity.",
+    scheduleConsultation: "Schedule Consultation",
+    browseListings: "Browse Listings",
   },
   tr: {
     // Navigation
@@ -46,6 +72,32 @@ export const translations = {
     ourTeam: "Ekibimiz",
     since2010: "2010'DAN BERİ",
     scroll: "KAYDIR",
+
+    // Home3 component content
+    home3Title: "Premium Gayrimenkul Çözümleri",
+    home3Subtitle:
+      "EbruLoria ile istisnai evler ve lüks otel yatırımları keşfedin. Modern konutlardan premium konaklama tesislerine kadar.",
+    explorePortfolio: "Portföyümüzü Keşfedin",
+    residential: "Konut",
+    commercial: "Ticari",
+    homes: "Evler",
+    hotels: "Oteller",
+    modernLiving: "Modern Yaşam Alanları",
+    modernLivingDesc:
+      "Modern yaşam için tasarlanmış çağdaş apartmanlar, lüks villalar ve aile evleri; premium olanaklar ve prestijli konumlar.",
+    viewProperties: "Mülkleri Görüntüle",
+    luxuryHotels: "Lüks Otel Yatırımları",
+    luxuryHotelsDesc:
+      "Mükemmel yatırım getirisi potansiyeli olan premium konaklama tesisleri, butik oteller ve ticari gayrimenkul fırsatları.",
+    viewHotels: "Otelleri Görüntüle",
+    propertiesSold: "Satılan Mülk",
+    yearsExperience: "Yıl Deneyim",
+    clientSatisfaction: "Müşteri Memnuniyeti",
+    readyToFind: "Mükemmel Mülkünüzü Bulmaya Hazır mısınız?",
+    readyToFindDesc:
+      "Uzman ekibimizin ideal ev veya yatırım fırsatını keşfetmenize yardım etmesine izin verin.",
+    scheduleConsultation: "Danışmanlık Planlayın",
+    browseListings: "İlanları Gözden Geçirin",
   },
   ar: {
     // Navigation
@@ -70,6 +122,32 @@ export const translations = {
     since2010: "منذ 2010",
     scroll: "تصفح",
   },
+
+  // Home3 component content
+  home3Title: "حلول العقارات المتميزة",
+  home3Subtitle:
+    "اكتشف المنازل الاستثنائية واستثمارات الفنادق الفاخرة مع إبرولوريا. من المساكن الحديثة إلى خصائص الضيافة المتميزة.",
+  explorePortfolio: "استكشف محفظتنا",
+  residential: "سكني",
+  commercial: "تجاري",
+  homes: "المنازل",
+  hotels: "الفنادق",
+  modernLiving: "مساحات المعيشة الحديثة",
+  modernLivingDesc:
+    "شقق عصرية وفيلات فاخرة ومنازل عائلية مصممة للحياة العصرية مع وسائل الراحة المتميزة والمواقع المرموقة.",
+  viewProperties: "عرض العقارات",
+  luxuryHotels: "استثمارات الفنادق الفاخرة",
+  luxuryHotelsDesc:
+    "خصائص ضيافة متميزة وفنادق بوتيك وفرص عقارية تجارية بإمكانية عائد استثمار ممتاز.",
+  viewHotels: "عرض الفنادق",
+  propertiesSold: "العقارات المباعة",
+  yearsExperience: "سنة خبرة",
+  clientSatisfaction: "رضا العملاء",
+  readyToFind: "مستعد لإيجاد عقارك المثالي؟",
+  readyToFindDesc:
+    "دع فريقنا الخبير يساعدك في اكتشاف المنزل أو فرصة الاستثمار المثالية.",
+  scheduleConsultation: "جدولة استشارة",
+  browseListings: "تصفح القوائم",
 };
 
 export const useTranslation = () => {
