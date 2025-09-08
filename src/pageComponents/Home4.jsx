@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useTranslation } from "../translations.js";
+import { useTranslation } from "..data/translations.js";
 
 // Import home images
 import pic8 from "../assets/images/home/pic-8.jpg";
