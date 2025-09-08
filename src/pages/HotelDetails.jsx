@@ -57,6 +57,51 @@ const HotelDetails = () => {
   const navigate = useNavigate();
   const { t, currentLanguage } = useTranslation();
 
+  // Helper function to translate location names
+  const translateLocation = (city, country) => {
+    const locationTranslations = {
+      // Countries
+      Turkey: {
+        en: "Turkey",
+        tr: "Türkiye",
+        ar: "تركيا",
+      },
+      // Cities
+      Istanbul: {
+        en: "Istanbul",
+        tr: "İstanbul",
+        ar: "إسطنبول",
+      },
+      Ankara: {
+        en: "Ankara",
+        tr: "Ankara",
+        ar: "أنقرة",
+      },
+      Antalya: {
+        en: "Antalya",
+        tr: "Antalya",
+        ar: "أنطاليا",
+      },
+      Bodrum: {
+        en: "Bodrum",
+        tr: "Bodrum",
+        ar: "بودروم",
+      },
+      Izmir: {
+        en: "Izmir",
+        tr: "İzmir",
+        ar: "إزمير",
+      },
+    };
+
+    const translatedCity =
+      locationTranslations[city]?.[currentLanguage] || city;
+    const translatedCountry =
+      locationTranslations[country]?.[currentLanguage] || country;
+
+    return { translatedCity, translatedCountry };
+  };
+
   const [hotel, setHotel] = useState(null);
   const [loading, setLoading] = useState(true);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -191,6 +236,10 @@ const HotelDetails = () => {
   }
 
   const images = getHotelImages(hotel);
+  const { translatedCity, translatedCountry } = translateLocation(
+    hotel.city,
+    hotel.country
+  );
 
   return (
     <div className="min-h-screen bg-gray-100">
@@ -282,7 +331,7 @@ const HotelDetails = () => {
           <div className="flex items-center mb-4">
             <MdLocationOn className="w-5 h-5 text-gray-600 mr-2" />
             <h1 className="text-2xl font-bold text-gray-800">
-              {hotel.city}, {hotel.country}
+              {translatedCity}, {translatedCountry}
             </h1>
           </div>
 
@@ -457,7 +506,7 @@ const HotelDetails = () => {
                 {t("hotels")}
               </button>
               <span className="mx-2">›</span>
-              <span className="text-gray-800">{hotel.city}</span>
+              <span className="text-gray-800">{translatedCity}</span>
               <span className="mx-2">›</span>
               <span className="text-gray-800">{hotel.adNumber}</span>
             </div>
@@ -562,7 +611,7 @@ const HotelDetails = () => {
               <div className="flex items-center mb-6">
                 <MdLocationOn className="w-5 h-5 text-gray-600 mr-2" />
                 <h1 className="text-2xl font-bold text-gray-800">
-                  {hotel.city}, {hotel.country}
+                  {translatedCity}, {translatedCountry}
                 </h1>
               </div>
 
