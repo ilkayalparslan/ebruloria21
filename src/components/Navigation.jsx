@@ -10,7 +10,7 @@ import React, { useState } from "react";
 import { FiSearch, FiMenu, FiX, FiChevronDown } from "react-icons/fi";
 import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "../data/translations";
-import { useLanguage } from "../data/languageContext";
+import { useLanguage } from "../data/languageContext.jsx";
 
 const Navigation = () => {
   const { t } = useTranslation();

@@ -1,4 +1,4 @@
-import { useLanguage } from "./languageContext";
+import { useLanguage } from "./languageContext.jsx";
 
 export const translations = {
   en: {
