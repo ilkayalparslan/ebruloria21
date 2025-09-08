@@ -9,8 +9,12 @@
 import React, { useState } from "react";
 import { FiSearch, FiMenu, FiX, FiChevronDown } from "react-icons/fi";
 import { Link, useLocation } from "react-router-dom";
+import { useTranslation } from "../data/translations";
+import { useLanguage } from "../data/languageContext";
 
 const Navigation = () => {
+  const { t } = useTranslation();
+  const { language, changeLanguage } = useLanguage();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
   const [isSearchExpanded, setIsSearchExpanded] = useState(false);
@@ -60,7 +64,7 @@ const Navigation = () => {
               {/* Search Input - expands to the left */}
               <input
                 type="text"
-                placeholder="Search..."
+                placeholder={t("search")}
                 className={`transition-all duration-300 h-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent ${
                   isSearchExpanded
                     ? "w-64 pl-4 pr-12 opacity-100"
@@ -86,16 +90,28 @@ const Navigation = () => {
                 onClick={toggleLanguage}
                 className="flex items-center space-x-1 text-gray-700 hover:text-primary"
               >
-                <span>EN</span>
+                <span>{language.toUpperCase()}</span>
                 <FiChevronDown size={16} />
               </button>
               {isLanguageOpen && (
                 <div className="absolute top-full mt-2 right-0 bg-white border border-gray-200 rounded-md shadow-lg py-2 min-w-[80px]">
-                  <button className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                  <button
+                    onClick={() => changeLanguage("en")}
+                    className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >
                     EN
                   </button>
-                  <button className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                  <button
+                    onClick={() => changeLanguage("tr")}
+                    className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >
                     TR
+                  </button>
+                  <button
+                    onClick={() => changeLanguage("ar")}
+                    className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >
+                    AR
                   </button>
                 </div>
               )}
@@ -106,21 +122,21 @@ const Navigation = () => {
               to="/homes"
               className="text-gray-700 hover:text-primary font-medium"
             >
-              Homes
+              {t("homes")}
             </Link>
             {!isHotelsPage && (
               <Link
                 to="/hotels"
                 className="text-gray-700 hover:text-primary font-medium"
               >
-                Hotels
+                {t("hotels")}
               </Link>
             )}
             <button className="text-white font-medium px-4 py-2 rounded-lg transition-all duration-200 bg-gradient-to-r from-primary to-accent hover:from-primary-dark hover:to-primary shadow-md">
-              Sign In
+              {t("signIn")}
             </button>
             <button className="bg-gradient-to-r from-primary to-primary-light text-white px-6 py-2 rounded-lg hover:from-primary-dark hover:to-primary font-medium shadow-md transition-all duration-200">
-              Sell on Ebruloria
+              {t("sellOn")}
             </button>
           </div>
 
@@ -131,7 +147,7 @@ const Navigation = () => {
               {/* Search Input - expands to the left on mobile to cover logo area */}
               <input
                 type="text"
-                placeholder="Search..."
+                placeholder={t("search")}
                 className={`absolute right-0 top-0 transition-all duration-300 h-9 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent ${
                   isSearchExpanded
                     ? "w-28 pl-3 pr-10 opacity-100"
@@ -155,16 +171,28 @@ const Navigation = () => {
                 onClick={toggleLanguage}
                 className="flex items-center space-x-1 text-gray-700 hover:text-primary text-sm"
               >
-                <span>EN</span>
+                <span>{language.toUpperCase()}</span>
                 <FiChevronDown size={16} />
               </button>
               {isLanguageOpen && (
                 <div className="absolute top-full mt-2 right-0 bg-white border border-primary rounded-md shadow-lg py-2 min-w-[80px]">
-                  <button className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                  <button
+                    onClick={() => changeLanguage("en")}
+                    className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >
                     EN
                   </button>
-                  <button className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                  <button
+                    onClick={() => changeLanguage("tr")}
+                    className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >
                     TR
+                  </button>
+                  <button
+                    onClick={() => changeLanguage("ar")}
+                    className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >
+                    AR
                   </button>
                 </div>
               )}
@@ -172,7 +200,7 @@ const Navigation = () => {
 
             {/* Sign In Button */}
             <button className="text-white font-medium px-4 py-2 rounded-lg transition-all duration-200 text-sm bg-gradient-to-r from-primary to-accent hover:from-primary-dark hover:to-primary shadow-md">
-              Sign In
+              {t("signIn")}
             </button>
 
             {/* Hamburger Menu Button */}
@@ -210,7 +238,7 @@ const Navigation = () => {
               className="block text-lg font-medium text-gray-700 hover:text-primary"
               onClick={toggleMobileMenu}
             >
-              Homes
+              {t("homes")}
             </Link>
             {!isHotelsPage && (
               <Link
@@ -218,11 +246,11 @@ const Navigation = () => {
                 className="block text-lg font-medium text-gray-700 hover:text-primary"
                 onClick={toggleMobileMenu}
               >
-                Hotels
+                {t("hotels")}
               </Link>
             )}
             <button className="block w-full text-left bg-gradient-to-r from-primary to-primary-light text-white px-4 py-3 rounded-lg hover:from-primary-dark hover:to-primary font-medium shadow-md transition-all duration-200">
-              Sell on Ebruloria
+              {t("sellOn")}
             </button>
           </div>
         </div>
