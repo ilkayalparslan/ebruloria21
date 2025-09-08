@@ -97,13 +97,13 @@ export const translations = {
     termsOfService: "Terms of Service",
     cookiePolicy: "Cookie Policy",
 
-    // Form placeholders - Updated
+    // Form placeholders
     yourName: "Your Name",
     yourSurname: "Your Surname",
     yourEmail: "youremail@example.com",
     yourPhone: "Your Phone Number",
 
-    // Hotel1 component translations - ADD THESE
+    // Hotel1 component translations
     all: "All",
     forSale: "For Sale",
     forRent: "For Rent",
@@ -125,6 +125,30 @@ export const translations = {
     interestedInProperty: "I'm interested in this",
     pleaseContactMe: "Please contact me.",
     thankYouInquiry: "Thank you for your inquiry! We'll get back to you soon.",
+
+    // HotelDetails component translations
+    loadingPropertyDetails: "Loading property details...",
+    propertyNotFound: "Property Not Found",
+    propertyNotFoundDescription:
+      "The property you're looking for doesn't exist.",
+    backToHotels: "Back to Hotels",
+    viewAll: "View All",
+    of: "of",
+    type: "Type",
+    floors: "Floors",
+    area: "Area",
+    description: "Description",
+    showLess: "Show Less",
+    showMore: "Show More",
+    amenities: "Amenities",
+    onlySimilarProperties: "Only {count} similar properties available",
+    propertyMarketInfo:
+      "Properties like this sell within 30 days • Best purchase window: Q1 2025",
+    requestTour: "Request Tour",
+    home: "Home",
+    property: "Property",
+    thumbnail: "Thumbnail",
+    urlCopied: "URL copied to clipboard!",
   },
   tr: {
     // Navigation
@@ -222,13 +246,13 @@ export const translations = {
     termsOfService: "Hizmet Şartları",
     cookiePolicy: "Çerez Politikası",
 
-    // Form placeholders - Updated
+    // Form placeholders
     yourName: "Adınız",
     yourSurname: "Soyadınız",
     yourEmail: "emailiniz@example.com",
     yourPhone: "Telefon Numaranız",
 
-    // Hotel1 component translations - ADD THESE
+    // Hotel1 component translations
     all: "Tümü",
     forSale: "Satılık",
     forRent: "Kiralık",
@@ -251,6 +275,29 @@ export const translations = {
     pleaseContactMe: "Lütfen benimle iletişime geçin.",
     thankYouInquiry:
       "Sorgunuz için teşekkürler! En kısa sürede size dönüş yapacağız.",
+
+    // HotelDetails component translations
+    loadingPropertyDetails: "Mülk detayları yükleniyor...",
+    propertyNotFound: "Mülk Bulunamadı",
+    propertyNotFoundDescription: "Aradığınız mülk mevcut değil.",
+    backToHotels: "Otellere Dön",
+    viewAll: "Tümünü Gör",
+    of: "/",
+    type: "Tür",
+    floors: "Kat",
+    area: "Alan",
+    description: "Açıklama",
+    showLess: "Daha Az Göster",
+    showMore: "Daha Fazla Göster",
+    amenities: "Olanaklar",
+    onlySimilarProperties: "Sadece {count} benzer mülk mevcut",
+    propertyMarketInfo:
+      "Bu tür mülkler 30 gün içinde satılıyor • En iyi satın alma penceresi: Q1 2025",
+    requestTour: "Tur Talep Et",
+    home: "Ana Sayfa",
+    property: "Mülk",
+    thumbnail: "Küçük Resim",
+    urlCopied: "URL panoya kopyalandı!",
   },
   ar: {
     // Navigation
@@ -348,13 +395,13 @@ export const translations = {
     termsOfService: "شروط الخدمة",
     cookiePolicy: "سياسة ملفات تعريف الارتباط",
 
-    // Form placeholders - Updated
+    // Form placeholders
     yourName: "اسمك",
     yourSurname: "اسم عائلتك",
     yourEmail: "ايميلك@example.com",
     yourPhone: "رقم هاتفك",
 
-    // Hotel1 component translations - ADD THESE
+    // Hotel1 component translations
     all: "الكل",
     forSale: "للبيع",
     forRent: "للإيجار",
@@ -376,6 +423,29 @@ export const translations = {
     interestedInProperty: "أنا مهتم بهذا",
     pleaseContactMe: "يرجى الاتصال بي.",
     thankYouInquiry: "شكراً لك على استفسارك! سنعاود الاتصال بك قريباً.",
+
+    // HotelDetails component translations
+    loadingPropertyDetails: "جاري تحميل تفاصيل العقار...",
+    propertyNotFound: "العقار غير موجود",
+    propertyNotFoundDescription: "العقار الذي تبحث عنه غير موجود.",
+    backToHotels: "العودة إلى الفنادق",
+    viewAll: "عرض الكل",
+    of: "من",
+    type: "النوع",
+    floors: "طوابق",
+    area: "المساحة",
+    description: "الوصف",
+    showLess: "عرض أقل",
+    showMore: "عرض المزيد",
+    amenities: "المرافق",
+    onlySimilarProperties: "فقط {count} عقارات مماثلة متاحة",
+    propertyMarketInfo:
+      "العقارات مثل هذه تُباع خلال 30 يوماً • أفضل نافذة شراء: الربع الأول 2025",
+    requestTour: "طلب جولة",
+    home: "الرئيسية",
+    property: "عقار",
+    thumbnail: "صورة مصغرة",
+    urlCopied: "تم نسخ الرابط إلى الحافظة!",
   },
 };
 

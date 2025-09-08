@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { useTranslation } from "../data/translations";
 import {
-  HOTEL_LISTINGS,
+  getHotelsWithTranslations,
   getRoomDisplay,
   getHotelImages,
 } from "../data/hotelData";
@@ -11,7 +12,7 @@ import {
   MdFavoriteBorder,
   MdShare,
   MdLocationOn,
-  MdHome,
+  MdHotel,
   MdLayers,
   MdSquareFoot,
   MdStar,
@@ -54,6 +55,7 @@ import { FaWhatsapp } from "react-icons/fa";
 const HotelDetails = () => {
   const { adNumber } = useParams();
   const navigate = useNavigate();
+  const { t, currentLanguage } = useTranslation();
 
   const [hotel, setHotel] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -65,12 +67,13 @@ const HotelDetails = () => {
   const [expandedDescription, setExpandedDescription] = useState(false);
   const [showAllImages, setShowAllImages] = useState(false);
 
-  // Find hotel by adNumber
+  // Find hotel by adNumber with current language translations
   useEffect(() => {
-    const foundHotel = HOTEL_LISTINGS.find((h) => h.adNumber === adNumber);
+    const translatedHotels = getHotelsWithTranslations(currentLanguage);
+    const foundHotel = translatedHotels.find((h) => h.adNumber === adNumber);
     setHotel(foundHotel);
     setLoading(false);
-  }, [adNumber]);
+  }, [adNumber, currentLanguage]);
 
   // Check if hotel is in favorites (localStorage)
   useEffect(() => {
@@ -160,7 +163,7 @@ const HotelDetails = () => {
       <div className="min-h-screen bg-gray-100 flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
-          <p className="text-gray-600">Loading property details...</p>
+          <p className="text-gray-600">{t("loadingPropertyDetails")}</p>
         </div>
       </div>
     );
@@ -171,16 +174,16 @@ const HotelDetails = () => {
       <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
         <div className="text-center">
           <h1 className="text-2xl font-bold text-gray-800 mb-4">
-            Property Not Found
+            {t("propertyNotFound")}
           </h1>
           <p className="text-gray-600 mb-6">
-            The property you're looking for doesn't exist.
+            {t("propertyNotFoundDescription")}
           </p>
           <button
             onClick={() => navigate("/hotels")}
             className="btn-primary-gradient text-white px-6 py-3 rounded-lg font-semibold"
           >
-            Back to Hotels
+            {t("backToHotels")}
           </button>
         </div>
       </div>
@@ -207,7 +210,7 @@ const HotelDetails = () => {
               <img
                 key={index}
                 src={image}
-                alt={`Property ${index + 1}`}
+                alt={`${t("property")} ${index + 1}`}
                 className="w-full h-full object-cover flex-shrink-0"
               />
             ))}
@@ -243,37 +246,21 @@ const HotelDetails = () => {
           </div>
 
           {/* Image Counter */}
-          {/* Image Counter with View All button */}
           <div className="absolute bottom-4 right-4 flex items-center gap-2">
             <button
               onClick={() => setShowAllImages(true)}
               className="backdrop-blur-sm bg-white/50 rounded-full px-3 py-2 hover:bg-white/70 transition-colors"
             >
               <span className="text-sm font-medium text-gray-800">
-                View All
+                {t("viewAll")}
               </span>
             </button>
             <div className="backdrop-blur-sm bg-white/50 rounded-full px-3 py-2">
               <span className="text-sm font-medium text-gray-800">
-                {currentImageIndex + 1} of {images.length}
+                {currentImageIndex + 1} {t("of")} {images.length}
               </span>
             </div>
           </div>
-
-          {/* Navigation Dots */}
-          {/* <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
-            <div className="flex gap-1">
-              {images.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => goToImage(index)}
-                  className={`w-2 h-2 rounded-full transition-colors ${
-                    currentImageIndex === index ? "bg-white" : "bg-white/50"
-                  }`}
-                />
-              ))}
-            </div>
-          </div> */}
         </div>
 
         {/* Property Details - Mobile */}
@@ -287,7 +274,7 @@ const HotelDetails = () => {
                   status === "For Sale" ? "bg-green-500" : "bg-blue-500"
                 }`}
               >
-                {status}
+                {status === "For Sale" ? t("forSale") : t("forRent")}
               </span>
             ))}
           </div>
@@ -302,32 +289,34 @@ const HotelDetails = () => {
           {/* Property Details Grid */}
           <div className="grid grid-cols-2 gap-4 mb-6">
             <div className="flex items-center">
-              <MdHome className="w-5 h-5 text-gray-600 mr-2" />
+              <MdHotel className="w-5 h-5 text-gray-600 mr-2" />
               <div>
-                <div className="text-sm text-gray-600">Type</div>
+                <div className="text-sm text-gray-600">{t("type")}</div>
                 <div className="font-semibold">{hotel.type}</div>
               </div>
             </div>
             <div className="flex items-center">
               <MdLayers className="w-5 h-5 text-gray-600 mr-2" />
               <div>
-                <div className="text-sm text-gray-600">Floors</div>
-                <div className="font-semibold">{hotel.floorCount} floors</div>
+                <div className="text-sm text-gray-600">{t("floors")}</div>
+                <div className="font-semibold">
+                  {hotel.floorCount} {t("floors")}
+                </div>
               </div>
             </div>
             <div className="flex items-center">
-              <MdHome className="w-5 h-5 text-gray-600 mr-2" />
+              <MdHotel className="w-5 h-5 text-gray-600 mr-2" />
               <div>
-                <div className="text-sm text-gray-600">Rooms</div>
+                <div className="text-sm text-gray-600">{t("rooms")}</div>
                 <div className="font-semibold">
-                  {getRoomDisplay(hotel.roomNumber)} rooms
+                  {getRoomDisplay(hotel.roomNumber)} {t("rooms")}
                 </div>
               </div>
             </div>
             <div className="flex items-center">
               <MdSquareFoot className="w-5 h-5 text-gray-600 mr-2" />
               <div>
-                <div className="text-sm text-gray-600">Area</div>
+                <div className="text-sm text-gray-600">{t("area")}</div>
                 <div className="font-semibold">{hotel.baseSquare} m²</div>
               </div>
             </div>
@@ -339,7 +328,7 @@ const HotelDetails = () => {
               <div className="text-3xl font-bold text-gray-900">
                 ${hotel.price}
                 <span className="text-lg text-gray-500 font-normal">
-                  /night
+                  {t("night")}
                 </span>
               </div>
             </div>
@@ -347,7 +336,7 @@ const HotelDetails = () => {
 
           {/* Description */}
           <div className="mb-6">
-            <h3 className="text-lg font-semibold mb-3">Description</h3>
+            <h3 className="text-lg font-semibold mb-3">{t("description")}</h3>
             <p className="text-gray-600 leading-relaxed">
               {expandedDescription
                 ? hotel.description
@@ -357,14 +346,14 @@ const HotelDetails = () => {
               onClick={() => setExpandedDescription(!expandedDescription)}
               className="text-blue-600 font-medium mt-2"
             >
-              {expandedDescription ? "Show Less" : "Show More"}
+              {expandedDescription ? t("showLess") : t("showMore")}
             </button>
           </div>
 
           {/* Amenities */}
           {hotel.amenities && hotel.amenities.length > 0 && (
             <div className="mb-6">
-              <h3 className="text-lg font-semibold mb-3">Amenities</h3>
+              <h3 className="text-lg font-semibold mb-3">{t("amenities")}</h3>
               <div className="flex flex-wrap gap-2">
                 {hotel.amenities.map((amenity, idx) => (
                   <span
@@ -384,11 +373,13 @@ const HotelDetails = () => {
               <MdInfo className="w-5 h-5 text-orange-600 mr-2 mt-0.5" />
               <div>
                 <p className="text-orange-800 font-medium text-sm mb-1">
-                  Only {availableProperties} similar properties available
+                  {t("onlySimilarProperties").replace(
+                    "{count}",
+                    availableProperties
+                  )}
                 </p>
                 <p className="text-orange-700 text-xs">
-                  Properties like this sell within 30 days • Best purchase
-                  window: Q1 2025
+                  {t("propertyMarketInfo")}
                 </p>
               </div>
             </div>
@@ -397,10 +388,10 @@ const HotelDetails = () => {
           {/* Call-to-Action Buttons */}
           <div className="space-y-3 mb-6">
             <button className="w-full bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
-              Request Tour
+              {t("requestTour")}
             </button>
             <button className="w-full border-2 border-gray-300 hover:border-gray-400 text-gray-700 px-8 py-3 rounded-lg font-semibold transition-colors">
-              Contact Agent
+              {t("contactAgent")}
             </button>
           </div>
 
@@ -437,7 +428,7 @@ const HotelDetails = () => {
                 <img
                   key={index}
                   src={image}
-                  alt={`Property ${index + 1}`}
+                  alt={`${t("property")} ${index + 1}`}
                   className="w-full h-80 object-cover rounded-lg"
                 />
               ))}
@@ -456,14 +447,14 @@ const HotelDetails = () => {
                 onClick={() => navigate("/")}
                 className="hover:text-gray-800"
               >
-                Home
+                {t("home")}
               </button>
               <span className="mx-2">›</span>
               <button
                 onClick={() => navigate("/hotels")}
                 className="hover:text-gray-800"
               >
-                Hotels
+                {t("hotels")}
               </button>
               <span className="mx-2">›</span>
               <span className="text-gray-800">{hotel.city}</span>
@@ -478,7 +469,7 @@ const HotelDetails = () => {
               <div className="relative h-96 rounded-xl overflow-hidden mb-4">
                 <img
                   src={images[currentImageIndex]}
-                  alt={`Property ${currentImageIndex + 1}`}
+                  alt={`${t("property")} ${currentImageIndex + 1}`}
                   className="w-full h-full object-cover"
                 />
 
@@ -520,11 +511,11 @@ const HotelDetails = () => {
                   </button>
                 </div>
 
-                {/* ADD THIS - Image Counter for Desktop */}
+                {/* Image Counter for Desktop */}
                 <div className="absolute bottom-4 right-4">
                   <div className="backdrop-blur-sm bg-white/50 rounded-full px-3 py-2">
                     <span className="text-sm font-medium text-gray-800">
-                      {currentImageIndex + 1} of {images.length}
+                      {currentImageIndex + 1} {t("of")} {images.length}
                     </span>
                   </div>
                 </div>
@@ -544,7 +535,7 @@ const HotelDetails = () => {
                   >
                     <img
                       src={image}
-                      alt={`Thumbnail ${index + 1}`}
+                      alt={`${t("thumbnail")} ${index + 1}`}
                       className="w-full h-full object-cover"
                     />
                   </button>
@@ -563,7 +554,7 @@ const HotelDetails = () => {
                       status === "For Sale" ? "bg-green-500" : "bg-blue-500"
                     }`}
                   >
-                    {status}
+                    {status === "For Sale" ? t("forSale") : t("forRent")}
                   </span>
                 ))}
               </div>
@@ -581,7 +572,7 @@ const HotelDetails = () => {
                   <div className="text-3xl font-bold text-gray-900">
                     ${hotel.price}
                     <span className="text-lg text-gray-500 font-normal">
-                      /night
+                      {t("night")}
                     </span>
                   </div>
                 </div>
@@ -590,34 +581,34 @@ const HotelDetails = () => {
               {/* Property Details Grid */}
               <div className="grid grid-cols-2 gap-4 mb-6">
                 <div className="flex items-center">
-                  <MdHome className="w-5 h-5 text-gray-600 mr-2" />
+                  <MdHotel className="w-5 h-5 text-gray-600 mr-2" />
                   <div>
-                    <div className="text-sm text-gray-600">Type</div>
+                    <div className="text-sm text-gray-600">{t("type")}</div>
                     <div className="font-semibold">{hotel.type}</div>
                   </div>
                 </div>
                 <div className="flex items-center">
                   <MdLayers className="w-5 h-5 text-gray-600 mr-2" />
                   <div>
-                    <div className="text-sm text-gray-600">Floors</div>
+                    <div className="text-sm text-gray-600">{t("floors")}</div>
                     <div className="font-semibold">
-                      {hotel.floorCount} floors
+                      {hotel.floorCount} {t("floors")}
                     </div>
                   </div>
                 </div>
                 <div className="flex items-center">
-                  <MdHome className="w-5 h-5 text-gray-600 mr-2" />
+                  <MdHotel className="w-5 h-5 text-gray-600 mr-2" />
                   <div>
-                    <div className="text-sm text-gray-600">Rooms</div>
+                    <div className="text-sm text-gray-600">{t("rooms")}</div>
                     <div className="font-semibold">
-                      {getRoomDisplay(hotel.roomNumber)} rooms
+                      {getRoomDisplay(hotel.roomNumber)} {t("rooms")}
                     </div>
                   </div>
                 </div>
                 <div className="flex items-center">
                   <MdSquareFoot className="w-5 h-5 text-gray-600 mr-2" />
                   <div>
-                    <div className="text-sm text-gray-600">Area</div>
+                    <div className="text-sm text-gray-600">{t("area")}</div>
                     <div className="font-semibold">{hotel.baseSquare} m²</div>
                   </div>
                 </div>
@@ -629,10 +620,13 @@ const HotelDetails = () => {
                   <MdInfo className="w-5 h-5 text-orange-600 mr-2 mt-0.5" />
                   <div>
                     <p className="text-orange-800 font-medium text-sm mb-1">
-                      Only {availableProperties} similar properties available
+                      {t("onlySimilarProperties").replace(
+                        "{count}",
+                        availableProperties
+                      )}
                     </p>
                     <p className="text-orange-700 text-xs">
-                      Properties like this sell within 30 days
+                      {t("propertyMarketInfo")}
                     </p>
                   </div>
                 </div>
@@ -641,10 +635,10 @@ const HotelDetails = () => {
               {/* Call-to-Action Buttons */}
               <div className="space-y-3 mb-6">
                 <button className="w-full bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
-                  Request Tour
+                  {t("requestTour")}
                 </button>
                 <button className="w-full border-2 border-gray-300 hover:border-gray-400 text-gray-700 px-8 py-3 rounded-lg font-semibold transition-colors">
-                  Contact Agent
+                  {t("contactAgent")}
                 </button>
               </div>
 
@@ -663,7 +657,9 @@ const HotelDetails = () => {
 
               {/* Description */}
               <div className="mb-6">
-                <h3 className="text-lg font-semibold mb-3">Description</h3>
+                <h3 className="text-lg font-semibold mb-3">
+                  {t("description")}
+                </h3>
                 <p className="text-gray-600 leading-relaxed text-sm">
                   {hotel.description}
                 </p>
@@ -672,7 +668,9 @@ const HotelDetails = () => {
               {/* Amenities */}
               {hotel.amenities && hotel.amenities.length > 0 && (
                 <div>
-                  <h3 className="text-lg font-semibold mb-3">Amenities</h3>
+                  <h3 className="text-lg font-semibold mb-3">
+                    {t("amenities")}
+                  </h3>
                   <div className="flex flex-wrap gap-2">
                     {hotel.amenities.map((amenity, idx) => (
                       <span
@@ -693,7 +691,7 @@ const HotelDetails = () => {
       {/* Share Toast */}
       {showShareToast && (
         <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white px-4 py-2 rounded-lg z-50">
-          URL copied to clipboard!
+          {t("urlCopied")}
         </div>
       )}
     </div>
