@@ -1,5 +1,7 @@
 import React from "react";
 import { useTranslation } from "../data/translations";
+import { Link } from "react-router-dom";
+import { MdChevronRight, MdArrowForward } from "react-icons/md";
 
 // Import home images
 import pic6 from "../assets/images/home/pic-6.jpg";
@@ -21,34 +23,21 @@ function Home3() {
           </p>
           <button className="group flex items-center gap-3 text-gray-800 hover:text-primary-dark transition-colors duration-300 text-lg font-medium font-inter mt-4">
             <span>{t("explorePortfolio")}</span>
-            <svg
-              className="w-6 h-6 transform group-hover:translate-x-2 transition-transform duration-300"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M17 8l4 4m0 0l-4 4m4-4H3"
-              />
-            </svg>
+            <MdArrowForward className="w-6 h-6 transform group-hover:translate-x-2 transition-transform duration-300" />
           </button>
         </div>
 
         {/* Two Main Categories */}
         <div className="w-full flex flex-col lg:flex-row gap-8 max-w-6xl">
           {/* Residential Properties */}
-          <div className="flex-1 group cursor-pointer">
+          <Link to="/homes" className="flex-1 group cursor-pointer">
             <div
               className="h-[500px] rounded-3xl overflow-hidden relative shadow-xl transition-all duration-500 hover:shadow-2xl hover:scale-[1.02]"
               style={{
                 background: `linear-gradient(135deg, rgba(122, 147, 172, 0.9) 0%, rgba(97, 112, 115, 0.9) 100%), 
-                           url('${pic6}') center/cover`,
+                   url('${pic6}') center/cover`,
               }}
             >
-              {/* Content Overlay */}
               <div className="absolute inset-0 flex flex-col justify-between p-8 text-white">
                 {/* Top Badge */}
                 <div className="self-start">
@@ -79,35 +68,22 @@ function Home3() {
                     <span className="text-sm font-medium">
                       {t("viewProperties")}
                     </span>
-                    <svg
-                      className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 5l7 7-7 7"
-                      />
-                    </svg>
+                    <MdChevronRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" />
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          </Link>
 
           {/* Hotel & Commercial Properties */}
-          <div className="flex-1 group cursor-pointer">
+          <Link to="/hotels" className="flex-1 group cursor-pointer">
             <div
               className="h-[500px] rounded-3xl overflow-hidden relative shadow-xl transition-all duration-500 hover:shadow-2xl hover:scale-[1.02]"
               style={{
                 background: `linear-gradient(135deg, rgba(175, 179, 247, 0.9) 0%, rgba(182, 186, 248, 0.9) 100%), 
-                           url('${pic7}') center/cover`,
+                   url('${pic7}') center/cover`,
               }}
             >
-              {/* Content Overlay */}
               <div className="absolute inset-0 flex flex-col justify-between p-8 text-white">
                 {/* Top Badge */}
                 <div className="self-start">
@@ -138,24 +114,12 @@ function Home3() {
                     <span className="text-sm font-medium">
                       {t("viewHotels")}
                     </span>
-                    <svg
-                      className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 5l7 7-7 7"
-                      />
-                    </svg>
+                    <MdChevronRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" />
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          </Link>
         </div>
 
         {/* Bottom Stats Section */}
