@@ -94,7 +94,7 @@ const Navigation = () => {
                 <FiChevronDown size={16} />
               </button>
               {isLanguageOpen && (
-                <div className="absolute top-full mt-2 right-0 bg-white border border-gray-200 rounded-md shadow-lg py-2 min-w-[80px]">
+                <div className="absolute top-full mt-2 right-0 bg-white border border-gray-200 rounded-md shadow-lg py-2 min-w-[80px] z-50">
                   <button
                     onClick={() => changeLanguage("en")}
                     className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
@@ -175,7 +175,7 @@ const Navigation = () => {
                 <FiChevronDown size={16} />
               </button>
               {isLanguageOpen && (
-                <div className="absolute top-full mt-2 right-0 bg-white border border-primary rounded-md shadow-lg py-2 min-w-[80px]">
+                <div className="absolute top-full mt-2 right-0 bg-white border border-primary rounded-md shadow-lg py-2 min-w-[80px] z-50">
                   <button
                     onClick={() => changeLanguage("en")}
                     className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
