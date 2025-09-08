@@ -8,12 +8,13 @@
 
 import React, { useState } from "react";
 import { FiSearch, FiMenu, FiX, FiChevronDown } from "react-icons/fi";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from "../data/translations";
 import { useLanguage } from "../data/languageContext.jsx";
 
-const Navigation = () => {
+const Navigation = ({ sellButtonText, sellButtonAction }) => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const { language, changeLanguage } = useLanguage();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
@@ -135,8 +136,11 @@ const Navigation = () => {
             <button className="text-white font-medium px-4 py-2 rounded-lg transition-all duration-200 bg-gradient-to-r from-primary to-accent hover:from-primary-dark hover:to-primary shadow-md">
               {t("signIn")}
             </button>
-            <button className="bg-gradient-to-r from-primary to-primary-light text-white px-6 py-2 rounded-lg hover:from-primary-dark hover:to-primary font-medium shadow-md transition-all duration-200">
-              {t("sellOn")}
+            <button
+              onClick={sellButtonAction || (() => navigate("/sell-property"))}
+              className="bg-gradient-to-r from-primary to-primary-light text-white px-6 py-2 rounded-lg hover:from-primary-dark hover:to-primary font-medium shadow-md transition-all duration-200"
+            >
+              {sellButtonText || t("sellOn")}
             </button>
           </div>
 
@@ -249,8 +253,18 @@ const Navigation = () => {
                 {t("hotels")}
               </Link>
             )}
-            <button className="block w-full text-left bg-gradient-to-r from-primary to-primary-light text-white px-4 py-3 rounded-lg hover:from-primary-dark hover:to-primary font-medium shadow-md transition-all duration-200">
-              {t("sellOn")}
+            <button
+              onClick={() => {
+                toggleMobileMenu();
+                if (sellButtonAction) {
+                  sellButtonAction();
+                } else {
+                  navigate("/sell-property");
+                }
+              }}
+              className="block w-full text-left bg-gradient-to-r from-primary to-primary-light text-white px-4 py-3 rounded-lg hover:from-primary-dark hover:to-primary font-medium shadow-md transition-all duration-200"
+            >
+              {sellButtonText || t("sellOn")}
             </button>
           </div>
         </div>
