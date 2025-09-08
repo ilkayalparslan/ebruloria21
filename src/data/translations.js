@@ -15,6 +15,14 @@ export const translations = {
       "With our vision that transcends boundaries, our world-class portfolio, and professional consultancy; we open a new door for you in the investment world.",
     getStarted: "Get Started",
     liveDemo: "Live Demo →",
+
+    home2Title:
+      "Since 2010, we have been designing thoughtful living spaces by working with",
+    home2TitleHighlight: "square centimeters",
+    home2TitleEnd: ", not square meters.",
+    ourTeam: "Our Team",
+    since2010: "SINCE 2010",
+    scroll: "SCROLL",
   },
   tr: {
     // Navigation
@@ -30,6 +38,14 @@ export const translations = {
       "Sınırları aşan vizyonumuz, dünya standartlarında portföyümüz ve profesyonel danışmanlığımızla; yatırım dünyasında size yeni bir kapı açıyoruz.",
     getStarted: "Başlayın",
     liveDemo: "Canlı Demo →",
+
+    // Home2 component content
+    home2Title: "2010'dan bu yana, metrekare değil",
+    home2TitleHighlight: "santimetre kare",
+    home2TitleEnd: "ile çalışarak düşünceli yaşam alanları tasarlıyoruz.",
+    ourTeam: "Ekibimiz",
+    since2010: "2010'DAN BERİ",
+    scroll: "KAYDIR",
   },
   ar: {
     // Navigation
@@ -45,6 +61,14 @@ export const translations = {
       "برؤيتنا التي تتجاوز الحدود ومحفظتنا بالمعايير العالمية واستشاراتنا المهنية؛ نفتح لك باباً جديداً في عالم الاستثمار.",
     getStarted: "ابدأ",
     liveDemo: "عرض مباشر ←",
+
+    // Home2 component content
+    home2Title: "منذ عام 2010، نصمم مساحات معيشة مدروسة بالعمل مع",
+    home2TitleHighlight: "السنتيمترات المربعة",
+    home2TitleEnd: "، وليس الأمتار المربعة.",
+    ourTeam: "فريقنا",
+    since2010: "منذ 2010",
+    scroll: "تصفح",
   },
 };
 

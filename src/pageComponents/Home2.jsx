@@ -1,6 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { useTranslation } from "../data/translations";
 
 function Home2() {
+  const { t } = useTranslation();
+
   return (
     <div className="relative w-full h-screen overflow-hidden">
       {/* Background Video */}
@@ -23,16 +27,20 @@ function Home2() {
         <div className="text-center max-w-4xl mx-auto">
           {/* Main Heading */}
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-8 font-inter">
-            Since 2010, we have been designing thoughtful living spaces by
-            working with{" "}
-            <span className="text-primary-light">square centimeters</span>, not
-            square meters.
+            {t("home2Title")}{" "}
+            <span className="text-primary-light">
+              {t("home2TitleHighlight")}
+            </span>
+            {t("home2TitleEnd")}
           </h1>
 
-          {/* Discover Button */}
-          <button className="group relative inline-flex items-center justify-center px-8 py-4 md:px-12 md:py-5 bg-transparent border-2 border-white text-white font-medium text-lg md:text-xl rounded-full hover:bg-white hover:text-dark transition-all duration-300 overflow-hidden">
+          {/* Our Team Button */}
+          <Link
+            to="/ourteam"
+            className="group relative inline-flex items-center justify-center px-8 py-4 md:px-12 md:py-5 bg-transparent border-2 border-white text-white font-medium text-lg md:text-xl rounded-full hover:bg-white hover:text-dark transition-all duration-300 overflow-hidden"
+          >
             <span className="relative z-10 flex items-center gap-3">
-              Discover
+              {t("ourTeam")}
               <svg
                 className="w-5 h-5 md:w-6 md:h-6 transform group-hover:translate-x-1 transition-transform duration-300"
                 fill="none"
@@ -50,7 +58,7 @@ function Home2() {
 
             {/* Button hover effect */}
             <div className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-          </button>
+          </Link>
         </div>
       </div>
 
@@ -58,7 +66,7 @@ function Home2() {
       <div className="absolute bottom-8 left-8 hidden md:block">
         <div className="w-16 h-px bg-primary-light mb-4"></div>
         <p className="text-white text-sm font-medium tracking-wider">
-          SINCE 2010
+          {t("since2010")}
         </p>
       </div>
 
@@ -66,7 +74,7 @@ function Home2() {
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 hidden md:block">
         <div className="flex flex-col items-center text-white">
           <span className="text-xs font-medium tracking-wider mb-3">
-            SCROLL
+            {t("scroll")}
           </span>
           <div className="w-px h-12 bg-white opacity-50"></div>
         </div>
