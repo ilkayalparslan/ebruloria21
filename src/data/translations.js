@@ -10,9 +10,9 @@ export const translations = {
     search: "Search...",
 
     // Home1 component content
-    home1Title: "Discover Your Perfect Stay",
+    home1Title: "Here, every opportunity is for you to stay one step ahead",
     home1Subtitle:
-      "Find unique accommodations and unforgettable experiences around the world. Whether you're looking for a cozy apartment or a luxury villa, we connect you with the perfect place to call home.",
+      "With our vision that transcends boundaries, our world-class portfolio, and professional consultancy; we open a new door for you in the investment world.",
     getStarted: "Get Started",
     liveDemo: "Live Demo →",
   },
@@ -25,9 +25,9 @@ export const translations = {
     search: "Ara...",
 
     // Home1 component content
-    home1Title: "Mükemmel Konaklamanızı Keşfedin",
+    home1Title: "Burada her fırsat, bir adım öne geçmeniz için",
     home1Subtitle:
-      "Dünya çapında benzersiz konaklama yerleri ve unutulmaz deneyimler bulun. Rahat bir daire arıyor olun ya da lüks bir villa, sizi ev diyebileceğiniz mükemmel yerle buluşturuyoruz.",
+      "Sınırları aşan vizyonumuz, dünya standartlarında portföyümüz ve profesyonel danışmanlığımızla; yatırım dünyasında size yeni bir kapı açıyoruz.",
     getStarted: "Başlayın",
     liveDemo: "Canlı Demo →",
   },
@@ -40,9 +40,9 @@ export const translations = {
     search: "بحث...",
 
     // Home1 component content
-    home1Title: "اكتشف إقامتك المثالية",
+    home1Title: "هنا، كل فرصة لتكون خطوة للأمام",
     home1Subtitle:
-      "اعثر على أماكن إقامة فريدة وتجارب لا تُنسى حول العالم. سواء كنت تبحث عن شقة مريحة أو فيلا فاخرة، نحن نربطك بالمكان المثالي لتسميه بيتك.",
+      "برؤيتنا التي تتجاوز الحدود ومحفظتنا بالمعايير العالمية واستشاراتنا المهنية؛ نفتح لك باباً جديداً في عالم الاستثمار.",
     getStarted: "ابدأ",
     liveDemo: "عرض مباشر ←",
   },
