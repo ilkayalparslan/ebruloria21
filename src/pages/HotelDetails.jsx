@@ -131,21 +131,21 @@ const HotelDetails = () => {
   }, [hotel]);
 
   // Toggle favorite status
-  const toggleFavorite = () => {
-    const favorites = JSON.parse(
-      localStorage.getItem("hotelFavorites") || "[]"
-    );
-    let newFavorites;
+  // const toggleFavorite = () => {
+  //   const favorites = JSON.parse(
+  //     localStorage.getItem("hotelFavorites") || "[]"
+  //   );
+  //   let newFavorites;
 
-    if (isFavorite) {
-      newFavorites = favorites.filter((id) => id !== hotel.adNumber);
-    } else {
-      newFavorites = [...favorites, hotel.adNumber];
-    }
+  //   if (isFavorite) {
+  //     newFavorites = favorites.filter((id) => id !== hotel.adNumber);
+  //   } else {
+  //     newFavorites = [...favorites, hotel.adNumber];
+  //   }
 
-    localStorage.setItem("hotelFavorites", JSON.stringify(newFavorites));
-    setIsFavorite(!isFavorite);
-  };
+  //   localStorage.setItem("hotelFavorites", JSON.stringify(newFavorites));
+  //   setIsFavorite(!isFavorite);
+  // };
 
   // Share functionality
   const handleShare = async () => {
@@ -276,7 +276,7 @@ const HotelDetails = () => {
           </div>
 
           <div className="absolute top-4 right-4 flex gap-2">
-            <button
+            {/* <button
               onClick={toggleFavorite}
               className="backdrop-blur-sm bg-white/50 rounded-full p-3 hover:bg-white/70 transition-colors"
             >
@@ -285,7 +285,7 @@ const HotelDetails = () => {
               ) : (
                 <MdFavoriteBorder className="w-6 h-6 text-gray-800" />
               )}
-            </button>
+            </button> */}
             <button
               onClick={handleShare}
               className="backdrop-blur-sm bg-white/50 rounded-full p-3 hover:bg-white/70 transition-colors"
@@ -542,7 +542,7 @@ const HotelDetails = () => {
                 )}
 
                 <div className="absolute top-4 right-4 flex gap-2">
-                  <button
+                  {/* <button
                     onClick={toggleFavorite}
                     className="backdrop-blur-sm bg-white/50 rounded-full p-3 hover:bg-white/70 transition-colors"
                   >
@@ -551,7 +551,7 @@ const HotelDetails = () => {
                     ) : (
                       <MdFavoriteBorder className="w-5 h-5 text-gray-800" />
                     )}
-                  </button>
+                  </button> */}
                   <button
                     onClick={handleShare}
                     className="backdrop-blur-sm bg-white/50 rounded-full p-3 hover:bg-white/70 transition-colors"
