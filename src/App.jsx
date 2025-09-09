@@ -5,6 +5,7 @@ import Home from "./pages/Home.jsx";
 import Hotels from "./pages/Hotels";
 import Homes from "./pages/Homes";
 import HotelDetails from "./pages/HotelDetails.jsx";
+import OurTeam from "./pages/OurTeam.jsx";
 import SellForm from "./pages/SellForm.jsx";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path="/hotels/:adNumber" element={<HotelDetails />} />
           <Route path="/homes" element={<Homes />} />
           <Route path="/sell-property" element={<SellForm />} />
+          <Route path="/ourteam" element={<OurTeam />} />
         </Routes>
       </Router>
     </LanguageProvider>
