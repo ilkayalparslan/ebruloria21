@@ -18,6 +18,7 @@ function SellForm() {
     baseSquare: "",
     amenities: [],
     message: "",
+    propertyImages: [], // Added this
   });
 
   const [errors, setErrors] = useState({});
@@ -92,6 +93,32 @@ function SellForm() {
     setFormData((prev) => ({
       ...prev,
       status: prev.status === statusId ? "" : statusId,
+    }));
+  };
+
+  const handleImageUpload = (e) => {
+    const files = Array.from(e.target.files);
+    const maxSize = 10 * 1024 * 1024; // 10MB
+    const validFiles = files.filter((file) => {
+      if (file.size > maxSize) {
+        alert(`File ${file.name} is too large. Maximum size is 10MB.`);
+        return false;
+      }
+      return file.type.startsWith("image/");
+    });
+
+    setFormData((prev) => ({
+      ...prev,
+      propertyImages: [...prev.propertyImages, ...validFiles],
+    }));
+  };
+
+  const removeImage = (indexToRemove) => {
+    setFormData((prev) => ({
+      ...prev,
+      propertyImages: prev.propertyImages.filter(
+        (_, index) => index !== indexToRemove
+      ),
     }));
   };
 
@@ -227,7 +254,7 @@ function SellForm() {
                       name="countryCode"
                       value={formData.countryCode}
                       onChange={handleInputChange}
-                      className="p-1 text-sm bg-transparent border-none outline-none cursor-pointer min-w-8 max-w-18"
+                      className="p-2 text-sm bg-transparent border-none outline-none cursor-pointer min-w-16 max-w-20"
                     >
                       {countryCodes.map((country) => (
                         <option key={country.code} value={country.code}>
@@ -438,6 +465,107 @@ function SellForm() {
                 <p className="text-sm text-gray-600 mt-2 italic">
                   This information will help us better understand your property
                   and requirements.
+                </p>
+              </div>
+            </div>
+
+            {/* Image Upload */}
+            <div className="mb-12 p-6 md:p-8 bg-slate-50 rounded-2xl border border-slate-200">
+              <h3 className="text-xl font-semibold text-gray-800 mb-6 flex items-center gap-2">
+                📸 Property Images
+              </h3>
+              <div>
+                <label className="block mb-2 text-sm font-semibold text-gray-700">
+                  Upload Property Photos
+                </label>
+                <div className="border-2 border-dashed border-slate-300 rounded-xl p-8 text-center bg-white hover:border-blue-400 transition-colors duration-300">
+                  <div className="mb-4">
+                    <svg
+                      className="mx-auto h-12 w-12 text-slate-400"
+                      stroke="currentColor"
+                      fill="none"
+                      viewBox="0 0 48 48"
+                    >
+                      <path
+                        d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </div>
+                  <div className="mb-4">
+                    <p className="text-lg font-medium text-gray-700 mb-2">
+                      Drop your images here, or browse
+                    </p>
+                    <p className="text-sm text-gray-500">
+                      Support: JPG, JPEG, PNG (Max 10MB each)
+                    </p>
+                  </div>
+                  <input
+                    type="file"
+                    name="propertyImages"
+                    multiple
+                    accept="image/*"
+                    onChange={handleImageUpload}
+                    className="hidden"
+                    id="image-upload"
+                  />
+                  <label
+                    htmlFor="image-upload"
+                    className="inline-flex items-center px-6 py-3 border border-transparent text-sm font-medium rounded-xl text-blue-600 bg-blue-50 hover:bg-blue-100 cursor-pointer transition-colors duration-200"
+                  >
+                    <svg
+                      className="mr-2 h-5 w-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+                      />
+                    </svg>
+                    Choose Files
+                  </label>
+                </div>
+
+                {/* Image Preview */}
+                {formData.propertyImages &&
+                  formData.propertyImages.length > 0 && (
+                    <div className="mt-6">
+                      <h4 className="text-sm font-semibold text-gray-700 mb-3">
+                        Selected Images ({formData.propertyImages.length})
+                      </h4>
+                      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                        {formData.propertyImages.map((image, index) => (
+                          <div key={index} className="relative group">
+                            <img
+                              src={URL.createObjectURL(image)}
+                              alt={`Property ${index + 1}`}
+                              className="w-full h-24 object-cover rounded-lg border border-slate-200"
+                            />
+                            <button
+                              type="button"
+                              onClick={() => removeImage(index)}
+                              className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:bg-red-600"
+                            >
+                              ×
+                            </button>
+                            <div className="absolute bottom-1 left-1 bg-black bg-opacity-50 text-white text-xs px-1 rounded">
+                              {(image.size / 1024 / 1024).toFixed(1)}MB
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                <p className="text-xs text-gray-600 mt-3 italic">
+                  Add multiple photos to showcase your property better. First
+                  image will be used as the main photo.
                 </p>
               </div>
             </div>
