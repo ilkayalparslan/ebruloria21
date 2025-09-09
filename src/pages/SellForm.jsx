@@ -149,11 +149,11 @@ function SellForm() {
   return (
     <>
       <Navigation />
-      <div className="bg-gradient-to-br from-slate-50 to-slate-200 min-h-screen py-10 px-4 sm:px-6">
+      <div className="bg-gradient-to-br from-cream to-warm-gray min-h-screen py-10 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto bg-white rounded-3xl p-6 md:p-12 shadow-2xl font-inter">
           {/* Header */}
           <div className="text-center mb-12">
-            <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-600 to-indigo-500 bg-clip-text text-transparent mb-3 tracking-tight">
+            <h1 className="text-3xl md:text-4xl font-bold text-accent bg-gradient-to-r from-accent to-accent-light bg-clip-text text-transparent mb-3 tracking-tight">
               List Your Property
             </h1>
             <p className="text-gray-600 max-w-lg mx-auto leading-relaxed">
@@ -574,7 +574,7 @@ function SellForm() {
             <div className="text-center">
               <button
                 type="submit"
-                className="bg-gradient-to-r from-blue-600 to-indigo-500 text-white px-12 py-4 text-lg font-semibold rounded-xl cursor-pointer transition-all duration-300 shadow-lg shadow-blue-600/30 hover:shadow-xl hover:shadow-blue-600/40 hover:-translate-y-0.5 tracking-wide"
+                className="btn-primary-gradient text-white px-12 py-4 text-lg font-semibold rounded-xl cursor-pointer tracking-wide"
               >
                 Submit Property Listing
               </button>
