@@ -133,9 +133,9 @@ const Navigation = ({ sellButtonText, sellButtonAction }) => {
                 {t("hotels")}
               </Link>
             )}
-            <button className="text-white font-medium px-4 py-2 rounded-lg transition-all duration-200 bg-gradient-to-r from-primary to-accent hover:from-primary-dark hover:to-primary shadow-md">
+            {/* <button className="text-white font-medium px-4 py-2 rounded-lg transition-all duration-200 bg-gradient-to-r from-primary to-accent hover:from-primary-dark hover:to-primary shadow-md">
               {t("signIn")}
-            </button>
+            </button> */}
             <button
               onClick={sellButtonAction || (() => navigate("/sell-property"))}
               className="bg-gradient-to-r from-primary to-primary-light text-white px-6 py-2 rounded-lg hover:from-primary-dark hover:to-primary font-medium shadow-md transition-all duration-200"
@@ -203,9 +203,9 @@ const Navigation = ({ sellButtonText, sellButtonAction }) => {
             </div>
 
             {/* Sign In Button */}
-            <button className="text-white font-medium px-4 py-2 rounded-lg transition-all duration-200 text-sm bg-gradient-to-r from-primary to-accent hover:from-primary-dark hover:to-primary shadow-md">
+            {/* <button className="text-white font-medium px-4 py-2 rounded-lg transition-all duration-200 text-sm bg-gradient-to-r from-primary to-accent hover:from-primary-dark hover:to-primary shadow-md">
               {t("signIn")}
-            </button>
+            </button> */}
 
             {/* Hamburger Menu Button */}
             <button
