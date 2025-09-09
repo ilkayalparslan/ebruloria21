@@ -18,7 +18,7 @@ function SellForm() {
     baseSquare: "",
     amenities: [],
     message: "",
-    propertyImages: [], // Added this
+    propertyImages: [],
   });
 
   const [errors, setErrors] = useState({});
