@@ -154,7 +154,7 @@ const Navigation = ({ sellButtonText, sellButtonAction }) => {
                 placeholder={t("search")}
                 className={`absolute right-0 top-0 transition-all duration-300 h-9 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent ${
                   isSearchExpanded
-                    ? "w-28 pl-3 pr-10 opacity-100"
+                    ? "w-64 pl-3 pr-10 opacity-100"
                     : "w-9 pl-1 pr-8 opacity-60"
                 }`}
                 onClick={!isSearchExpanded ? toggleSearch : undefined}
