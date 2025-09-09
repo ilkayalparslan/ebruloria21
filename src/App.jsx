@@ -18,7 +18,7 @@ function App() {
           <Route path="/hotels/:adNumber" element={<HotelDetails />} />
           <Route path="/homes" element={<Homes />} />
           <Route path="/sell-property" element={<SellForm />} />
-          <Route path="/ourteam" element={<OurTeam />} />
+          <Route path="/our-team" element={<OurTeam />} />
         </Routes>
       </Router>
     </LanguageProvider>

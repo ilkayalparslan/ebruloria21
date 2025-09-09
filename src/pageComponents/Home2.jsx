@@ -36,7 +36,7 @@ function Home2() {
 
           {/* Our Team Button */}
           <Link
-            to="/ourteam"
+            to="/our-team"
             className="group relative inline-flex items-center justify-center px-8 py-4 md:px-12 md:py-5 bg-transparent border-2 border-white text-white font-medium text-lg md:text-xl rounded-full hover:bg-white hover:text-dark transition-all duration-300 overflow-hidden"
           >
             <span className="relative z-10 flex items-center gap-3">
