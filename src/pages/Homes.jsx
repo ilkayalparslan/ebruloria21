@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { FiHome } from "react-icons/fi";
 
 const Homes = () => {
+  const navigate = useNavigate();
   const [progress, setProgress] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -18,6 +21,10 @@ const Homes = () => {
 
     return () => clearInterval(interval);
   }, []);
+
+  const handleGoHome = () => {
+    navigate("/");
+  };
 
   return (
     <div
@@ -114,21 +121,12 @@ const Homes = () => {
 
         {/* Call to action */}
         <div>
-          <button className="bg-gradient-to-r from-white/20 to-white/10 border border-white/30 text-white px-8 py-4 rounded-full font-semibold backdrop-blur-md flex items-center gap-2 mx-auto transition-all duration-300 hover:from-white/30 hover:to-white/20 hover:-translate-y-0.5 hover:shadow-[0_10px_25px_rgba(0,0,0,0.2)]">
-            <span>Notify Me When Ready</span>
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              className="animate-[bounce_2s_infinite]"
-            >
-              <path d="M10 0L15 8H5L10 0Z" fill="currentColor" />
-              <path
-                d="M10 20L15 12H5L10 20Z"
-                fill="currentColor"
-                opacity="0.6"
-              />
-            </svg>
+          <button
+            onClick={handleGoHome}
+            className="bg-gradient-to-r from-white/20 to-white/10 border border-white/30 text-white px-8 py-4 rounded-full font-semibold backdrop-blur-md flex items-center gap-2 mx-auto transition-all duration-300 hover:from-white/30 hover:to-white/20 hover:-translate-y-0.5 hover:shadow-[0_10px_25px_rgba(0,0,0,0.2)]"
+          >
+            <FiHome size={20} />
+            <span>Go Back Home</span>
           </button>
         </div>
       </div>
