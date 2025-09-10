@@ -36,6 +36,7 @@ import newhotelData from "./newhotel.json";
 import pelicanhouseData from "./pelicanhouse.json";
 import raimondData from "./raimond.json";
 import riasuitesData from "./riasuites.json";
+import erdemhotelData from "./erdemhotel.json";
 
 // Raw hotel listings (with translations object)
 export const RAW_HOTEL_LISTINGS = [
@@ -47,6 +48,7 @@ export const RAW_HOTEL_LISTINGS = [
   pelicanhouseData,
   raimondData,
   riasuitesData,
+  erdemhotelData,
 ];
 
 // Helper function to get translated content for a single hotel

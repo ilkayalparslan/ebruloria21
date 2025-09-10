@@ -1,0 +1,65 @@
+{
+  "id": 9,
+  "name": "Erdem Hotel",
+  "adNumber": "6394827165",
+  "location": "Laleli District",
+  "city": "Istanbul",
+  "country": "Turkey",
+  "roomNumber": 28,
+  "imageCount": 17,
+  "imageFolderName": "erdemhotel",
+  "status": ["For Sale", "For Rent"],
+  "floorCount": 5,
+  "baseSquare": 75,
+  "tier": "gold",
+  "translations": {
+    "en": {
+      "description": "**Centrally Located Hotel in Laleli District**\n\nLocated in the city center in a vibrant area with shops and restaurants, this hotel offers excellent accessibility and urban convenience. The property is just a 1-minute walk from Aksaray Metro Station and 3 km from the historic Blue Mosque, providing guests with easy access to both modern transportation and Istanbul's cultural treasures.\n\n**Prime Location Benefits**\nSituated in the heart of Laleli textile district, guests have immediate access to shopping opportunities and local commerce. The bustling neighborhood offers numerous dining options and retail establishments, making it ideal for both business and leisure travelers.\n\n**Comfortable Room Amenities**\nAll rooms feature essential modern amenities including complimentary WiFi, flat-screen television, and tea-coffee making facilities for guest convenience. Selected rooms are enhanced with additional seating areas and mini bars for extended comfort. Room service is available to ensure a pleasant stay experience.\n\n**Dining Services**\nThe hotel's bright and welcoming restaurant serves a comprehensive open buffet breakfast, providing guests with a variety of options to start their day. The restaurant's pleasant atmosphere creates an enjoyable dining environment.\n\n**Commercial Opportunities**\nThe ground floor houses two retail shops, adding commercial value to the property and providing additional revenue potential for investors.\n\n**Strategic Investment Location**\nThis property represents an excellent investment opportunity in the renowned Laleli textile district, combining residential hospitality with commercial retail spaces in one of Istanbul's most active business areas.",
+      "type": "City Hotel",
+      "amenities": [
+        "Free WiFi",
+        "Buffet Breakfast",
+        "Room Service",
+        "Flat-screen TV",
+        "Tea-Coffee Facilities",
+        "Mini Bar",
+        "Seating Area",
+        "Metro Access",
+        "Ground Floor Shops",
+        "City Center Location"
+      ]
+    },
+    "tr": {
+      "description": "**Laleli Bölgesinde Merkezi Konumlu Otel**\n\nŞehir merkezinde, mağaza ve restoranların bulunduğu hareketli bir bölgede bulunan otel. Aksaray metro durağına 1 dakikalık yürüme mesafesinde ve Sultanahmet Camii'ne 3 km uzaklıktadır.\n\n**Konum Avantajları**\nLaleli tekstilciler bölgesinde yer alan otel, misafirlere alışveriş imkanları ve yerel ticaret alanlarına anında erişim sağlar. Hareketli mahalle, çok sayıda yemek seçeneği ve perakende mağaza sunarak hem iş hem de tatil seyahatleri için ideal konumdadır.\n\n**Konforlu Oda Olanakları**\nRahat odalarda WiFi, düz ekran TV ve çay-kahve malzemeleri vardır. Bazı odalarda ayrıca oturma alanı, mini bar mevcuttur. Oda servisi sunulur.\n\n**Yemek Hizmetleri**\nAçık büfe kahvaltı, aydınlık bir restoranda servis edilir. Restoranın hoş atmosferi keyifli bir yemek ortamı yaratır.\n\n**Ticari Fırsatlar**\nGiriş katta 2 dükkan bulunmaktadır. Bu durum mülke ticari değer katarken yatırımcılar için ek gelir potansiyeli sağlar.\n\n**Stratejik Yatırım Konumu**\nBu mülk, ünlü Laleli tekstil bölgesinde konaklama hizmetleri ile ticari perakende alanlarını birleştiren, İstanbul'un en aktif iş bölgelerinden birinde mükemmel bir yatırım fırsatı sunmaktadır.",
+      "type": "Şehir Oteli",
+      "amenities": [
+        "Ücretsiz WiFi",
+        "Büfe Kahvaltısı",
+        "Oda Servisi",
+        "Düz Ekran TV",
+        "Çay-Kahve İmkanları",
+        "Mini Bar",
+        "Oturma Alanı",
+        "Metro Erişimi",
+        "Giriş Kat Dükkanlar",
+        "Şehir Merkezi Konumu"
+      ]
+    },
+    "ar": {
+      "description": "**فندق في موقع مركزي في منطقة لاللي**\n\nيقع هذا الفندق في وسط المدينة في منطقة نابضة بالحياة مع المحلات التجارية والمطاعم، ويوفر إمكانية وصول ممتازة وراحة حضرية. العقار على بعد دقيقة واحدة فقط سيراً على الأقدام من محطة مترو أكسراي و3 كم من المسجد الأزرق التاريخي، مما يوفر للضيوف وصولاً سهلاً لكل من وسائل النقل الحديثة وكنوز إسطنبول الثقافية.\n\n**مزايا الموقع المتميز**\nيقع في قلب منطقة لاللي للمنسوجات، ويتمتع الضيوف بوصول فوري لفرص التسوق والتجارة المحلية. يوفر الحي المزدحم خيارات طعام عديدة ومؤسسات تجارية، مما يجعله مثالياً لكل من مسافري الأعمال والترفيه.\n\n**وسائل راحة الغرف المريحة**\nتتميز جميع الغرف بوسائل الراحة الحديثة الأساسية بما في ذلك الواي فاي المجاني وتلفزيون بشاشة مسطحة ومرافق صنع الشاي والقهوة لراحة الضيوف. الغرف المختارة معززة بمناطق جلوس إضافية وميني بار للراحة الممتدة. خدمة الغرف متاحة لضمان تجربة إقامة ممتعة.\n\n**خدمات الطعام**\nيقدم مطعم الفندق المشرق والترحيبي إفطاراً شاملاً مفتوحاً، مما يوفر للضيوف مجموعة متنوعة من الخيارات لبدء يومهم. الأجواء الممتعة للمطعم تخلق بيئة طعام ممتعة.\n\n**الفرص التجارية**\nيضم الطابق الأرضي متجرين للبيع بالتجزئة، مما يضيف قيمة تجارية للعقار ويوفر إمكانية دخل إضافية للمستثمرين.\n\n**موقع استثماري استراتيجي**\nتمثل هذه العقار فرصة استثمارية ممتازة في منطقة لاللي المشهورة للمنسوجات، حيث تجمع بين الضيافة السكنية ومساحات البيع بالتجزئة التجارية في واحدة من أكثر مناطق الأعمال نشاطاً في إسطنبول.",
+      "type": "فندق المدينة",
+      "amenities": [
+        "واي فاي مجاني",
+        "إفطار بوفيه",
+        "خدمة الغرف",
+        "تلفزيون بشاشة مسطحة",
+        "مرافق الشاي والقهوة",
+        "ميني بار",
+        "منطقة جلوس",
+        "وصول المترو",
+        "محلات الطابق الأرضي",
+        "موقع وسط المدينة"
+      ]
+    }
+  }
+}
