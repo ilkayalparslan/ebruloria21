@@ -1,0 +1,65 @@
+{
+  "id": 8,
+  "name": "Istanbul Comfort Hotel",
+  "adNumber": "6725894301",
+  "location": "Beyoglu District",
+  "city": "Istanbul",
+  "country": "Turkey",
+  "roomNumber": 45,
+  "imageCount": 18,
+  "imageFolderName": "riasuites",
+  "status": ["For Sale", "For Rent"],
+  "floorCount": 7,
+  "baseSquare": 95,
+  "tier": "premium",
+  "translations": {
+    "en": {
+      "description": "**Modern Comfort Hotel in Istanbul**\n\nExperience exceptional comfort in this well-appointed hotel featuring air-conditioned rooms with spacious living areas. Each room includes a pleasant balcony as part of the standard equipment, providing guests with a relaxing outdoor space. The comfortable double beds ensure a restful night's sleep, while additional amenities like child beds and extra beds can be arranged upon request.\n\n**Room Features & Amenities**\nAll rooms are equipped with essential amenities including in-room safe, mini bar, and work desk for business travelers. The kitchenette features a refrigerator and microwave oven for added convenience. Modern connectivity is ensured with internet access, telephone, television, and wireless internet connection throughout the property.\n\n**Bathroom & Personal Care**\nPrivate bathrooms feature shower facilities with hair dryer and bathrobes provided for daily use. Premium toiletries and towels complete the comfortable bathroom experience.\n\n**Hotel Services & Facilities**\nThe hotel offers comprehensive services including luggage storage, hotel safe, and currency exchange office. Free wireless internet connection is available in all common areas. Multilingual staff provides 24-hour security service, childcare facilities, transfer service, room service, and laundry facilities.\n\n**Dining & Recreation**\nGuests can enjoy diverse dining options including restaurant, breakfast lounge, café, and bar services. Children can enjoy the on-site playground where they can spend their energy freely. The property also provides transportation services for guest convenience.\n\n**Parking & Additional Services**\nParking spaces are available for guests traveling with private vehicles. The hotel combines modern amenities with traditional Turkish hospitality, making it an ideal choice for both business and leisure travelers.",
+      "type": "Comfort Hotel",
+      "amenities": [
+        "Free WiFi",
+        "Free Breakfast",
+        "Free Parking",
+        "Air Conditioning",
+        "Restaurant",
+        "Laundry Service",
+        "24/7 Security",
+        "Room Service",
+        "Mini Bar",
+        "Safe Box"
+      ]
+    },
+    "tr": {
+      "description": "**İstanbul'da Modern Konfor Oteli**\n\nOdalarda klima ve salon bulunmaktadır. Hoş vakit geçirilebilecek bir balkon odalar temel donanım dâhildir. Odalarda bulunan çift kişilik yatak keyifli bir gece istirahatı sağlar. Çocuk yatağı ve ekstra yatak temin edilebilir. Bunun dışında, oda kasası, mini bar ve çalışma masası vardır.\n\n**Oda Özellikleri ve Olanakları**\nMutfak köşesinde buzdolabı ve mikrodalga fırın bulunmaktadır. İnternet erişimi, telefon, televizyon ve kablosuz internet bağlantısı, eksiksiz bir tatil konforu sunmaktadır. Tüm odalarda modern bağlantı imkanları mevcuttur.\n\n**Banyo ve Kişisel Bakım**\nBanyoların iç düzenine bir duş dâhildir. Saç kurutma makinesi ve bornozlar günlük kullanım için hazır beklemektedir. Premium banyo malzemeleri ve havlular konforlu banyo deneyimini tamamlar.\n\n**Otel Hizmetleri ve Tesisleri**\nEmanet bürosu, otel kasası ve döviz bürosu gibi hizmetler mevcut konfora katkıda bulunmaktadır. Ortak alanlardaki kablosuz internet bağlantısı mevcuttur. Yabancı dil bilen personel, 24 saat güvenlik hizmeti, kreş, transfer hizmeti, oda servisi ve çamaşırhane ilave hizmetler arasındadır.\n\n**Yemek ve Eğlence**\nGastronomi alanındaki donanım dâhilinde misafirlere, restoran, kahvaltı salonu, kafe ve bar hizmet vermektedir. Çocuklar tesisin oyun parkında enerjilerini diledikleri gibi harcayabilirler. Misafirlere ayrıca taşıma hizmeti sağlanmaktadır.\n\n**Park ve Ek Hizmetler**\nÖzel aracıyla seyahat eden misafirlerin ihtiyaç halinde kullanılabilecekleri park yerleri mevcuttur. Otel, modern olanakları geleneksel Türk misafirperverliği ile birleştirerek hem iş hem de tatil seyahatleri için ideal bir seçenek sunmaktadır.",
+      "type": "Konfor Oteli",
+      "amenities": [
+        "Ücretsiz WiFi",
+        "Ücretsiz Kahvaltı",
+        "Ücretsiz Park",
+        "Klima",
+        "Restoran",
+        "Çamaşır Yıkama Hizmeti",
+        "7/24 Güvenlik",
+        "Oda Servisi",
+        "Mini Bar",
+        "Kasa"
+      ]
+    },
+    "ar": {
+      "description": "**فندق الراحة الحديث في إسطنبول**\n\nتتميز الغرف بتكييف الهواء وصالة معيشة واسعة. تشمل كل غرفة شرفة لطيفة كجزء من التجهيزات الأساسية، مما يوفر للضيوف مساحة خارجية مريحة للاسترخاء. تضمن الأسرة المزدوجة المريحة نوماً هادئاً، بينما يمكن ترتيب وسائل راحة إضافية مثل أسرة الأطفال والأسرة الإضافية عند الطلب.\n\n**ميزات الغرف ووسائل الراحة**\nتم تجهيز جميع الغرف بوسائل الراحة الأساسية بما في ذلك خزانة آمنة في الغرفة وميني بار ومكتب عمل لرجال الأعمال. تحتوي المطبخ الصغير على ثلاجة وفرن ميكروويف لمزيد من الراحة. يتم ضمان الاتصال الحديث مع الوصول للإنترنت والهاتف والتلفزيون والاتصال اللاسلكي بالإنترنت في جميع أنحاء العقار.\n\n**الحمام والعناية الشخصية**\nتحتوي الحمامات الخاصة على مرافق الاستحمام مع مجفف شعر وأرواب حمام متوفرة للاستخدام اليومي. تكمل مستلزمات الحمام المتميزة والمناشف تجربة الحمام المريحة.\n\n**خدمات ومرافق الفندق**\nيوفر الفندق خدمات شاملة بما في ذلك حفظ الأمتعة وخزانة الفندق ومكتب صرف العملات. تتوفر خدمة الإنترنت اللاسلكية المجانية في جميع المناطق العامة. يوفر الموظفون متعددو اللغات خدمة أمنية على مدار 24 ساعة ومرافق رعاية الأطفال وخدمة النقل وخدمة الغرف ومرافق الغسيل.\n\n**الطعام والترفيه**\nيمكن للضيوف الاستمتاع بخيارات طعام متنوعة بما في ذلك المطعم وصالة الإفطار والمقهى وخدمات البار. يمكن للأطفال الاستمتاع بملعب الأطفال في الموقع حيث يمكنهم قضاء طاقتهم بحرية. توفر العقار أيضاً خدمات النقل لراحة الضيوف.\n\n**المواقف والخدمات الإضافية**\nتتوفر أماكن وقوف السيارات للضيوف المسافرين بسياراتهم الخاصة. يجمع الفندق بين وسائل الراحة الحديثة والضيافة التركية التقليدية، مما يجعله خياراً مثالياً لكل من المسافرين للأعمال والترفيه.",
+      "type": "فندق الراحة",
+      "amenities": [
+        "واي فاي مجاني",
+        "إفطار مجاني",
+        "موقف مجاني",
+        "تكييف الهواء",
+        "مطعم",
+        "خدمة الغسيل",
+        "أمان 7/24",
+        "خدمة الغرف",
+        "ميني بار",
+        "صندوق آمان"
+      ]
+    }
+  }
+}
