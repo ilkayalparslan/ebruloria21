@@ -167,7 +167,7 @@ export const translations = {
     liveDemo: "Canlı Demo →",
 
     // Home2 component content
-    home2Title: "Biz; uluslararası pazarda otel alım–satımında uzmanlaşmış,",
+    home2Title: "Biz; uluslararası pazarda otel alım satımında uzmanlaşmış,",
     home2TitleHighlight: "güvenilir ve şeffaf",
     home2TitleEnd: "bir danışmanlık ekibiyiz.",
     ourTeam: "Ekibimiz",
