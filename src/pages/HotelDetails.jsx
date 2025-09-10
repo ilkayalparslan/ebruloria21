@@ -148,14 +148,35 @@ const HotelDetails = () => {
   // };
 
   // Share functionality
+  // Replace the existing handleShare function (around lines 151-160)
   const handleShare = async () => {
     const url = window.location.href;
-    try {
-      await navigator.clipboard.writeText(url);
-      setShowShareToast(true);
-      setTimeout(() => setShowShareToast(false), 3000);
-    } catch (err) {
-      console.error("Failed to copy URL:", err);
+    const title = `${hotel.type} in ${translatedCity}, ${translatedCountry}`;
+    const text = `Check out this amazing ${
+      hotel.type
+    } - ${hotel.description.slice(0, 100)}...`;
+
+    // Check if Web Share API is supported (mobile devices)
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: title,
+          text: text,
+          url: url,
+        });
+      } catch (err) {
+        // User cancelled or error occurred
+        console.log("Share cancelled:", err);
+      }
+    } else {
+      // Fallback: Copy to clipboard for desktop
+      try {
+        await navigator.clipboard.writeText(url);
+        setShowShareToast(true);
+        setTimeout(() => setShowShareToast(false), 3000);
+      } catch (err) {
+        console.error("Failed to copy URL:", err);
+      }
     }
   };
 
