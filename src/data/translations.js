@@ -168,8 +168,8 @@ export const translations = {
 
     // Home2 component content
     home2Title: "Biz; uluslararası pazarda otel alım satımında uzmanlaşmış,",
-    home2TitleHighlight: "etik değerleri önemseyen bir",
-    home2TitleEnd: "danışmanlık ekibiyiz.",
+    home2TitleHighlight: "etik değerleri önemseyen",
+    home2TitleEnd: "bir danışmanlık ekibiyiz.",
     ourTeam: "Ekibimiz",
     since2020: "2020'DAN BERİ",
     scroll: "KAYDIR",
