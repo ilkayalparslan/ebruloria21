@@ -16,10 +16,11 @@ export const translations = {
     getStarted: "Get Started",
     liveDemo: "Live Demo →",
 
+    // Home2 component content
     home2Title:
-      "Since 2020, we have been designing thoughtful living spaces by working with",
-    home2TitleHighlight: "square centimeters",
-    home2TitleEnd: ", not square meters.",
+      "We are a reliable and transparent consulting team specialized in",
+    home2TitleHighlight: "hotel buying and selling",
+    home2TitleEnd: "in the international market.",
     ourTeam: "Our Team",
     since2020: "SINCE 2020",
     scroll: "SCROLL",
@@ -166,9 +167,9 @@ export const translations = {
     liveDemo: "Canlı Demo →",
 
     // Home2 component content
-    home2Title: "2020'dan bu yana, metrekare değil",
-    home2TitleHighlight: "santimetre kare",
-    home2TitleEnd: "ile çalışarak düşünceli yaşam alanları tasarlıyoruz.",
+    home2Title: "Biz; uluslararası pazarda otel alım–satımında uzmanlaşmış,",
+    home2TitleHighlight: "güvenilir ve şeffaf",
+    home2TitleEnd: "bir danışmanlık ekibiyiz.",
     ourTeam: "Ekibimiz",
     since2020: "2020'DAN BERİ",
     scroll: "KAYDIR",
@@ -315,9 +316,9 @@ export const translations = {
     liveDemo: "عرض مباشر ←",
 
     // Home2 component content
-    home2Title: "منذ عام 2020، نصمم مساحات معيشة مدروسة بالعمل مع",
-    home2TitleHighlight: "السنتيمترات المربعة",
-    home2TitleEnd: "، وليس الأمتار المربعة.",
+    home2Title: "نحن فريق استشاري موثوق وشفاف متخصص في",
+    home2TitleHighlight: "شراء وبيع الفنادق",
+    home2TitleEnd: "في السوق الدولي.",
     ourTeam: "فريقنا",
     since2020: "منذ 2020",
     scroll: "تصفح",
