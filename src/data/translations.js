@@ -17,11 +17,11 @@ export const translations = {
     liveDemo: "Live Demo →",
 
     home2Title:
-      "Since 2010, we have been designing thoughtful living spaces by working with",
+      "Since 2020, we have been designing thoughtful living spaces by working with",
     home2TitleHighlight: "square centimeters",
     home2TitleEnd: ", not square meters.",
     ourTeam: "Our Team",
-    since2010: "SINCE 2010",
+    since2020: "SINCE 2020",
     scroll: "SCROLL",
 
     // Home3 component content
@@ -166,11 +166,11 @@ export const translations = {
     liveDemo: "Canlı Demo →",
 
     // Home2 component content
-    home2Title: "2010'dan bu yana, metrekare değil",
+    home2Title: "2020'dan bu yana, metrekare değil",
     home2TitleHighlight: "santimetre kare",
     home2TitleEnd: "ile çalışarak düşünceli yaşam alanları tasarlıyoruz.",
     ourTeam: "Ekibimiz",
-    since2010: "2010'DAN BERİ",
+    since2020: "2020'DAN BERİ",
     scroll: "KAYDIR",
 
     // Home3 component content
@@ -315,11 +315,11 @@ export const translations = {
     liveDemo: "عرض مباشر ←",
 
     // Home2 component content
-    home2Title: "منذ عام 2010، نصمم مساحات معيشة مدروسة بالعمل مع",
+    home2Title: "منذ عام 2020، نصمم مساحات معيشة مدروسة بالعمل مع",
     home2TitleHighlight: "السنتيمترات المربعة",
     home2TitleEnd: "، وليس الأمتار المربعة.",
     ourTeam: "فريقنا",
-    since2010: "منذ 2010",
+    since2020: "منذ 2020",
     scroll: "تصفح",
 
     // Home3 component content
