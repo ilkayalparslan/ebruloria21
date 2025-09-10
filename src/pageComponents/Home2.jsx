@@ -66,7 +66,7 @@ function Home2() {
       <div className="absolute bottom-8 left-8 hidden md:block">
         <div className="w-16 h-px bg-primary-light mb-4"></div>
         <p className="text-white text-sm font-medium tracking-wider">
-          {t("since2010")}
+          {t("since2020")}
         </p>
       </div>
 
