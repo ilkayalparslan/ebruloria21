@@ -7,11 +7,13 @@ import Homes from "./pages/Homes";
 import HotelDetails from "./pages/HotelDetails.jsx";
 import OurTeam from "./pages/OurTeam.jsx";
 import SellForm from "./pages/SellForm.jsx";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <LanguageProvider>
       <Router>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/hotels" element={<Hotels />} />
