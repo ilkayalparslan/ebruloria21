@@ -64,7 +64,7 @@ const Hotel1 = () => {
   // Get truncated description (4-5 words)
   const getTruncatedDescription = (description) => {
     const words = description.split(" ");
-    return words.slice(0, 5).join(" ");
+    return words.slice(0, 4).join(" ");
   };
 
   const openContactModal = (hotel) => {
@@ -141,9 +141,11 @@ const Hotel1 = () => {
 
     if (isLeftSwipe || isRightSwipe) {
       const currentIndex = currentImageIndex[hotelIndex] || 0;
+      // Fix: Ensure we don't go beyond the actual sliced images (max 6)
+      const maxIndex = Math.min(totalImages, 6) - 1;
       let newIndex = currentIndex;
 
-      if (isLeftSwipe && currentIndex < totalImages - 1) {
+      if (isLeftSwipe && currentIndex < maxIndex) {
         newIndex = currentIndex + 1;
       } else if (isRightSwipe && currentIndex > 0) {
         newIndex = currentIndex - 1;
@@ -229,7 +231,10 @@ const Hotel1 = () => {
                   onTouchStart={handleTouchStart}
                   onTouchMove={handleTouchMove}
                   onTouchEnd={() =>
-                    handleTouchEnd(index, hotel.imageCount || 1)
+                    handleTouchEnd(
+                      index,
+                      getHotelImages(hotel).slice(0, 6).length
+                    )
                   }
                 >
                   {getHotelImages(hotel)
@@ -243,24 +248,22 @@ const Hotel1 = () => {
                       />
                     ))}
                 </div>
-
                 {/* Navigation Dots */}
                 <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex gap-2">
-                  {Array.from({
-                    length: Math.min(hotel.imageCount || 1, 6),
-                  }).map((_, imgIndex) => (
-                    <button
-                      key={imgIndex}
-                      onClick={() => handleDotClick(index, imgIndex)}
-                      className={`w-2 h-2 rounded-full transition-colors duration-200 ${
-                        (currentImageIndex[index] || 0) === imgIndex
-                          ? "bg-white"
-                          : "bg-white/50 hover:bg-white/75"
-                      }`}
-                    />
-                  ))}
+                  {getHotelImages(hotel)
+                    .slice(0, 6)
+                    .map((_, imgIndex) => (
+                      <button
+                        key={imgIndex}
+                        onClick={() => handleDotClick(index, imgIndex)}
+                        className={`w-2 h-2 rounded-full transition-colors duration-200 ${
+                          (currentImageIndex[index] || 0) === imgIndex
+                            ? "bg-white"
+                            : "bg-white/50 hover:bg-white/75"
+                        }`}
+                      />
+                    ))}
                 </div>
-
                 {/* Status Badges */}
                 <div className="absolute top-3 left-3 flex gap-2">
                   {hotel.status.map((status, idx) => (
@@ -274,7 +277,6 @@ const Hotel1 = () => {
                     </span>
                   ))}
                 </div>
-
                 {/* Contact Agent Button */}
                 <div className="absolute top-3 right-3">
                   <button
