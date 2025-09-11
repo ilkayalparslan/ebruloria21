@@ -295,11 +295,14 @@ export const getDisplayTitle = (hotel) => {
 
 // Helper function to get room count display
 export const getRoomDisplay = (roomNumber) => {
-  if (roomNumber >= 100) return "100+";
-  if (roomNumber >= 50) return "50+";
-  if (roomNumber >= 20) return "20+";
-  if (roomNumber >= 10) return "10+";
-  return roomNumber.toString();
+  if (!roomNumber) return "N/A";
+
+  // Convert to number if it's a string
+  const num =
+    typeof roomNumber === "string" ? parseInt(roomNumber) : roomNumber;
+
+  // Return exact number instead of "20+" format
+  return num.toString();
 };
 
 // MULTILINGUAL HELPER FUNCTIONS
