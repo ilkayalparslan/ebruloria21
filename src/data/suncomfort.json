@@ -5,12 +5,12 @@
   "location": "Sultanahmet District",
   "city": "Istanbul",
   "country": "Turkey",
-  "roomNumber": 25,
+  "roomNumber": 29,
   "imageCount": 16,
   "imageFolderName": "suncomfort",
   "status": ["For Sale", "For Rent"],
-  "floorCount": 4,
-  "baseSquare": 28,
+  "floorCount": 7,
+  "baseSquare": 75,
   "tier": "basic",
   "translations": {
     "en": {
