@@ -313,6 +313,32 @@ const Hotel1 = () => {
                   </span>
                 </div>
 
+                {/* ADD THIS: Status Tag */}
+                {hotel.status && hotel.status.length > 0 && (
+                  <div className="mb-3">
+                    <div className="flex flex-wrap gap-2">
+                      {hotel.status.map((status, idx) => (
+                        <span
+                          key={idx}
+                          className={`px-3 py-1 rounded-full text-xs font-medium uppercase tracking-wide ${
+                            status === "For Sale"
+                              ? "bg-green-100 text-green-700"
+                              : status === "For Rent"
+                              ? "bg-blue-100 text-blue-700"
+                              : "bg-gray-100 text-gray-700"
+                          }`}
+                        >
+                          {status === "For Sale"
+                            ? t("forSale")
+                            : status === "For Rent"
+                            ? t("forRent")
+                            : status}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
                 {/* Title */}
                 {hotel.title && (
                   <div className="mb-3">
