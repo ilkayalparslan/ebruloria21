@@ -28,7 +28,7 @@ const Hotel1 = () => {
   });
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [hotelsPerPage] = useState(12);
+  const [hotelsPerPage] = useState(9);
 
   const [currentImageIndex, setCurrentImageIndex] = useState({});
   const [touchStart, setTouchStart] = useState(null);
