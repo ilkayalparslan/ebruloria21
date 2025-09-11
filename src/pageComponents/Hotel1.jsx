@@ -33,7 +33,8 @@ const Hotel1 = () => {
 
   // Get hotels with translations for current language
   const HOTEL_LISTINGS = useMemo(() => {
-    return getHotelsWithTranslations(currentLanguage);
+    const hotelsWithTranslations = getHotelsWithTranslations(currentLanguage);
+    return hotelsWithTranslations;
   }, [currentLanguage]);
 
   // Get unique cities for filter dropdown
@@ -227,7 +228,7 @@ const Hotel1 = () => {
               key={index}
               className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
             >
-              {/* Hotel Image carousel - no changes needed */}
+              {/* Hotel Image carousel */}
               <div className="relative h-80 overflow-hidden">
                 <div
                   className="flex h-full transition-transform duration-300 ease-in-out"
@@ -272,30 +273,9 @@ const Hotel1 = () => {
                       />
                     ))}
                 </div>
-                {/* Status Badges */}
-                <div className="absolute top-3 left-3 flex gap-2">
-                  {hotel.status.map((status, idx) => (
-                    <span
-                      key={idx}
-                      className={`px-3 py-1 rounded-full text-xs font-semibold text-white ${
-                        status === "For Sale" ? "bg-green-500" : "bg-blue-500"
-                      }`}
-                    >
-                      {status === "For Sale" ? t("forSale") : t("forRent")}
-                    </span>
-                  ))}
-                </div>
-                {/* Contact Agent Button */}
-                <div className="absolute top-3 right-3">
-                  <button
-                    onClick={() => openContactModal(hotel)}
-                    className="btn-primary-gradient text-white px-4 py-2 rounded-lg text-sm font-medium"
-                  >
-                    {t("contactAgent")}
-                  </button>
-                </div>
               </div>
 
+              {/* Hotel Details - Now shows translated content */}
               {/* Hotel Details - Now shows translated content */}
               <div className="p-4">
                 {/* Location */}
@@ -306,6 +286,15 @@ const Hotel1 = () => {
                   </span>
                 </div>
 
+                {/* Title - NEW: Display the title from JSON */}
+                {hotel.title && (
+                  <div className="mb-3">
+                    <h3 className="text-lg font-semibold text-gray-900 leading-tight">
+                      {hotel.title}
+                    </h3>
+                  </div>
+                )}
+
                 {/* Description with toggle - Now uses translated description */}
                 <div className="mb-3">
                   <div className="flex items-start justify-between">
@@ -314,10 +303,10 @@ const Hotel1 = () => {
                         ? hotel.description
                         : getTruncatedDescription(hotel.description)}
                       {!expandedDescriptions[index] &&
-                        hotel.description.split(" ").length > 5 &&
+                        hotel.description.split(" ").length > 4 &&
                         "..."}
                     </p>
-                    {hotel.description.split(" ").length > 5 && (
+                    {hotel.description.split(" ").length > 4 && (
                       <button
                         onClick={() => toggleDescription(index)}
                         className="text-gray-400 hover:text-gray-600 transition-colors ml-1 flex-shrink-0"

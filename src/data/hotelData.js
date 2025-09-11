@@ -58,6 +58,7 @@ export const getTranslatedHotel = (hotel, language = "en") => {
   const translations = hotel.translations[language] || hotel.translations.en;
   return {
     ...hotel,
+    title: translations.title,
     description: translations.description,
     type: translations.type,
     amenities: translations.amenities,
