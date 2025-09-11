@@ -12,7 +12,7 @@ import { MdLocationOn, MdHotel, MdStar, MdClose } from "react-icons/md";
 
 const Hotel1 = () => {
   const navigate = useNavigate();
-  const { t, currentLanguage } = useTranslation(); // Add currentLanguage
+  const { t, currentLanguage } = useTranslation();
   const [statusFilter, setStatusFilter] = useState("all");
   const [cityFilter, setCityFilter] = useState("all");
   const [expandedDescriptions, setExpandedDescriptions] = useState({});
@@ -104,7 +104,6 @@ const Hotel1 = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission here
     console.log("Contact form submitted:", formData);
     alert(t("thankYouInquiry"));
     closeContactModal();
@@ -150,7 +149,6 @@ const Hotel1 = () => {
 
     if (isLeftSwipe || isRightSwipe) {
       const currentIndex = currentImageIndex[hotelIndex] || 0;
-      // Fix: Ensure we don't go beyond the actual sliced images (max 6)
       const maxIndex = Math.min(totalImages, 6) - 1;
       let newIndex = currentIndex;
 
@@ -221,7 +219,7 @@ const Hotel1 = () => {
           </select>
         </div>
 
-        {/* Hotel Cards Grid - Rest remains the same but hotel content is now translated */}
+        {/* Hotel Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredHotels.map((hotel, index) => (
             <div
@@ -275,18 +273,18 @@ const Hotel1 = () => {
                 </div>
               </div>
 
-              {/* Hotel Details - Now shows translated content */}
-              {/* Hotel Details - Now shows translated content */}
+              {/* Hotel Details */}
               <div className="p-4">
-                {/* Location */}
+                {/* Location - FIXED: Now uses proper translation access */}
                 <div className="flex items-center text-gray-600 mb-2">
                   <MdLocationOn className="w-4 h-4 mr-2" />
                   <span className="text-lg font-semibold text-gray-800">
-                    {hotel.city}, {hotel.country}
+                    {t(`cities.${hotel.city}`) || hotel.city},{" "}
+                    {t(`countries.${hotel.country}`) || hotel.country}
                   </span>
                 </div>
 
-                {/* Title - NEW: Display the title from JSON */}
+                {/* Title */}
                 {hotel.title && (
                   <div className="mb-3">
                     <h3 className="text-lg font-semibold text-gray-900 leading-tight">
@@ -295,7 +293,7 @@ const Hotel1 = () => {
                   </div>
                 )}
 
-                {/* Description with toggle - Now uses translated description */}
+                {/* Description with toggle */}
                 <div className="mb-3">
                   <div className="flex items-start justify-between">
                     <p className="text-gray-600 text-xs leading-relaxed flex-1 mr-2">
@@ -339,7 +337,7 @@ const Hotel1 = () => {
                   </span>
                 </div>
 
-                {/* Property Type & Rating - Now uses translated type */}
+                {/* Property Type & Rating */}
                 <div className="flex items-center justify-between mb-3">
                   <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
                     {hotel.type}
@@ -354,7 +352,7 @@ const Hotel1 = () => {
                   )}
                 </div>
 
-                {/* Amenities - Now uses translated amenities */}
+                {/* Amenities */}
                 {hotel.amenities && hotel.amenities.length > 0 && (
                   <div className="mb-3">
                     <div className="flex flex-wrap gap-1">
@@ -394,6 +392,7 @@ const Hotel1 = () => {
                     </div>
                   </div>
                 )}
+
                 {/* Price */}
                 <div className="flex items-center justify-between mb-3">
                   {hotel.price && (
@@ -426,7 +425,7 @@ const Hotel1 = () => {
         )}
       </div>
 
-      {/* Contact Modal - No changes needed, already translated */}
+      {/* Contact Modal */}
       {showContactModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
           <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto">
@@ -435,7 +434,11 @@ const Hotel1 = () => {
                 {t("contactAgentModal")}
               </h3>
               <p className="text-primary-light text-sm mt-1">
-                {selectedHotel?.city}, {selectedHotel?.country}
+                {/* FIXED: Modal location also uses translated city/country */}
+                {t(`cities.${selectedHotel?.city}`) ||
+                  selectedHotel?.city},{" "}
+                {t(`countries.${selectedHotel?.country}`) ||
+                  selectedHotel?.country}
               </p>
               <button
                 onClick={closeContactModal}
@@ -520,7 +523,7 @@ const Hotel1 = () => {
                 />
               </div>
 
-              {/* Property Details Card - Now shows translated type */}
+              {/* Property Details Card */}
               <div className="bg-gray-50 rounded-lg p-4 mb-6">
                 <div className="flex items-center justify-between text-sm">
                   <span className="text-gray-600">{t("propertyType")}:</span>

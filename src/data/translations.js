@@ -127,6 +127,16 @@ export const translations = {
     pleaseContactMe: "Please contact me.",
     thankYouInquiry: "Thank you for your inquiry! We'll get back to you soon.",
 
+    // Cities and Countries translations
+    cities: {
+      Istanbul: "Istanbul",
+      Trabzon: "Trabzon",
+      Ankara: "Ankara",
+    },
+    countries: {
+      Turkey: "Turkey",
+    },
+
     // HotelDetails component translations
     loadingPropertyDetails: "Loading property details...",
     propertyNotFound: "Property Not Found",
@@ -277,6 +287,16 @@ export const translations = {
     thankYouInquiry:
       "Sorgunuz için teşekkürler! En kısa sürede size dönüş yapacağız.",
 
+    // Cities and Countries translations
+    cities: {
+      Istanbul: "İstanbul",
+      Trabzon: "Trabzon",
+      Ankara: "Ankara",
+    },
+    countries: {
+      Turkey: "Türkiye",
+    },
+
     // HotelDetails component translations
     loadingPropertyDetails: "Mülk detayları yükleniyor...",
     propertyNotFound: "Mülk Bulunamadı",
@@ -425,6 +445,16 @@ export const translations = {
     pleaseContactMe: "يرجى الاتصال بي.",
     thankYouInquiry: "شكراً لك على استفسارك! سنعاود الاتصال بك قريباً.",
 
+    // Cities and Countries translations
+    cities: {
+      Istanbul: "اسطنبول",
+      Trabzon: "طرابزون",
+      Ankara: "أنقرة",
+    },
+    countries: {
+      Turkey: "تركيا",
+    },
+
     // HotelDetails component translations
     loadingPropertyDetails: "جاري تحميل تفاصيل العقار...",
     propertyNotFound: "العقار غير موجود",
@@ -453,7 +483,23 @@ export const translations = {
 export const useTranslation = () => {
   const { language } = useLanguage();
 
-  const t = (key) => translations[language][key] || key;
+  const t = (key) => {
+    // Handle nested keys like 'cities.Istanbul'
+    if (key.includes(".")) {
+      const keys = key.split(".");
+      let value = translations[language];
+
+      for (const k of keys) {
+        value = value?.[k];
+        if (value === undefined) break;
+      }
+
+      return value || key;
+    }
+
+    // Handle regular keys
+    return translations[language][key] || key;
+  };
 
   return { t, currentLanguage: language };
 };
