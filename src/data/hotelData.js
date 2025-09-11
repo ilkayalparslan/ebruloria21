@@ -39,6 +39,7 @@ import riasuitesData from "./riasuites.json";
 import erdemhotelData from "./erdemhotel.json";
 import taksimparksuitesData from "./taksimparksuites.json";
 import suncomfortData from "./suncomfort.json";
+import bigappleData from "./bigapple.json";
 
 // Raw hotel listings (with translations object)
 export const RAW_HOTEL_LISTINGS = [
@@ -53,6 +54,7 @@ export const RAW_HOTEL_LISTINGS = [
   erdemhotelData,
   taksimparksuitesData,
   suncomfortData,
+  bigappleData,
 ];
 
 // Helper function to get translated content for a single hotel

@@ -1,0 +1,56 @@
+{
+  "id": 12,
+  "name": "Big Apple Hotel",
+  "adNumber": "6927485631",
+  "location": "Sultanahmet District",
+  "city": "Istanbul",
+  "country": "Turkey",
+  "roomNumber": 15,
+  "imageCount": 14,
+  "imageFolderName": "bigapple",
+  "status": ["For Sale"],
+  "floorCount": 5,
+  "baseSquare": 150,
+  "tier": "basic",
+  "translations": {
+    "en": {
+      "title": "Coastal Comfort with Sea Views",
+      "description": "This modest hostel is located just a 6-minute walk from the Marmara Sea coastline, an 8-minute walk to Sultanahmet Square, and 4 km from Kumkapı Train Station. Simple rooms and dormitories feature WiFi, lockers, and city or sea views. Buffet breakfast is served. Other facilities include luggage storage service, computer room, and a terrace bar with sea views.",
+      "type": "Hostel",
+      "amenities": [
+        "Free WiFi",
+        "Free Breakfast",
+        "Parking",
+        "Child Friendly",
+        "Laundry Service",
+        "Air Conditioning"
+      ]
+    },
+    "tr": {
+      "title": "Deniz Manzaralı Sahil Konforu",
+      "description": "Marmara Denizi kıyı şeridine 6 dakikalık yürüme mesafesindeki bu mütevazı hostel, Sultanahmet Meydanı'na 8 dakikalık yürüme mesafesinde ve Kumkapı Tren İstasyonu'na 4 km uzaklıktadır. Sade oda ve yatakhanelerde WiFi, kilitli dolaplar ile şehir ve deniz manzarası vardır. Açık büfe kahvaltı sunulur. Diğer imkanlar arasında bagaj emanet hizmeti, bilgisayar odası ve deniz manzaralı teras bar bulunur.",
+      "type": "Hostel",
+      "amenities": [
+        "Ücretsiz kablosuz bağlantı",
+        "Ücretsiz kahvaltı",
+        "Park yeri",
+        "Çocuklar için uygun",
+        "Çamaşır yıkama hizmeti",
+        "Klimalı"
+      ]
+    },
+    "ar": {
+      "title": "راحة ساحلية مع إطلالات بحرية في السلطان أحمد التاريخية",
+      "description": "يقع هذا النزل المتواضع على بعد 6 دقائق سيراً على الأقدام من الساحل البحري لبحر مرمرة، وعلى بعد 8 دقائق سيراً على الأقدام من ميدان السلطان أحمد، و4 كم من محطة قطار كومكابي. تحتوي الغرف البسيطة والمهاجع على خدمة الواي فاي وخزائن مقفلة مع إطلالات على المدينة والبحر. يتم تقديم إفطار مفتوح. تشمل المرافق الأخرى خدمة حفظ الأمتعة وغرفة الكمبيوتر وبار التراس مع إطلالات بحرية.",
+      "type": "نزل",
+      "amenities": [
+        "واي فاي مجاني",
+        "إفطار مجاني",
+        "موقف سيارات",
+        "مناسب للأطفال",
+        "خدمة الغسيل",
+        "تكييف الهواء"
+      ]
+    }
+  }
+}
