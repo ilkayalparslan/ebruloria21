@@ -200,44 +200,44 @@ const Hotel1 = () => {
         {/* Filter Buttons */}
         <div className="mb-6 flex flex-col md:flex-row md:flex-wrap gap-4 md:items-center">
           {/* Status Filter Buttons */}
+
           <div className="flex gap-2 w-full md:w-auto">
             <button
               onClick={() => handleStatusFilter("all")}
-              className={`flex-1 md:flex-none px-4 py-2 rounded-lg font-medium transition-colors ${
+              className={`flex-1 md:flex-none px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
                 statusFilter === "all"
-                  ? "btn-primary-gradient text-white" // ✅ Your primary gradient
-                  : "bg-white text-gray-700 hover:bg-gray-100"
+                  ? "btn-primary-gradient text-white shadow-lg" // ✅ Your primary gradient
+                  : "bg-white text-gray-700 hover:bg-gray-50 border border-gray-200"
               }`}
             >
               {t("all")}
             </button>
             <button
               onClick={() => handleStatusFilter("For Sale")}
-              className={`flex-1 md:flex-none px-4 py-2 rounded-lg font-medium transition-colors ${
+              className={`flex-1 md:flex-none px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
                 statusFilter === "For Sale"
-                  ? "btn-success-gradient text-white" // ✅ Your success gradient
-                  : "bg-white text-gray-700 hover:bg-gray-100"
+                  ? "btn-primary-gradient text-white shadow-lg" // ✅ Same as "all" button
+                  : "bg-white text-gray-700 hover:bg-gray-50 border border-gray-200"
               }`}
             >
               {t("forSale")}
             </button>
             <button
               onClick={() => handleStatusFilter("For Rent")}
-              className={`flex-1 md:flex-none px-4 py-2 rounded-lg font-medium transition-colors ${
+              className={`flex-1 md:flex-none px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
                 statusFilter === "For Rent"
-                  ? "btn-info-gradient text-white" // ✅ Your info gradient
-                  : "bg-white text-gray-700 hover:bg-gray-100"
+                  ? "btn-primary-gradient text-white shadow-lg" // ✅ Same as "all" button
+                  : "bg-white text-gray-700 hover:bg-gray-50 border border-gray-200"
               }`}
             >
               {t("forRent")}
             </button>
           </div>
-
           {/* City Filter Dropdown */}
           <select
             value={cityFilter}
             onChange={(e) => handleCityFilter(e.target.value)}
-            className="w-full md:w-auto px-4 py-2 rounded-lg border border-gray-300 bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full md:w-auto px-4 py-2 rounded-lg border border-gray-300 bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
           >
             <option value="all">{t("allCities")}</option>
             {uniqueCities.map((city) => (
