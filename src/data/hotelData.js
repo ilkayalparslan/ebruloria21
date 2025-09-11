@@ -38,6 +38,7 @@ import raimondData from "./raimond.json";
 import riasuitesData from "./riasuites.json";
 import erdemhotelData from "./erdemhotel.json";
 import taksimparksuitesData from "./taksimparksuites.json";
+import suncomfortData from "./suncomfort.json";
 
 // Raw hotel listings (with translations object)
 export const RAW_HOTEL_LISTINGS = [
@@ -51,6 +52,7 @@ export const RAW_HOTEL_LISTINGS = [
   riasuitesData,
   erdemhotelData,
   taksimparksuitesData,
+  suncomfortData,
 ];
 
 // Helper function to get translated content for a single hotel

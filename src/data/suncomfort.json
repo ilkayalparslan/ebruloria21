@@ -1,0 +1,56 @@
+{
+  "id": 11,
+  "name": "Historic Sultanahmet Boutique Hotel",
+  "adNumber": "6751029463",
+  "location": "Sultanahmet District",
+  "city": "Istanbul",
+  "country": "Turkey",
+  "roomNumber": 25,
+  "imageCount": 16,
+  "imageFolderName": "suncomfort",
+  "status": ["For Sale", "For Rent"],
+  "floorCount": 4,
+  "baseSquare": 28,
+  "tier": "basic",
+  "translations": {
+    "en": {
+      "title": "Historic Charm in the Heart of Sultanahmet",
+      "description": "This stylish and economical hotel is located on a bustling cobblestone street in the city center, just an 11-minute walk to the nearest tram stop, 15 minutes to the Grand Bazaar, and 2 km from Hagia Sophia. The hotel features shared simple rooms with flat-screen TV, kitchenette, and dining area. Elegant private rooms include gold quilted headboards, separate seating areas, and marble bathrooms. WiFi is available throughout the property. Services such as luggage storage, hotel safe, and currency exchange office contribute to guest comfort. Wireless internet in common areas is at guests' disposal. Restaurant and bar facilities are available, along with an on-site garden. Other hotel services include a newsstand and television room. Guests can park their private vehicles in covered or open parking areas. Additional amenities include multilingual staff, 24-hour security service, car rental, medical support, transfer service, room service, wake-up service, laundry, and hairdresser. Paid transportation service is also provided to guests. A fax machine is available to meet classic office needs.",
+      "type": "City Hotel",
+      "amenities": [
+        "Free WiFi",
+        "Free Breakfast",
+        "Wheelchair Accessible",
+        "Air Conditioning",
+        "Room Service",
+        "Child Friendly"
+      ]
+    },
+    "tr": {
+      "title": "Sultanahmet'in Kalbinde Tarihi Çekicilik",
+      "description": "Şehir merkezindeki Arnavut kaldırımlı hareketli bir cadde üzerinde yer alan bu şık ve ekonomik otel, en yakın tramvay durağına yürüyerek 11 dakika, Kapalı Çarşı'ya 15 dakika, Ayasofya'ya 2 km uzaklıktadır. Paylaşımlı sade odalarda düz ekran TV, mini mutfak ve yemek alanı bulunur. Şık özel odalarda altın renkli kapitone yatak başlığı, ayrı oturma alanı ve mermer banyo vardır. WiFi mevcuttur. Emanet bürosu, otel kasası ve döviz bürosu gibi hizmetler mevcut konfora katkıda bulunmaktadır. Ortak alanlarda kablosuz internet misafirlerin hizmetindedir. Restoran ve bar mevcuttur. Bunun yanı sıra, tesis dâhilinde bir bahçe bulunmaktadır. Otelin sunduğu diğer hizmetler arasında gazete bayii ve televizyon odası sayılabilir. Misafirler, özel araçlarını kapalı veya açık otoparka bırakabilirler. Yabancı dil bilen personel, 24 saat güvenlik hizmeti, araç kiralama, tıbbi destek, transfer hizmeti, oda servisi, uyandırma servisi, çamaşırhane ve kuaför sunulan imkânlar arasındadır. Misafirlere ayrıca ücretli taşıma hizmeti sağlanmaktadır. Klasik ofis ihtiyaçlarını karşılamak amacıyla bir faks cihazını olur.",
+      "type": "Sehir Oteli",
+      "amenities": [
+        "Ücretsiz kablosuz bağlantı",
+        "Ücretsiz kahvaltı",
+        "Engellilere uygun",
+        "Klimalı",
+        "Oda servisi",
+        "Çocuklar için uygun"
+      ]
+    },
+    "ar": {
+      "title": "السحر التاريخي في قلب السلطان أحمد",
+      "description": "يقع هذا الفندق الأنيق والاقتصادي على شارع مرصوف بالحصى المزدحم في وسط المدينة، على بعد 11 دقيقة سيراً على الأقدام إلى أقرب محطة ترام، و15 دقيقة إلى البازار الكبير، و2 كم من آيا صوفيا. يحتوي الفندق على غرف مشتركة بسيطة مع تلفزيون بشاشة مسطحة ومطبخ صغير ومنطقة طعام. تشمل الغرف الخاصة الأنيقة رؤوس أسرة مبطنة ذهبية ومناطق جلوس منفصلة وحمامات رخامية. تتوفر خدمة الواي فاي في جميع أنحاء العقار. تساهم الخدمات مثل حفظ الأمتعة وخزانة الفندق ومكتب صرف العملات في راحة الضيوف. الإنترنت اللاسلكي في المناطق المشتركة في خدمة الضيوف. تتوفر مرافق المطعم والبار، بالإضافة إلى حديقة في الموقع. تشمل خدمات الفندق الأخرى كشك الصحف وغرفة التلفزيون. يمكن للضيوف إيقاف سياراتهم الخاصة في مناطق وقوف السيارات المغطاة أو المفتوحة. تشمل وسائل الراحة الإضافية الموظفين متعددي اللغات وخدمة الأمان على مدار 24 ساعة وتأجير السيارات والدعم الطبي وخدمة النقل وخدمة الغرف وخدمة الإيقاظ والغسيل ومصفف الشعر. كما يتم توفير خدمة النقل المدفوعة للضيوف. يتوفر جهاز فاكس لتلبية احتياجات المكتب الكلاسيكية.",
+      "type": "فندق المدينة",
+      "amenities": [
+        "واي فاي مجاني",
+        "إفطار مجاني",
+        "مناسب للكراسي المتحركة",
+        "تكييف الهواء",
+        "خدمة الغرف",
+        "مناسب للأطفال"
+      ]
+    }
+  }
+}
