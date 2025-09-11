@@ -27,6 +27,9 @@ const Hotel1 = () => {
     message: "",
   });
 
+  const [currentPage, setCurrentPage] = useState(1);
+  const [hotelsPerPage] = useState(12);
+
   const [currentImageIndex, setCurrentImageIndex] = useState({});
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
@@ -45,7 +48,7 @@ const Hotel1 = () => {
   // Filter and prioritize hotels
   const filteredHotels = useMemo(() => {
     const prioritized = getPrioritizedHotels(HOTEL_LISTINGS);
-    return prioritized.filter((hotel) => {
+    const filtered = prioritized.filter((hotel) => {
       const statusMatch =
         statusFilter === "all" || hotel.status.includes(statusFilter);
       const cityMatch =
@@ -53,7 +56,33 @@ const Hotel1 = () => {
         `${hotel.city}, ${hotel.country}` === cityFilter;
       return statusMatch && cityMatch;
     });
+
+    setCurrentPage(1);
+    return filtered;
   }, [statusFilter, cityFilter, HOTEL_LISTINGS]);
+
+  const totalHotels = filteredHotels.length;
+  const totalPages = Math.ceil(totalHotels / hotelsPerPage);
+  const startIndex = 0;
+  const endIndex = currentPage * hotelsPerPage;
+  const currentHotels = filteredHotels.slice(startIndex, endIndex);
+  const hasMore = endIndex < totalHotels;
+
+  const handleLoadMore = () => {
+    if (hasMore) {
+      setCurrentPage((prev) => prev + 1);
+    }
+  };
+
+  const handleStatusFilter = (status) => {
+    setStatusFilter(status);
+    setCurrentPage(1);
+  };
+
+  const handleCityFilter = (city) => {
+    setCityFilter(city);
+    setCurrentPage(1);
+  };
 
   // Toggle description expansion
   const toggleDescription = (index) => {
@@ -173,30 +202,30 @@ const Hotel1 = () => {
           {/* Status Filter Buttons */}
           <div className="flex gap-2 w-full md:w-auto">
             <button
-              onClick={() => setStatusFilter("all")}
+              onClick={() => handleStatusFilter("all")}
               className={`flex-1 md:flex-none px-4 py-2 rounded-lg font-medium transition-colors ${
                 statusFilter === "all"
-                  ? "bg-gray-800 text-white"
+                  ? "btn-primary-gradient text-white" // ✅ Your primary gradient
                   : "bg-white text-gray-700 hover:bg-gray-100"
               }`}
             >
               {t("all")}
             </button>
             <button
-              onClick={() => setStatusFilter("For Sale")}
+              onClick={() => handleStatusFilter("For Sale")}
               className={`flex-1 md:flex-none px-4 py-2 rounded-lg font-medium transition-colors ${
                 statusFilter === "For Sale"
-                  ? "bg-green-500 text-white"
+                  ? "btn-success-gradient text-white" // ✅ Your success gradient
                   : "bg-white text-gray-700 hover:bg-gray-100"
               }`}
             >
               {t("forSale")}
             </button>
             <button
-              onClick={() => setStatusFilter("For Rent")}
+              onClick={() => handleStatusFilter("For Rent")}
               className={`flex-1 md:flex-none px-4 py-2 rounded-lg font-medium transition-colors ${
                 statusFilter === "For Rent"
-                  ? "bg-blue-500 text-white"
+                  ? "btn-info-gradient text-white" // ✅ Your info gradient
                   : "bg-white text-gray-700 hover:bg-gray-100"
               }`}
             >
@@ -207,7 +236,7 @@ const Hotel1 = () => {
           {/* City Filter Dropdown */}
           <select
             value={cityFilter}
-            onChange={(e) => setCityFilter(e.target.value)}
+            onChange={(e) => handleCityFilter(e.target.value)}
             className="w-full md:w-auto px-4 py-2 rounded-lg border border-gray-300 bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
             <option value="all">{t("allCities")}</option>
@@ -221,7 +250,7 @@ const Hotel1 = () => {
 
         {/* Hotel Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredHotels.map((hotel, index) => (
+          {currentHotels.map((hotel, index) => (
             <div
               key={index}
               className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
@@ -275,7 +304,7 @@ const Hotel1 = () => {
 
               {/* Hotel Details */}
               <div className="p-4">
-                {/* Location - FIXED: Now uses proper translation access */}
+                {/* Location */}
                 <div className="flex items-center text-gray-600 mb-2">
                   <MdLocationOn className="w-4 h-4 mr-2" />
                   <span className="text-lg font-semibold text-gray-800">
@@ -417,8 +446,27 @@ const Hotel1 = () => {
           ))}
         </div>
 
+        {/* Load More Button */}
+        {hasMore && (
+          <div className="text-center mt-8">
+            <button
+              onClick={handleLoadMore}
+              className="btn-primary-gradient text-white px-8 py-3 rounded-lg font-medium transition-colors duration-200 shadow-lg hover:shadow-xl"
+            >
+              {t("loadMore")} ({totalHotels - endIndex} {t("remaining")})
+            </button>
+          </div>
+        )}
+
+        {/* Pagination info */}
+        {totalHotels > 0 && (
+          <div className="text-center mt-4 text-sm text-gray-500">
+            {t("page")} {currentPage} {t("of")} {totalPages}
+          </div>
+        )}
+
         {/* No results message */}
-        {filteredHotels.length === 0 && (
+        {currentHotels.length === 0 && (
           <div className="text-center py-12">
             <p className="text-gray-500 text-lg">{t("noPropertiesFound")}</p>
           </div>
@@ -434,9 +482,7 @@ const Hotel1 = () => {
                 {t("contactAgentModal")}
               </h3>
               <p className="text-primary-light text-sm mt-1">
-                {/* FIXED: Modal location also uses translated city/country */}
-                {t(`cities.${selectedHotel?.city}`) ||
-                  selectedHotel?.city},{" "}
+                {t(`cities.${selectedHotel?.city}`) || selectedHotel?.city},{" "}
                 {t(`countries.${selectedHotel?.country}`) ||
                   selectedHotel?.country}
               </p>

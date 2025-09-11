@@ -126,6 +126,11 @@ export const translations = {
     interestedInProperty: "I'm interested in this",
     pleaseContactMe: "Please contact me.",
     thankYouInquiry: "Thank you for your inquiry! We'll get back to you soon.",
+    loadMore: "Load More",
+    remaining: "remaining",
+    showing: "Showing",
+    properties: "properties",
+    page: "Page",
 
     // Cities and Countries translations
     cities: {
@@ -286,6 +291,11 @@ export const translations = {
     pleaseContactMe: "Lütfen benimle iletişime geçin.",
     thankYouInquiry:
       "Sorgunuz için teşekkürler! En kısa sürede size dönüş yapacağız.",
+    loadMore: "Daha Fazla Yükle",
+    remaining: "kalan",
+    showing: "Gösteriliyor",
+    properties: "mülk",
+    page: "Sayfa",
 
     // Cities and Countries translations
     cities: {
@@ -444,6 +454,11 @@ export const translations = {
     interestedInProperty: "أنا مهتم بهذا",
     pleaseContactMe: "يرجى الاتصال بي.",
     thankYouInquiry: "شكراً لك على استفسارك! سنعاود الاتصال بك قريباً.",
+    loadMore: "تحميل المزيد",
+    remaining: "متبقي",
+    showing: "عرض",
+    properties: "عقارات",
+    page: "صفحة",
 
     // Cities and Countries translations
     cities: {
