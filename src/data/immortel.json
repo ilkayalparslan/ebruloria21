@@ -1,0 +1,68 @@
+{
+  "id": 13,
+  "name": "Immortel",
+  "adNumber": "6815374902",
+  "location": "Kucuk Ayasofya",
+  "city": "Istanbul",
+  "country": "Turkey",
+  "roomNumber": 20,
+  "imageCount": 19,
+  "imageFolderName": "immortel",
+  "status": ["For Sale"],
+  "floorCount": 6,
+  "baseSquare": 98,
+  "tier": "basic",
+  "translations": {
+    "en": {
+      "title": "Modern Comfort Hotel Near Little Hagia Sophia",
+      "description": "The rooms feature air conditioning and central heating. Each room is equipped with either a double bed or a queen-size bed. Room amenities include mini bar, tea and coffee machine, fire alarm, and wireless internet connection. Guests will find a pair of slippers in their rooms. Bathrooms are equipped with showers and hair dryers. Cosmetic products and towel options in the bathrooms create a privileged comfort experience. The accommodation offers family room and non-smoking room options. Guests can easily and quickly reach different floors of the hotel by elevator. Luggage storage and hotel safe are among the services offered. Wireless internet is available in common areas for guests. Children can spend their energy freely in the facility's playground. Additional services include multilingual staff, 24-hour security service, transfer service, and room service. Transportation service is also provided to guests. A fax machine is ready for use to carry out all office activities for communication or business purposes.",
+      "type": "City Hotel",
+      "amenities": [
+        "Free WiFi",
+        "Air Conditioning",
+        "Central Heating",
+        "Elevator",
+        "Mini Bar",
+        "Room Service",
+        "24/7 Security",
+        "Children's Playground",
+        "Hotel Safe",
+        "Transfer Service"
+      ]
+    },
+    "tr": {
+      "title": "Küçük Ayasofya Yakınında Modern Konfor Oteli",
+      "description": "Odalarda klima ve merkezi ısıtma bulunmaktadır. Odalarda çift kişilik bir yatak ya da bir \"Queensize\" yatak mevcuttur. Odaların donanımına mini bar, çay-kahve makinesi, yangın alarmı ve kablosuz internet bağlantısı dâhildir. Odalarda misafirler için bir çift terlik bulunmaktadır. Banyolarda duş mevcuttur. Ayrıca, saç kurutma makinesi bulunmaktadır. Banyolarda kozmetik ürün ve havlu seçeneği ayrıcalıklı konfor duygusu yaratır. Konaklama yeri, tarafından aile odası ve sigara içilmeyen oda seçenekleri sunulmaktadır. Otelin farklı katlarına misafirler asansör ile rahat ve hızlı bir şekilde ulaşabilir. Emanet bürosu ve otel kasası sunulan hizmetler arasındadır. Ortak alanlarda kablosuz internet misafirlerin hizmetindedir. Çocuklar tesisin oyun parkında enerjilerini diledikleri gibi harcayabilirler. Yabancı dil bilen personel, 24 saat güvenlik hizmeti, transfer hizmeti ve oda servisi ilave hizmetler arasındadır. Misafirlere ayrıca taşıma hizmeti sağlanmaktadır. İletişim veya iş amaçlı tüm ofis faaliyetlerini gerçekleştirebilmek için bir faks cihazını kullanıma hazırdır.",
+      "type": "Şehir Oteli",
+      "amenities": [
+        "Ücretsiz WiFi",
+        "Klima",
+        "Merkezi Isıtma",
+        "Asansör",
+        "Mini Bar",
+        "Oda Servisi",
+        "24 Saat Güvenlik",
+        "Çocuk Oyun Alanı",
+        "Otel Kasası",
+        "Transfer Hizmeti"
+      ]
+    },
+    "ar": {
+      "title": "فندق الراحة الحديث بالقرب من آيا صوفيا الصغيرة",
+      "description": "تحتوي الغرف على تكييف الهواء والتدفئة المركزية. كل غرفة مجهزة بسرير مزدوج أو سرير كوين سايز. تشمل وسائل الراحة في الغرف ميني بار وآلة الشاي والقهوة وإنذار الحريق واتصال إنترنت لاسلكي. سيجد الضيوف زوجاً من النعال في غرفهم. الحمامات مجهزة بدش ومجفف شعر. تخلق المنتجات التجميلية وخيارات المناشف في الحمامات تجربة راحة مميزة. يوفر المكان خيارات غرف عائلية وغرف غير مدخنين. يمكن للضيوف الوصول بسهولة وسرعة إلى طوابق مختلفة من الفندق بالمصعد. تخزين الأمتعة وخزانة الفندق من بين الخدمات المقدمة. الإنترنت اللاسلكي متاح في المناطق المشتركة للضيوف. يمكن للأطفال قضاء طاقتهم بحرية في ملعب المرفق. تشمل الخدمات الإضافية الموظفين متعددي اللغات وخدمة الأمان على مدار 24 ساعة وخدمة النقل وخدمة الغرف. كما يتم توفير خدمة النقل للضيوف. جهاز فاكس جاهز للاستخدام لتنفيذ جميع الأنشطة المكتبية لأغراض الاتصال أو الأعمال.",
+      "type": "فندق المدينة",
+      "amenities": [
+        "واي فاي مجاني",
+        "تكييف الهواء",
+        "تدفئة مركزية",
+        "مصعد",
+        "ميني بار",
+        "خدمة الغرف",
+        "أمان 24 ساعة",
+        "ملعب الأطفال",
+        "خزانة الفندق",
+        "خدمة النقل"
+      ]
+    }
+  }
+}
