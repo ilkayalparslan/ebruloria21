@@ -17,6 +17,7 @@ const Hotel1 = () => {
   const [cityFilter, setCityFilter] = useState("all");
   const [expandedDescriptions, setExpandedDescriptions] = useState({});
   const [showContactModal, setShowContactModal] = useState(false);
+  const [expandedAmenities, setExpandedAmenities] = useState({});
   const [selectedHotel, setSelectedHotel] = useState(null);
   const [formData, setFormData] = useState({
     firstName: "",
@@ -117,6 +118,13 @@ const Hotel1 = () => {
     setCurrentImageIndex((prev) => ({
       ...prev,
       [hotelIndex]: imageIndex,
+    }));
+  };
+
+  const toggleAmenities = (index) => {
+    setExpandedAmenities((prev) => ({
+      ...prev,
+      [index]: !prev[index],
     }));
   };
 
@@ -361,7 +369,10 @@ const Hotel1 = () => {
                 {hotel.amenities && hotel.amenities.length > 0 && (
                   <div className="mb-3">
                     <div className="flex flex-wrap gap-1">
-                      {hotel.amenities.slice(0, 3).map((amenity, idx) => (
+                      {(expandedAmenities[index]
+                        ? hotel.amenities
+                        : hotel.amenities.slice(0, 3)
+                      ).map((amenity, idx) => (
                         <span
                           key={idx}
                           className="bg-blue-50 text-blue-700 px-2 py-1 rounded text-xs"
@@ -370,14 +381,30 @@ const Hotel1 = () => {
                         </span>
                       ))}
                       {hotel.amenities.length > 3 && (
-                        <span className="text-gray-500 text-xs">
-                          +{hotel.amenities.length - 3} {t("more")}
-                        </span>
+                        <button
+                          onClick={() => toggleAmenities(index)}
+                          className="text-blue-600 hover:text-blue-800 transition-colors flex items-center text-xs"
+                        >
+                          <svg
+                            className={`w-3 h-3 transform transition-transform ml-1 ${
+                              expandedAmenities[index] ? "rotate-180" : ""
+                            }`}
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M19 9l-7 7-7-7"
+                            />
+                          </svg>
+                        </button>
                       )}
                     </div>
                   </div>
                 )}
-
                 {/* Price */}
                 <div className="flex items-center justify-between mb-3">
                   {hotel.price && (
