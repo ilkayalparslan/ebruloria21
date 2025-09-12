@@ -1,0 +1,83 @@
+{
+  "id": 15,
+  "name": "Royal Mount",
+  "adNumber": "6936592311",
+  "location": "Fatih",
+  "city": "Istanbul",
+  "country": "Turkey",
+  "roomNumber": 13,
+  "imageCount": 15,
+  "imageFolderName": "royalmount",
+  "status": ["For Sale"],
+  "floorCount": 6,
+  "baseSquare": 40,
+  "tier": "basic",
+  "translations": {
+    "en": {
+      "title": "Exclusive Boutique Hotel with Sea of Marmara Views in Historic Peninsula",
+      "description": "Experience the ultimate blend of Ottoman heritage and modern luxury at this exceptional boutique hotel, perfectly positioned on Istanbul's historic peninsula. Overlooking a charming cobblestone street with breathtaking Sea of Marmara views, this intimate property offers an unparalleled glimpse into Istanbul's rich Byzantine and Ottoman past.\n\nThe hotel enjoys an enviable location just 6 minutes' walk from Çemberlitaş tram station and only 1 kilometer from the world-famous Hagia Sophia Museum, formerly a Byzantine museum and mosque. This strategic positioning places guests at the heart of Istanbul's UNESCO World Heritage sites and most treasured historical landmarks.\n\n**Property Features:**\n- 13 elegantly appointed rooms across 6 floors\n- Spectacular Sea of Marmara and city panoramic views\n- 2 atmospheric restaurants with scenic vistas\n- 2 distinctive bars for sophisticated dining and entertainment\n- Traditional Turkish spa and authentic hamam experience\n- Complimentary breakfast service\n- Premium suites with private balconies and separate living areas\n- 24/7 room service and concierge\n\nThis rare investment opportunity combines the intimacy of a boutique hotel with the grandeur of Istanbul's imperial heritage. The property caters to discerning travelers seeking authentic Ottoman atmosphere while providing modern amenities and exceptional service standards.\n\nPerfect for investors looking to acquire a premium hospitality asset in one of the world's most historically significant and touristically valuable locations.",
+      "type": "Boutique Hotel",
+      "amenities": [
+        "Sea of Marmara Views",
+        "WiFi",
+        "Flat Screen TV",
+        "Mini Bar",
+        "In-room Safe",
+        "Premium Suites with Balcony",
+        "2 Restaurants",
+        "2 Bars",
+        "Turkish Spa",
+        "Traditional Hamam",
+        "24/7 Room Service",
+        "Complimentary Breakfast",
+        "Panoramic City Views",
+        "Historic Location",
+        "Tram Access"
+      ]
+    },
+    "tr": {
+      "title": "Tarihi Yarımada'da Marmara Denizi Manzaralı Eşsiz Butik Otel",
+      "description": "İstanbul'un tarihi yarımadasında mükemmel konumlanmış bu olağanüstü butik otelde Osmanlı mirası ve modern lüksün eşsiz karışımını deneyimleyin. Nefes kesen Marmara Denizi manzaralı büyüleyici Arnavut kaldırımlı sokağa bakan bu samimi mülk, İstanbul'un zengin Bizans ve Osmanlı geçmişine eşsiz bir bakış sunuyor.\n\nOtel, Çemberlitaş tramvay durağına sadece 6 dakikalık yürüme mesafesi ve dünyaca ünlü Ayasofya Müzesi'ne sadece 1 kilometre mesafede imrenilecek bir konuma sahip. Bu stratejik konum, misafirleri İstanbul'un UNESCO Dünya Mirası alanları ve en değerli tarihi simgelerinin kalbine yerleştiriyor.\n\n**Mülk Özellikleri:**\n- 6 katta zarif döşenmiş 13 oda\n- Muhteşem Marmara Denizi ve şehir panoramik manzaraları\n- Manzaralı 2 atmosferik restoran\n- Sofistike yemek ve eğlence için 2 farklı bar\n- Geleneksel Türk spa'sı ve otantik hamam deneyimi\n- Ücretsiz kahvaltı servisi\n- Özel balkonlu ve ayrı oturma alanları olan premium süitler\n- 7/24 oda servisi ve concierge\n\nBu nadir yatırım fırsatı, bir butik otelin samimiyetini İstanbul'un imparatorluk mirasının ihtişamıyla birleştiriyor. Mülk, otantik Osmanlı atmosferi arayan seçkin seyahatçilere hizmet verirken modern olanaklar ve olağanüstü hizmet standartları sunuyor.\n\nDünyanın en tarihi öneme sahip ve turistik değeri yüksek lokasyonlarından birinde premium konaklama varlığı edinmek isteyen yatırımcılar için mükemmel.",
+      "type": "Butik Otel",
+      "amenities": [
+        "Marmara Denizi Manzarası",
+        "WiFi",
+        "Düz Ekran TV",
+        "Mini Bar",
+        "Oda Kasası",
+        "Balkonlu Premium Süitler",
+        "2 Restoran",
+        "2 Bar",
+        "Türk Spa'sı",
+        "Geleneksel Hamam",
+        "7/24 Oda Servisi",
+        "Ücretsiz Kahvaltı",
+        "Panoramik Şehir Manzarası",
+        "Tarihi Lokasyon",
+        "Tramvay Erişimi"
+      ]
+    },
+    "ar": {
+      "title": "فندق بوتيك فريد في موقع مركزي - شبه الجزيرة التاريخية",
+      "description": "اختبر المزيج الأمثل من التراث العثماني والرفاهية الحديثة في هذا الفندق البوتيك الاستثنائي، المتموضع بشكل مثالي في شبه الجزيرة التاريخية في إسطنبول. يقع هذا العقار الحميم في شارع مرصوف بالحجارة الساحر في قلب منطقة الفاتح، ويقدم لمحة لا مثيل لها عن ماضي إسطنبول الغني البيزنطي والعثماني.\n\nيتمتع الفندق بموقع يُحسد عليه على بُعد 6 دقائق فقط سيراً على الأقدام من محطة ترام تشمبرليتاش وكيلومتر واحد فقط من متحف آيا صوفيا المشهور عالمياً، الذي كان سابقاً متحفاً ومسجداً بيزنطياً. هذا الموقع الاستراتيجي يضع الضيوف في قلب مواقع التراث العالمي لليونسكو في إسطنبول وأثمن المعالم التاريخية.\n\n**مميزات العقار:**\n- 13 غرفة مؤثثة بأناقة على 6 طوابق\n- أجواء حميمة مع سحر تاريخي أصيل\n- مطعمان جويان مع أجواء مريحة\n- بارين مميزين للطعام الراقي والترفيه\n- سبا تركي تقليدي وتجربة حمام أصيل\n- خدمة إفطار مجاني\n- أجنحة فاخرة مع شرفات خاصة ومناطق معيشة منفصلة\n- خدمة الغرف والكونسيرج 7/24\n\nتجمع فرصة الاستثمار النادرة هذه بين حميمية الفندق البوتيك وعظمة التراث الإمبراطوري لإسطنبول. يلبي العقار احتياجات المسافرين المميزين الذين يبحثون عن أجواء عثمانية أصيلة مع توفير وسائل الراحة الحديثة ومعايير الخدمة الاستثنائية.\n\nمثالي للمستثمرين الذين يتطلعون إلى الحصول على أصول ضيافة متميزة في واحد من أكثر المواقع أهمية تاريخياً وقيمة سياحية في العالم.",
+      "type": "فندق تراث بوتيك",
+      "amenities": [
+        "شارع تاريخي مرصوف بالحجارة",
+        "واي فاي",
+        "تلفزيون بشاشة مسطحة",
+        "ميني بار",
+        "خزنة في الغرفة",
+        "أجنحة فاخرة مع شرفة",
+        "مطعمان",
+        "بارين",
+        "سبا تركي",
+        "حمام تقليدي",
+        "خدمة الغرف 7/24",
+        "إفطار مجاني",
+        "موقع مركزي",
+        "منطقة الفاتح التاريخية",
+        "وصول للترام"
+      ]
+    }
+  }
+}
