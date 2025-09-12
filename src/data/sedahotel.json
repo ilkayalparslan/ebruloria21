@@ -1,0 +1,68 @@
+{
+  "id": 14,
+  "name": "Seda Hotel",
+  "adNumber": "6023453911",
+  "location": "Laleli",
+  "city": "Istanbul",
+  "country": "Turkey",
+  "roomNumber": 28,
+  "imageCount": 14,
+  "imageFolderName": "sedahotel",
+  "status": ["For Sale"],
+  "floorCount": 7,
+  "baseSquare": 95,
+  "tier": "basic",
+  "translations": {
+    "en": {
+      "title": "Charming Boutique Hotel in Historic Laleli District",
+      "description": "Discover this elegant boutique hotel perfectly positioned in Istanbul's historic Laleli district, offering guests an authentic Turkish hospitality experience. Located just a 5-minute walk from the nearest metro station, this property provides exceptional connectivity while maintaining the charm of old Istanbul.\n\nThe hotel's prime location places guests within 3 kilometers of Istanbul's most iconic landmarks, including the magnificent Sultanahmet Mosque (Blue Mosque) and the world-renowned Hagia Sophia. This strategic positioning makes it an ideal base for exploring the rich cultural heritage of Istanbul's historic peninsula.\n\n**Property Features:**\n- 28 comfortable and well-appointed guest rooms across 7 floors\n- Climate-controlled accommodations for year-round comfort\n- Established operation with consistent guest satisfaction\n- Excellent transport links to major tourist attractions\n- Prime location in the heart of Istanbul's cultural district\n\nEach thoughtfully designed room features modern amenities while maintaining the warm, welcoming atmosphere that defines Turkish hospitality. The property caters to both leisure travelers seeking to explore Istanbul's historic treasures and business guests requiring convenient city center accommodation.\n\nThis turnkey hospitality investment offers tremendous potential in one of Istanbul's most sought-after tourist districts, perfect for investors looking to enter the thriving Turkish tourism market.",
+      "type": "Boutique Hotel",
+      "amenities": [
+        "Air Conditioning",
+        "Work Desk",
+        "Flat Screen TV",
+        "WiFi",
+        "Mini Refrigerator",
+        "In-room Safe",
+        "Private Bathroom",
+        "24/7 Room Service",
+        "Metro Access",
+        "Historic Location"
+      ]
+    },
+    "tr": {
+      "title": "Tarihi Laleli Semtinde Şirin Butik Otel",
+      "description": "İstanbul'un tarihi Laleli semtinde mükemmel konumlanmış bu zarif butik oteli keşfedin ve misafirlere otantik Türk misafirperverliği deneyimi sunun. En yakın metro durağına sadece 5 dakikalık yürüme mesafesinde bulunan bu mülk, eski İstanbul'un cazibesini korurken olağanüstü bağlantı imkanları sağlıyor.\n\nOtelin birinci sınıf konumu, misafirleri İstanbul'un en ikonik simgelerinden olan muhteşem Sultanahmet Camii (Mavi Cami) ve dünyaca ünlü Ayasofya'ya 3 kilometre mesafeye yerleştiriyor. Bu stratejik konum, İstanbul'un tarihi yarımadasının zengin kültürel mirasını keşfetmek için ideal bir üs haline getiriyor.\n\n**Mülk Özellikleri:**\n- 7 katta 28 konforlu ve güzel döşenmiş misafir odası\n- Yıl boyu konfor için klima kontrolü\n- Sürekli misafir memnuniyeti ile kurulu operasyon\n- Başlıca turistik yerlere mükemmel ulaşım bağlantıları\n- İstanbul'un kültür bölgesinin kalbinde birinci sınıf lokasyon\n\nHer biri özenle tasarlanmış oda, Türk misafirperverliğini tanımlayan sıcak, samimi atmosferi korurken modern olanaklar sunuyor. Mülk hem İstanbul'un tarihi hazinelerini keşfetmeye gelen tatil seyahatçilerine hem de uygun şehir merkezi konaklamasına ihtiyaç duyan iş misafirlerine hizmet veriyor.\n\nBu anahtar teslim konaklama yatırımı, İstanbul'un en gözde turist bölgelerinden birinde muazzam potansiyel sunuyor ve gelişen Türk turizm pazarına girmek isteyen yatırımcılar için mükemmel.",
+      "type": "Butik Otel",
+      "amenities": [
+        "Klima",
+        "Çalışma Masası",
+        "Düz Ekran TV",
+        "WiFi",
+        "Mini Buzdolabı",
+        "Oda Kasası",
+        "Özel Banyo",
+        "7/24 Oda Servisi",
+        "Metro Erişimi",
+        "Tarihi Lokasyon"
+      ]
+    },
+    "ar": {
+      "title": "فندق بوتيك ساحر في منطقة لاليلي التاريخية",
+      "description": "اكتشف هذا الفندق البوتيك الأنيق المتموضع بشكل مثالي في منطقة لاليلي التاريخية في إسطنبول، والذي يقدم للضيوف تجربة ضيافة تركية أصيلة. يقع الفندق على بُعد 5 دقائق فقط سيراً على الأقدام من أقرب محطة مترو، وتوفر هذه العقار اتصالاً استثنائياً مع الحفاظ على سحر إسطنبول القديمة.\n\nيضع الموقع المتميز للفندق الضيوف في نطاق 3 كيلومترات من أشهر معالم إسطنبول، بما في ذلك جامع السلطان أحمد الرائع (الجامع الأزرق) وآيا صوفيا المشهورة عالمياً. هذا الموقع الاستراتيجي يجعله قاعدة مثالية لاستكشاف التراث الثقافي الغني لشبه الجزيرة التاريخية في إسطنبول.\n\n**مميزات العقار:**\n- 28 غرفة ضيوف مريحة ومؤثثة بشكل جيد على 7 طوابق\n- تحكم بالمناخ للراحة على مدار السنة\n- عملية راسخة مع رضا مستمر للضيوف\n- روابط نقل ممتازة إلى المعالم السياحية الرئيسية\n- موقع متميز في قلب المنطقة الثقافية في إسطنبول\n\nتتميز كل غرفة مصممة بعناية بوسائل الراحة الحديثة مع الحفاظ على الأجواء الدافئة والمرحبة التي تميز الضيافة التركية. تلبي العقار احتياجات كل من المسافرين للترفيه الساعين لاستكشاف كنوز إسطنبول التاريخية والضيوف التجاريين الذين يحتاجون إلى إقامة مريحة في وسط المدينة.\n\nتقدم هذه الاستثمار الفندقي الجاهز إمكانات هائلة في واحدة من أكثر المناطق السياحية المرغوبة في إسطنبول، مثالية للمستثمرين الذين يتطلعون إلى دخول سوق السياحة التركية المزدهرة.",
+      "type": "فندق بوتيك",
+      "amenities": [
+        "تكييف الهواء",
+        "مكتب عمل",
+        "تلفزيون بشاشة مسطحة",
+        "واي فاي",
+        "ثلاجة صغيرة",
+        "خزنة في الغرفة",
+        "حمام خاص",
+        "خدمة الغرف 7/24",
+        "وصول للمترو",
+        "موقع تاريخي"
+      ]
+    }
+  }
+}
