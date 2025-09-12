@@ -193,7 +193,7 @@ const Footer = () => {
                   to="tel:+1234567890"
                   className="text-gray-300 hover:text-primary-light transition-colors duration-300 font-inter"
                 >
-                  +1 (234) 567-8900
+                  +90 (532) 556-11-90
                 </Link>
               </div>
               <div className="flex items-center gap-3">
