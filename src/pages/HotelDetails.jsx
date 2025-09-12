@@ -222,7 +222,12 @@ const HotelDetails = () => {
   };
 
   // Generate random availability number
-  const availableProperties = Math.floor(Math.random() * 4) + 2; // 2-5
+  const availableProperties = useMemo(() => {
+    if (!hotel) return 2;
+    // Use hotel adNumber as seed for consistent number
+    const seed = parseInt(hotel.adNumber.replace(/\D/g, "")) || 1;
+    return (seed % 4) + 2; // Will always be 2-5 for the same hotel
+  }, [hotel?.adNumber]);
 
   if (loading) {
     return (
