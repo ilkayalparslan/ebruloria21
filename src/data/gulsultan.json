@@ -12,6 +12,7 @@
   "floorCount": 8,
   "baseSquare": 170,
   "tier": "basic",
+  "isAvailableInTurkey": true,
   "translations": {
     "en": {
       "title": "Historic Charm in the Heart of Sultanahmet",

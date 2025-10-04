@@ -12,6 +12,7 @@
   "floorCount": 4,
   "baseSquare": 130,
   "tier": "basic",
+  "isAvailableInTurkey": true,
   "translations": {
     "en": {
       "title": "Convenient City Hotel in Historic Aksaray District",

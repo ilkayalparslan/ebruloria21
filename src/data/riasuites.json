@@ -12,6 +12,7 @@
   "floorCount": 7,
   "baseSquare": 95,
   "tier": "basic",
+  "isAvailableInTurkey": true,
   "translations": {
     "en": {
       "title": "Modern Comfort Hotel in Istanbul",

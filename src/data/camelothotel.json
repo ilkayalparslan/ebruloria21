@@ -1,5 +1,5 @@
 {
-  "id": 15,
+  "id": 16,
   "name": "Camelot Hotel",
   "adNumber": "6936668311",
   "location": "Fatih - Cankurtaran",
@@ -12,6 +12,7 @@
   "floorCount": 5,
   "baseSquare": 65,
   "tier": "basic",
+  "isAvailableInTurkey": true,
   "translations": {
     "en": {
       "title": "Charming Sea View Hotel in Historic Cankurtaran District",

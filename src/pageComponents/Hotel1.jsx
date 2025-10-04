@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "../data/translations";
+import { usePropertyFilter } from "../hooks/usePropertyFilter";
 import {
   getHotelsWithTranslations,
   getUniqueCities,
@@ -35,12 +36,22 @@ const Hotel1 = () => {
   const [touchEnd, setTouchEnd] = useState(null);
 
   // Get hotels with translations for current language
-  const HOTEL_LISTINGS = useMemo(() => {
+  const allHotelsWithTranslations = useMemo(() => {
     const hotelsWithTranslations = getHotelsWithTranslations(currentLanguage);
     return hotelsWithTranslations;
   }, [currentLanguage]);
 
-  // Get unique cities for filter dropdown
+  // Apply geolocation filtering
+  const {
+    filteredProperties: geoFilteredHotels,
+    isLoading: locationLoading,
+    userCountry,
+  } = usePropertyFilter(allHotelsWithTranslations);
+
+  // Use geo-filtered hotels as the base for other filters
+  const HOTEL_LISTINGS = geoFilteredHotels;
+
+  // Get unique cities for filter dropdown (from geo-filtered hotels)
   const uniqueCities = useMemo(() => {
     return getUniqueCities(HOTEL_LISTINGS);
   }, [HOTEL_LISTINGS]);
@@ -60,6 +71,23 @@ const Hotel1 = () => {
     setCurrentPage(1);
     return filtered;
   }, [statusFilter, cityFilter, HOTEL_LISTINGS]);
+
+  // Show loading screen while detecting location
+  if (locationLoading) {
+    return (
+      <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-blue-500 mx-auto mb-4"></div>
+          <p className="text-xl text-gray-700 mb-2">
+            Detecting your location...
+          </p>
+          <p className="text-sm text-gray-500">
+            Preparing personalized hotel listings
+          </p>
+        </div>
+      </div>
+    );
+  }
 
   const totalHotels = filteredHotels.length;
   const totalPages = Math.ceil(totalHotels / hotelsPerPage);
@@ -494,7 +522,18 @@ const Hotel1 = () => {
         {/* No results message */}
         {currentHotels.length === 0 && (
           <div className="text-center py-12">
-            <p className="text-gray-500 text-lg">{t("noPropertiesFound")}</p>
+            <div className="max-w-md mx-auto">
+              <div className="text-6xl mb-4">🏨</div>
+              <p className="text-gray-500 text-lg mb-2">
+                {t("noPropertiesFound")}
+              </p>
+              {userCountry === "TR" &&
+                geoFilteredHotels.length < allHotelsWithTranslations.length && (
+                  <p className="text-sm text-gray-400">
+                    Some properties may not be available in your region
+                  </p>
+                )}
+            </div>
           </div>
         )}
       </div>

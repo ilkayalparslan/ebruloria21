@@ -12,6 +12,7 @@
   "floorCount": 7,
   "baseSquare": 125,
   "tier": "basic",
+  "isAvailableInTurkey": true,
   "translations": {
     "en": {
       "title": "Modern Budget Hotel in Central Aksaray District",

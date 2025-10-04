@@ -12,6 +12,7 @@
   "floorCount": 7,
   "baseSquare": 95,
   "tier": "basic",
+  "isAvailableInTurkey": true,
   "translations": {
     "en": {
       "title": "Charming Boutique Hotel in Historic Laleli District",

@@ -12,6 +12,7 @@
   "floorCount": 6,
   "baseSquare": 98,
   "tier": "basic",
+  "isAvailableInTurkey": true,
   "translations": {
     "en": {
       "title": "Modern Comfort Hotel Near Little Hagia Sophia",

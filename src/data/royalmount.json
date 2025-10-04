@@ -12,6 +12,7 @@
   "floorCount": 6,
   "baseSquare": 40,
   "tier": "basic",
+  "isAvailableInTurkey": true,
   "translations": {
     "en": {
       "title": "Exclusive Boutique Hotel with Sea of Marmara Views in Historic Peninsula",

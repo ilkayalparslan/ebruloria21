@@ -1,0 +1,69 @@
+{
+  "id": 18,
+  "name": "Marmaray Hotel",
+  "adNumber": "6473180925",
+  "location": "Fatih",
+  "city": "Istanbul",
+  "country": "Turkey",
+  "roomNumber": 108,
+  "imageCount": 22,
+  "imageFolderName": "marmaray",
+  "status": ["For Sale"],
+  "floorCount": 9,
+  "baseSquare": 480,
+  "tier": "gold",
+  "isAvailableInTurkey": true,
+  "translations": {
+    "en": {
+      "title": "Historic District Hotel with Modern Amenities",
+      "description": "Nestled in the heart of Fatih, Istanbul's most historically rich district, this distinguished hotel property offers investors a unique opportunity to own a premium establishment in one of the city's most culturally significant areas. Fatih is home to some of Istanbul's most iconic landmarks and serves as the historical peninsula where east meets west.\n\nThe district encompasses major attractions including the Sultanahmet area, the Grand Bazaar, and numerous UNESCO World Heritage Sites. This prime location attracts millions of tourists annually, ensuring consistent demand from both cultural tourists and business travelers. The property benefits from excellent public transportation connectivity, including proximity to the historic Marmaray railway tunnel that connects the European and Asian sides of Istanbul.\n\n**Property Features:**\n- 108 well-appointed guest rooms across 9 floors\n- 480 square meters of base area\n- Premium gold-tier classification\n- Comprehensive renovations and modern amenities\n- Strategic location in the historical peninsula\n- High occupancy rates due to tourist demand\n- Currently operational with established market presence\n\nFatih's unique position as Istanbul's cultural and historical core makes it an evergreen investment destination. The area combines ancient heritage with modern infrastructure, offering guests an authentic Istanbul experience while maintaining contemporary comfort standards. The district's continuous appeal to international visitors provides stable revenue streams throughout the year.\n\nThis turnkey hotel represents an exceptional opportunity for investors seeking a well-positioned property in one of the world's most visited tourist destinations. The combination of historical significance, modern facilities, and strategic location creates strong potential for sustained profitability in Istanbul's thriving hospitality sector.",
+      "type": "Hotel",
+      "amenities": [
+        "WiFi",
+        "Swimming Pool",
+        "Fitness Center",
+        "Restaurant",
+        "Free Parking",
+        "Business Center",
+        "Conference Rooms",
+        "Spa Services",
+        "Room Service",
+        "24/7 Reception"
+      ]
+    },
+    "tr": {
+      "title": "Modern Olanaklarla Tarihi Bölge Oteli",
+      "description": "İstanbul'un en tarih açısından zengin ilçesi olan Fatih'in kalbinde yer alan bu seçkin otel mülkü, yatırımcılara şehrin en kültürel açıdan önemli alanlarından birinde premium bir tesis sahibi olma fırsatı sunuyor. Fatih, İstanbul'un en ikonik simgelerinden bazılarına ev sahipliği yapıyor ve doğunun batıyla buluştuğu tarihi yarımada olarak hizmet veriyor.\n\nİlçe, Sultanahmet bölgesi, Kapalıçarşı ve çok sayıda UNESCO Dünya Mirası Alanı dahil olmak üzere başlıca turistik yerleri kapsıyor. Bu birinci sınıf konum, yıllık milyonlarca turisti çekerek hem kültür turistlerinden hem de iş gezginlerinden sürekli talep sağlıyor. Mülk, İstanbul'un Avrupa ve Asya yakalarını birleştiren tarihi Marmaray demiryolu tüneline yakınlık dahil olmak üzere mükemmel toplu taşıma bağlantısından yararlanıyor.\n\n**Mülk Özellikleri:**\n- 9 kat boyunca 108 güzel döşenmiş misafir odası\n- 480 metrekare taban alanı\n- Premium altın katman sınıflandırması\n- Kapsamlı yenilemeler ve modern olanaklar\n- Tarihi yarımadada stratejik konum\n- Turist talebi nedeniyle yüksek doluluk oranları\n- Kurulu pazar varlığı ile şu anda faal durumda\n\nFatih'in İstanbul'un kültürel ve tarihi çekirdeği olarak benzersiz konumu, onu her zaman geçerli bir yatırım destinasyonu haline getiriyor. Bölge, antik mirası modern altyapı ile birleştirerek, misafirlere çağdaş konfor standartlarını korurken otantik bir İstanbul deneyimi sunuyor. İlçenin uluslararası ziyaretçilere sürekli çekiciliği, yıl boyunca istikrarlı gelir akışları sağlıyor.\n\nBu anahtar teslim otel, dünyanın en çok ziyaret edilen turistik destinasyonlarından birinde iyi konumlandırılmış bir mülk arayan yatırımcılar için olağanüstü bir fırsat temsil ediyor. Tarihi önem, modern tesisler ve stratejik konumun kombinasyonu, İstanbul'un gelişen konaklama sektöründe sürdürülebilir karlılık için güçlü potansiyel yaratıyor.",
+      "type": "Otel",
+      "amenities": [
+        "WiFi",
+        "Yüzme Havuzu",
+        "Fitness Merkezi",
+        "Restoran",
+        "Ücretsiz Park",
+        "İş Merkezi",
+        "Konferans Salonları",
+        "Spa Hizmetleri",
+        "Oda Servisi",
+        "7/24 Resepsiyon"
+      ]
+    },
+    "ar": {
+      "title": "فندق في منطقة تاريخية مع وسائل راحة حديثة",
+      "description": "يقع هذا العقار الفندقي المتميز في قلب الفاتح، المنطقة الأكثر ثراءً تاريخياً في إسطنبول، ويوفر للمستثمرين فرصة فريدة لامتلاك منشأة متميزة في واحدة من أكثر المناطق أهمية ثقافياً في المدينة. الفاتح هي موطن لبعض معالم إسطنبول الأكثر شهرة وتعمل كشبه الجزيرة التاريخية حيث يلتقي الشرق بالغرب.\n\nتشمل المنطقة مناطق الجذب الرئيسية بما في ذلك منطقة السلطان أحمد والبازار الكبير والعديد من مواقع التراث العالمي لليونسكو. يجذب هذا الموقع المتميز ملايين السياح سنوياً، مما يضمن الطلب المستمر من كل من السياح الثقافيين والمسافرين لأغراض العمل. يستفيد العقار من اتصال ممتاز بوسائل النقل العام، بما في ذلك القرب من نفق مرمرة التاريخي للسكك الحديدية الذي يربط بين الجانبين الأوروبي والآسيوي من إسطنبول.\n\n**مميزات العقار:**\n- 108 غرفة ضيوف مؤثثة بشكل جيد عبر 9 طوابق\n- 480 متر مربع من المساحة الأساسية\n- تصنيف الفئة الذهبية المتميزة\n- تجديدات شاملة ووسائل راحة حديثة\n- موقع استراتيجي في شبه الجزيرة التاريخية\n- معدلات إشغال عالية بسبب الطلب السياحي\n- تعمل حالياً مع وجود سوقي راسخ\n\nيجعل الموقع الفريد للفاتح كقلب ثقافي وتاريخي لإسطنبول منها وجهة استثمارية دائمة الخضرة. تجمع المنطقة بين التراث القديم والبنية التحتية الحديثة، مما يوفر للضيوف تجربة إسطنبول الأصيلة مع الحفاظ على معايير الراحة المعاصرة. يوفر الجذب المستمر للمنطقة للزوار الدوليين تدفقات إيرادات مستقرة على مدار العام.\n\nيمثل هذا الفندق الجاهز فرصة استثنائية للمستثمرين الذين يبحثون عن عقار في موقع جيد في واحدة من أكثر الوجهات السياحية زيارة في العالم. يخلق الجمع بين الأهمية التاريخية والمرافق الحديثة والموقع الاستراتيجي إمكانات قوية للربحية المستدامة في قطاع الضيافة المزدهر في إسطنبول.",
+      "type": "فندق",
+      "amenities": [
+        "واي فاي",
+        "حمام السباحة",
+        "مركز اللياقة",
+        "مطعم",
+        "موقف مجاني",
+        "مركز الأعمال",
+        "قاعات المؤتمرات",
+        "خدمات السبا",
+        "خدمة الغرف",
+        "استقبال 7/24"
+      ]
+    }
+  }
+}

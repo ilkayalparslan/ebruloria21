@@ -12,6 +12,7 @@
   "floorCount": 4,
   "baseSquare": 35,
   "tier": "basic",
+  "isAvailableInTurkey": true,
   "translations": {
     "en": {
       "title": "Modern Boutique Hotel in Heart of Taksim",

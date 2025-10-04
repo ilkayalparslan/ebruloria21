@@ -12,6 +12,7 @@
   "floorCount": 5,
   "baseSquare": 65,
   "tier": "basic",
+  "isAvailableInTurkey": true,
   "translations": {
     "en": {
       "title": "Prime Location in the Heart of Istanbul",

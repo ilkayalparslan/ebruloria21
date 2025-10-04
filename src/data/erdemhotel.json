@@ -12,6 +12,7 @@
   "floorCount": 5,
   "baseSquare": 75,
   "tier": "basic",
+  "isAvailableInTurkey": true,
   "translations": {
     "en": {
       "title": "Centrally Located Hotel in Laleli District",

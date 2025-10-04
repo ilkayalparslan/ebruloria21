@@ -1,0 +1,69 @@
+{
+  "id": 17,
+  "name": "Dedeman Hotel",
+  "adNumber": "6542817396",
+  "location": "Şişli",
+  "city": "Istanbul",
+  "country": "Turkey",
+  "roomNumber": 200,
+  "imageCount": 5,
+  "imageFolderName": "dedeman",
+  "status": ["For Sale"],
+  "floorCount": 15,
+  "baseSquare": 750,
+  "tier": "gold",
+  "isAvailableInTurkey": false,
+  "translations": {
+    "en": {
+      "title": "Prestigious Hotel in Istanbul's Business District",
+      "description": "Located in the dynamic Şişli district, this substantial hotel property represents a premium investment opportunity in one of Istanbul's most prominent business and residential areas. The property's impressive scale and strategic positioning make it an ideal acquisition for serious investors seeking a flagship presence in Turkey's largest city.\n\nŞişli is renowned as one of Istanbul's most vibrant districts, serving as a major commercial and cultural hub. The area offers excellent connectivity to all parts of the city, with multiple metro lines, bus routes, and proximity to major highways. The district attracts both domestic and international business travelers, as well as tourists seeking modern amenities in a well-connected location.\n\n**Property Features:**\n- 200 spacious guest rooms across 15 floors\n- 750 square meters of base area\n- Premium gold-tier classification\n- Comprehensive hospitality infrastructure\n- High-capacity facility suitable for large-scale operations\n- Strategic location in central Istanbul\n\nThe hotel benefits from Şişli's robust infrastructure, including proximity to major shopping centers, corporate offices, medical facilities, and entertainment venues. The area's continuous development and strong demand from business travelers ensure consistent occupancy rates throughout the year.\n\nThis property offers exceptional potential for investors looking to establish or expand their portfolio in Istanbul's competitive hospitality market. The substantial room capacity and premium location provide strong revenue generation opportunities in one of Europe's most visited cities.",
+      "type": "Hotel",
+      "amenities": [
+        "WiFi",
+        "Swimming Pool",
+        "Fitness Center",
+        "Restaurant",
+        "Free Parking",
+        "Business Center",
+        "Conference Rooms",
+        "Spa Services",
+        "Room Service",
+        "24/7 Reception"
+      ]
+    },
+    "tr": {
+      "title": "İstanbul'un İş Bölgesinde Prestijli Otel",
+      "description": "Dinamik Şişli ilçesinde yer alan bu büyük otel mülkü, İstanbul'un en önde gelen iş ve konut alanlarından birinde birinci sınıf bir yatırım fırsatı sunuyor. Mülkün etkileyici ölçeği ve stratejik konumu, Türkiye'nin en büyük şehrinde amiral gemisi varlığı arayan ciddi yatırımcılar için ideal bir satın alma haline getiriyor.\n\nŞişli, İstanbul'un en canlı ilçelerinden biri olarak tanınır ve önemli bir ticari ve kültürel merkez olarak hizmet verir. Bölge, birden fazla metro hattı, otobüs güzergahları ve ana otoyollara yakınlık ile şehrin tüm bölgelerine mükemmel bağlantı sunar. İlçe, modern olanaklara iyi bağlantılı bir konumda arayan turistlerin yanı sıra hem yerel hem de uluslararası iş gezginlerini çeker.\n\n**Mülk Özellikleri:**\n- 15 kat boyunca 200 geniş misafir odası\n- 750 metrekare taban alanı\n- Premium altın katman sınıflandırması\n- Kapsamlı konaklama altyapısı\n- Büyük ölçekli operasyonlar için uygun yüksek kapasiteli tesis\n- Merkezi İstanbul'da stratejik konum\n\nOtel, büyük alışveriş merkezleri, kurumsal ofisler, tıbbi tesisler ve eğlence mekanlarına yakınlık dahil olmak üzere Şişli'nin sağlam altyapısından yararlanıyor. Bölgenin sürekli gelişimi ve iş gezginlerinden gelen güçlü talep, yıl boyunca tutarlı doluluk oranlarını garanti ediyor.\n\nBu mülk, İstanbul'un rekabetçi konaklama pazarında portföylerini kurmak veya genişletmek isteyen yatırımcılar için olağanüstü potansiyel sunuyor. Önemli oda kapasitesi ve birinci sınıf konum, Avrupa'nın en çok ziyaret edilen şehirlerinden birinde güçlü gelir yaratma fırsatları sağlıyor.",
+      "type": "Otel",
+      "amenities": [
+        "WiFi",
+        "Yüzme Havuzu",
+        "Fitness Merkezi",
+        "Restoran",
+        "Ücretsiz Park",
+        "İş Merkezi",
+        "Konferans Salonları",
+        "Spa Hizmetleri",
+        "Oda Servisi",
+        "7/24 Resepsiyon"
+      ]
+    },
+    "ar": {
+      "title": "فندق مرموق في منطقة الأعمال في إسطنبول",
+      "description": "يقع هذا العقار الفندقي الكبير في منطقة شيشلي الديناميكية، ويمثل فرصة استثمارية متميزة في واحدة من أبرز المناطق التجارية والسكنية في إسطنبول. يجعل الحجم المذهل للعقار وموقعه الاستراتيجي منه استحواذاً مثالياً للمستثمرين الجادين الذين يسعون للحصول على وجود رئيسي في أكبر مدن تركيا.\n\nتشتهر شيشلي بأنها واحدة من أكثر مناطق إسطنبول حيوية، حيث تعمل كمركز تجاري وثقافي رئيسي. توفر المنطقة اتصالاً ممتازاً بجميع أنحاء المدينة، مع خطوط مترو متعددة وطرق الحافلات والقرب من الطرق السريعة الرئيسية. تجذب المنطقة كلاً من المسافرين لأغراض العمل المحليين والدوليين، وكذلك السياح الذين يبحثون عن وسائل الراحة الحديثة في موقع جيد الاتصال.\n\n**مميزات العقار:**\n- 200 غرفة ضيوف واسعة عبر 15 طابقاً\n- 750 متر مربع من المساحة الأساسية\n- تصنيف الفئة الذهبية المتميزة\n- بنية تحتية شاملة للضيافة\n- منشأة عالية السعة مناسبة للعمليات واسعة النطاق\n- موقع استراتيجي في وسط إسطنبول\n\nيستفيد الفندق من البنية التحتية القوية لشيشلي، بما في ذلك القرب من مراكز التسوق الرئيسية والمكاتب الإدارية والمرافق الطبية وأماكن الترفيه. يضمن التطوير المستمر للمنطقة والطلب القوي من المسافرين لأغراض العمل معدلات إشغال ثابتة على مدار العام.\n\nيوفر هذا العقار إمكانات استثنائية للمستثمرين الذين يتطلعون إلى إنشاء أو توسيع محفظتهم في سوق الضيافة التنافسي في إسطنبول. توفر سعة الغرف الكبيرة والموقع المتميز فرصاً قوية لتوليد الإيرادات في واحدة من أكثر المدن زيارة في أوروبا.",
+      "type": "فندق",
+      "amenities": [
+        "واي فاي",
+        "حمام السباحة",
+        "مركز اللياقة",
+        "مطعم",
+        "موقف مجاني",
+        "مركز الأعمال",
+        "قاعات المؤتمرات",
+        "خدمات السبا",
+        "خدمة الغرف",
+        "استقبال 7/24"
+      ]
+    }
+  }
+}

@@ -12,6 +12,7 @@
   "floorCount": 9,
   "baseSquare": 85,
   "tier": "basic",
+  "isAvailableInTurkey": true,
   "translations": {
     "en": {
       "title": "Historic Boutique Hotel in Kumkapi District",

@@ -12,6 +12,7 @@
   "floorCount": 6,
   "baseSquare": 210,
   "tier": "basic",
+  "isAvailableInTurkey": true,
   "translations": {
     "en": {
       "title": "Modern Business Hotel in Central Istanbul",
