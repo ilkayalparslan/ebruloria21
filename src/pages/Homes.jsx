@@ -1,23 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { FiHome } from "react-icons/fi";
-import { usePropertyFilter } from "../hooks/usePropertyFilter";
-import dedemanData from "../data/dedeman.json";
 
 const Homes = () => {
-  const navigate = useNavigate();
   const [progress, setProgress] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
-
-  // Add property data - you can add more properties here
-  const allProperties = [dedemanData];
-
-  // Use the property filter hook
-  const {
-    filteredProperties,
-    isLoading: locationLoading,
-    userCountry,
-  } = usePropertyFilter(allProperties);
 
   useEffect(() => {
     // Fade in animation on mount
@@ -33,25 +18,6 @@ const Homes = () => {
 
     return () => clearInterval(interval);
   }, []);
-
-  const handleGoHome = () => {
-    navigate("/");
-  };
-
-  // Show loading if still detecting location
-  if (locationLoading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500">
-        <div className="text-center text-white">
-          <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-white mx-auto mb-4"></div>
-          <p className="text-xl">Detecting your location...</p>
-          <p className="text-sm opacity-75 mt-2">
-            Preparing personalized content
-          </p>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div
@@ -122,16 +88,6 @@ const Homes = () => {
             Our team is crafting something special just for you. Stay tuned for
             an incredible experience.
           </p>
-
-          {/* Add location-aware message */}
-          {userCountry && (
-            <div className="mt-4 text-sm text-white/60">
-              <p>🌍 Personalized content for your region</p>
-              <p className="text-xs mt-1">
-                {filteredProperties.length} properties available in your area
-              </p>
-            </div>
-          )}
         </div>
 
         {/* Progress section */}
@@ -158,35 +114,23 @@ const Homes = () => {
 
         {/* Call to action */}
         <div>
-          <button
-            onClick={handleGoHome}
-            className="bg-gradient-to-r from-white/20 to-white/10 border border-white/30 text-white px-8 py-4 rounded-full font-semibold backdrop-blur-md flex items-center gap-2 mx-auto transition-all duration-300 hover:from-white/30 hover:to-white/20 hover:-translate-y-0.5 hover:shadow-[0_10px_25px_rgba(0,0,0,0.2)]"
-          >
-            <FiHome size={20} />
-            <span>Go Back Home</span>
+          <button className="bg-gradient-to-r from-white/20 to-white/10 border border-white/30 text-white px-8 py-4 rounded-full font-semibold backdrop-blur-md flex items-center gap-2 mx-auto transition-all duration-300 hover:from-white/30 hover:to-white/20 hover:-translate-y-0.5 hover:shadow-[0_10px_25px_rgba(0,0,0,0.2)]">
+            <span>Notify Me When Ready</span>
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              className="animate-[bounce_2s_infinite]"
+            >
+              <path d="M10 0L15 8H5L10 0Z" fill="currentColor" />
+              <path
+                d="M10 20L15 12H5L10 20Z"
+                fill="currentColor"
+                opacity="0.6"
+              />
+            </svg>
           </button>
         </div>
-
-        {/* Debug info in development */}
-        {process.env.NODE_ENV === "development" && (
-          <div className="mt-8 p-4 bg-black/20 rounded-lg text-left">
-            <h4 className="text-white font-semibold mb-2">Debug Info:</h4>
-            <p className="text-white/70 text-sm">User Country: {userCountry}</p>
-            <p className="text-white/70 text-sm">
-              Total Properties: {allProperties.length}
-            </p>
-            <p className="text-white/70 text-sm">
-              Filtered Properties: {filteredProperties.length}
-            </p>
-            <p className="text-white/70 text-sm">
-              Hidden Properties:{" "}
-              {allProperties
-                .filter((p) => !filteredProperties.includes(p))
-                .map((p) => p.name)
-                .join(", ") || "None"}
-            </p>
-          </div>
-        )}
       </div>
 
       {/* Decorative elements */}
