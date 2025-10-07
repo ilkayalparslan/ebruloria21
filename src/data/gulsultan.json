@@ -9,8 +9,8 @@
   "imageCount": 14,
   "imageFolderName": "gulsultan",
   "status": ["For Rent"],
-  "floorCount": 8,
-  "baseSquare": 170,
+  "floorCount": 5,
+  "baseSquare": 530,
   "tier": "basic",
   "isAvailableInTurkey": true,
   "translations": {

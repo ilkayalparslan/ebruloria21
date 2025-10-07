@@ -9,8 +9,8 @@
   "imageFolderName": "mardia",
   "imageCount": 20,
   "status": ["For Sale"],
-  "floorCount": 4,
-  "baseSquare": 130,
+  "floorCount": 7,
+  "baseSquare": 714,
   "tier": "basic",
   "isAvailableInTurkey": true,
   "translations": {
