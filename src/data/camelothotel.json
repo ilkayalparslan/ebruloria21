@@ -10,7 +10,7 @@
   "imageFolderName": "camelothotel",
   "status": ["For Sale"],
   "floorCount": 5,
-  "baseSquare": 65,
+  "baseSquare": 325,
   "tier": "basic",
   "isAvailableInTurkey": true,
   "translations": {

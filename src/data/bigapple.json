@@ -10,7 +10,7 @@
   "imageFolderName": "bigapple",
   "status": ["For Sale"],
   "floorCount": 5,
-  "baseSquare": 150,
+  "baseSquare": 700,
   "tier": "basic",
   "isAvailableInTurkey": true,
   "translations": {

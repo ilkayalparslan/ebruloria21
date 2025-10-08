@@ -10,7 +10,7 @@
   "imageFolderName": "suncomfort",
   "status": ["For Sale", "For Rent"],
   "floorCount": 7,
-  "baseSquare": 75,
+  "baseSquare": 865,
   "tier": "basic",
   "isAvailableInTurkey": true,
   "translations": {

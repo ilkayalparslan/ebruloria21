@@ -10,7 +10,7 @@
   "imageFolderName": "marmaray",
   "status": ["For Sale"],
   "floorCount": 9,
-  "baseSquare": 480,
+  "baseSquare": 4320,
   "tier": "gold",
   "isAvailableInTurkey": true,
   "translations": {

@@ -10,7 +10,7 @@
   "imageFolderName": "newhotel",
   "status": ["For Rent"],
   "floorCount": 6,
-  "baseSquare": 700,
+  "baseSquare": 1065,
   "tier": "basic",
   "isAvailableInTurkey": true,
   "translations": {
