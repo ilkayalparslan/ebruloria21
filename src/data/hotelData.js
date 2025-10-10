@@ -46,6 +46,7 @@ import royalmountData from "./royalmount.json";
 import camelothotelData from "./camelothotel.json";
 import dedemanhotelData from "./dedeman.json";
 import marmarayhotelData from "./marmaray.json";
+import genyatermalhotelData from "./genyatermal.json";
 
 // Raw hotel listings (with translations object)
 export const RAW_HOTEL_LISTINGS = [
@@ -67,6 +68,7 @@ export const RAW_HOTEL_LISTINGS = [
   camelothotelData,
   dedemanhotelData,
   marmarayhotelData,
+  genyatermalhotelData,
 ];
 
 // Helper function to get translated content for a single hotel

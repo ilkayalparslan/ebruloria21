@@ -1,0 +1,69 @@
+{
+  "id": 19,
+  "name": "Genya Termal Hotel",
+  "adNumber": "6258374109",
+  "location": "Gemlik",
+  "city": "Bursa",
+  "country": "Turkey",
+  "roomNumber": 12,
+  "imageCount": 36,
+  "imageFolderName": "genyatermalhotel",
+  "status": ["For Sale"],
+  "isAvailableInTurkey": false,
+  "floorCount": 12,
+  "baseSquare": 1605,
+  "tier": "gold",
+  "translations": {
+    "en": {
+      "title": "Genya Thermal Hotel - Boutique Hotel with Sea View for Sale in Gemlik",
+      "description": "The perfect destination for a unique sea view and quality accommodation experience at Genya Hotel. Shared facilities include a pool, kitchen, and lounge area. Breakfast options are available for an additional fee. Our rooms are air-conditioned and accommodate 1-4 guests. Each room features a private bathroom. Our hotel is located 5 minutes from Kurşunlu Beach and 15 minutes from Kadınlar Beach. Genya Boutique Hotel-Restaurant is situated on the new highway across from Kurşunlu Gendarmerie station on the Gemlik-Mudanya route.",
+      "type": "Hotel",
+      "amenities": [
+        "Swimming Pool",
+        "Shared Kitchen",
+        "Lounge Area",
+        "Air Conditioning",
+        "Private Bathrooms",
+        "Restaurant",
+        "Breakfast Service (Extra Fee)",
+        "Sea View",
+        "Near Beach (5-15 min)",
+        "Highway Access"
+      ]
+    },
+    "tr": {
+      "title": "Genya Termal Otel - Gemlik'te Deniz Manzaralı Butik Otel Satılık",
+      "description": "Eşsiz deniz manzarası ve kaliteli konaklama deneyimi için doğru adres Genya Otel. Ortak kullanım için havuz, mutfak ve oturma alanı bulunmaktadır. Ekstra ücret ile kahvaltı seçeneğimiz mevcuttur. Odalarımız klimalıdır. Odalarımız 1-2-3-4 kişiliktir. Her odanın özel banyosu bulunmaktadır. Otelimiz Kurşunlu Plajına 5, Kadınlar Plajına ise 15 dk mesafededir. Genya Butik Otel-Restoranımız, Gemlik-Mudanya yolu istikametinde Kurşunlu Jandarma karakolu karşısı yeni otoban yolu üzerinde bulunmaktadır.",
+      "type": "Hotel",
+      "amenities": [
+        "Yüzme Havuzu",
+        "Ortak Mutfak",
+        "Oturma Alanı",
+        "Klima",
+        "Özel Banyo",
+        "Restoran",
+        "Kahvaltı Servisi (Ekstra Ücretli)",
+        "Deniz Manzarası",
+        "Plaja Yakın (5-15 dk)",
+        "Otoban Erişimi"
+      ]
+    },
+    "ar": {
+      "title": "فندق جينيا الحراري - فندق بوتيك بإطلالة بحرية للبيع في جمليك",
+      "description": "العنوان المثالي لإطلالة بحرية فريدة وتجربة إقامة عالية الجودة في فندق جينيا. تتوفر مرافق مشتركة تشمل حمام سباحة ومطبخ ومنطقة جلوس. تتوفر خيارات الإفطار مقابل رسوم إضافية. غرفنا مكيفة وتستوعب من 1 إلى 4 أشخاص. تحتوي كل غرفة على حمام خاص. يقع فندقنا على بعد 5 دقائق من شاطئ كورشونلو و15 دقيقة من شاطئ كادينلار. يقع فندق جينيا البوتيكي-مطعمنا على الطريق السريع الجديد مقابل مركز درك كورشونلو على طريق جمليك-مودانيا.",
+      "type": "Hotel",
+      "amenities": [
+        "حمام سباحة",
+        "مطبخ مشترك",
+        "منطقة جلوس",
+        "تكييف هواء",
+        "حمامات خاصة",
+        "مطعم",
+        "خدمة إفطار (رسوم إضافية)",
+        "إطلالة بحرية",
+        "قريب من الشاطئ (5-15 دقيقة)",
+        "وصول للطريق السريع"
+      ]
+    }
+  }
+}

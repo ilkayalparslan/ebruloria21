@@ -137,6 +137,7 @@ export const translations = {
       Istanbul: "Istanbul",
       Trabzon: "Trabzon",
       Ankara: "Ankara",
+      Bursa: "Bursa",
     },
     countries: {
       Turkey: "Turkey",
@@ -302,6 +303,7 @@ export const translations = {
       Istanbul: "İstanbul",
       Trabzon: "Trabzon",
       Ankara: "Ankara",
+      Bursa: "Bursa",
     },
     countries: {
       Turkey: "Türkiye",
@@ -465,6 +467,7 @@ export const translations = {
       Istanbul: "اسطنبول",
       Trabzon: "طرابزون",
       Ankara: "أنقرة",
+      Bursa: "بورصة",
     },
     countries: {
       Turkey: "تركيا",
